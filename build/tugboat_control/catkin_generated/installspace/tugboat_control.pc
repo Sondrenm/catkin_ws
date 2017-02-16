@@ -1,0 +1,8 @@
+prefix=/home/sondre/catkin_ws/install
+
+Name: tugboat_control
+Description: Description of tugboat_control
+Version: 0.0.0
+Cflags: -I/home/sondre/catkin_ws/install/include
+Libs: -L/home/sondre/catkin_ws/install/lib -ltugboat_control
+Requires: roscpp rospy std_msgs message_runtime
