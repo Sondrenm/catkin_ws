@@ -21,7 +21,7 @@ class ThrustCommand {
   static serialize(obj, bufferInfo) {
     // Serializes a message object of type ThrustCommand
     // Serialize message field [ID]
-    bufferInfo = _serializer.int8(obj.ID, bufferInfo);
+    bufferInfo = _serializer.uint8(obj.ID, bufferInfo);
     // Serialize message field [thrust]
     bufferInfo = _serializer.int8(obj.thrust, bufferInfo);
     // Serialize message field [cwturn]
@@ -35,7 +35,7 @@ class ThrustCommand {
     let len;
     let data = new ThrustCommand();
     // Deserialize message field [ID]
-    tmp = _deserializer.int8(buffer);
+    tmp = _deserializer.uint8(buffer);
     data.ID = tmp.data;
     buffer = tmp.buffer;
     // Deserialize message field [thrust]
@@ -59,15 +59,16 @@ class ThrustCommand {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'fcc2a347632ee0312c19efd7a2a067b6';
+    return 'eb36a969d5d22c5ec8c64a8469c7e207';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int8 ID
-    int8 thrust
-    int8 cwturn
+    # To Arduino
+    uint8 ID
+    int8 thrust # In % + 100
+    int8 cwturn # In % + 100
     `;
   }
 

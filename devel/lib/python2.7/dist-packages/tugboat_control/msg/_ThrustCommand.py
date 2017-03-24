@@ -7,14 +7,15 @@ import struct
 
 
 class ThrustCommand(genpy.Message):
-  _md5sum = "fcc2a347632ee0312c19efd7a2a067b6"
+  _md5sum = "eb36a969d5d22c5ec8c64a8469c7e207"
   _type = "tugboat_control/ThrustCommand"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int8 ID
-int8 thrust
-int8 cwturn"""
+  _full_text = """# To Arduino
+uint8 ID
+int8 thrust # In % + 100
+int8 cwturn # In % + 100"""
   __slots__ = ['ID','thrust','cwturn']
-  _slot_types = ['int8','int8','int8']
+  _slot_types = ['uint8','int8','int8']
 
   def __init__(self, *args, **kwds):
     """
@@ -57,7 +58,7 @@ int8 cwturn"""
     """
     try:
       _x = self
-      buff.write(_get_struct_3b().pack(_x.ID, _x.thrust, _x.cwturn))
+      buff.write(_get_struct_B2b().pack(_x.ID, _x.thrust, _x.cwturn))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -71,7 +72,7 @@ int8 cwturn"""
       _x = self
       start = end
       end += 3
-      (_x.ID, _x.thrust, _x.cwturn,) = _get_struct_3b().unpack(str[start:end])
+      (_x.ID, _x.thrust, _x.cwturn,) = _get_struct_B2b().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -85,7 +86,7 @@ int8 cwturn"""
     """
     try:
       _x = self
-      buff.write(_get_struct_3b().pack(_x.ID, _x.thrust, _x.cwturn))
+      buff.write(_get_struct_B2b().pack(_x.ID, _x.thrust, _x.cwturn))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -100,7 +101,7 @@ int8 cwturn"""
       _x = self
       start = end
       end += 3
-      (_x.ID, _x.thrust, _x.cwturn,) = _get_struct_3b().unpack(str[start:end])
+      (_x.ID, _x.thrust, _x.cwturn,) = _get_struct_B2b().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -109,9 +110,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3b = None
-def _get_struct_3b():
-    global _struct_3b
-    if _struct_3b is None:
-        _struct_3b = struct.Struct("<3b")
-    return _struct_3b
+_struct_B2b = None
+def _get_struct_B2b():
+    global _struct_B2b
+    if _struct_B2b is None:
+        _struct_B2b = struct.Struct("<B2b")
+    return _struct_B2b

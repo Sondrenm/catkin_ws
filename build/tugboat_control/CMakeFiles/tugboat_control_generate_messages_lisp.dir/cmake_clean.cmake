@@ -1,6 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tugboat_control_generate_messages_lisp"
-  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ThrustCommand.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Thrust.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatList.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/TugSetpoints.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatStatus.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoint.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/PushingForce.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

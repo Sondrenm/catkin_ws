@@ -48,9 +48,7 @@
   (cwturn m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <ThrustCommand>) ostream)
   "Serializes a message object of type '<ThrustCommand>"
-  (cl:let* ((signed (cl:slot-value msg 'ID)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    )
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) ostream)
   (cl:let* ((signed (cl:slot-value msg 'thrust)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     )
@@ -60,9 +58,7 @@
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <ThrustCommand>) istream)
   "Deserializes a message object of type '<ThrustCommand>"
-    (cl:let ((unsigned 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'ID) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) (cl:read-byte istream))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:slot-value msg 'thrust) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
@@ -79,16 +75,16 @@
   "tugboat_control/ThrustCommand")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ThrustCommand>)))
   "Returns md5sum for a message object of type '<ThrustCommand>"
-  "fcc2a347632ee0312c19efd7a2a067b6")
+  "eb36a969d5d22c5ec8c64a8469c7e207")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ThrustCommand)))
   "Returns md5sum for a message object of type 'ThrustCommand"
-  "fcc2a347632ee0312c19efd7a2a067b6")
+  "eb36a969d5d22c5ec8c64a8469c7e207")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ThrustCommand>)))
   "Returns full string definition for message of type '<ThrustCommand>"
-  (cl:format cl:nil "int8 ID~%int8 thrust~%int8 cwturn~%~%"))
+  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % + 100~%int8 cwturn # In % + 100~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ThrustCommand)))
   "Returns full string definition for message of type 'ThrustCommand"
-  (cl:format cl:nil "int8 ID~%int8 thrust~%int8 cwturn~%~%"))
+  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % + 100~%int8 cwturn # In % + 100~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ThrustCommand>))
   (cl:+ 0
      1

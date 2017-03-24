@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h
+/home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h
 string
 -
 vector
@@ -27,11 +43,15 @@ ros/ros.h
 /home/sondre/catkin_ws/src/tugboat_control/src/ros/ros.h
 std_msgs/String.h
 /home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/String.h
-tugboat_control/ThrustCommand.h
-/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/ThrustCommand.h
+tugboat_control/Thrust.h
+/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/Thrust.h
+tugboat_control/TugSetpoints.h
+/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/TugSetpoints.h
 iostream
 -
 sstream
+-
+unistd.h
 -
 
 /opt/ros/kinetic/include/XmlRpcDecl.h

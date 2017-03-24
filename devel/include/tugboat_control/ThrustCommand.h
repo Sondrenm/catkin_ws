@@ -37,7 +37,7 @@ struct ThrustCommand_
 
 
 
-   typedef int8_t _ID_type;
+   typedef uint8_t _ID_type;
   _ID_type ID;
 
    typedef int8_t _thrust_type;
@@ -80,7 +80,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'tugboat_control': ['/home/sondre/catkin_ws/src/tugboat_control/msg', '/home/sondre/catkin_ws/src/tugboat_control/msg']}
+// {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'tugboat_control': ['/home/sondre/catkin_ws/src/tugboat_control/msg', '/home/sondre/catkin_ws/src/tugboat_control/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -123,12 +123,12 @@ struct MD5Sum< ::tugboat_control::ThrustCommand_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "fcc2a347632ee0312c19efd7a2a067b6";
+    return "eb36a969d5d22c5ec8c64a8469c7e207";
   }
 
   static const char* value(const ::tugboat_control::ThrustCommand_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xfcc2a347632ee031ULL;
-  static const uint64_t static_value2 = 0x2c19efd7a2a067b6ULL;
+  static const uint64_t static_value1 = 0xeb36a969d5d22c5eULL;
+  static const uint64_t static_value2 = 0xc8c64a8469c7e207ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,9 +147,10 @@ struct Definition< ::tugboat_control::ThrustCommand_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int8 ID\n\
-int8 thrust\n\
-int8 cwturn\n\
+    return "# To Arduino\n\
+uint8 ID\n\
+int8 thrust # In % + 100\n\
+int8 cwturn # In % + 100\n\
 ";
   }
 
@@ -190,7 +191,7 @@ struct Printer< ::tugboat_control::ThrustCommand_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::tugboat_control::ThrustCommand_<ContainerAllocator>& v)
   {
     s << indent << "ID: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.ID);
+    Printer<uint8_t>::stream(s, indent + "  ", v.ID);
     s << indent << "thrust: ";
     Printer<int8_t>::stream(s, indent + "  ", v.thrust);
     s << indent << "cwturn: ";

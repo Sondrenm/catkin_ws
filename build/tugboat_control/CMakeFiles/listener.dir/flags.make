@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"tugboat_control\"
 
-CXX_INCLUDES = -I/home/sondre/catkin_ws/devel/include -I/opt/ros/kinetic/include 
+CXX_INCLUDES = -I/home/sondre/catkin_ws/devel/include -I/opt/ros/kinetic/include -I/home/sondre/catkin_ws/src/tugboat_control/{/usr/local/include/PID_cpp} 
 

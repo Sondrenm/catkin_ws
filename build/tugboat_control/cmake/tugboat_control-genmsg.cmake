@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "tugboat_control: 1 messages, 0 services")
+message(STATUS "tugboat_control: 6 messages, 0 services")
 
-set(MSG_I_FLAGS "-Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg")
+set(MSG_I_FLAGS "-Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,9 +17,34 @@ add_custom_target(tugboat_control_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" NAME_WE)
 add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" ""
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" "tugboat_control/BoatStatus"
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" ""
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" ""
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" ""
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" ""
 )
 
 #
@@ -29,7 +54,37 @@ add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(tugboat_control
-  "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
@@ -49,7 +104,17 @@ add_custom_target(tugboat_control_generate_messages_cpp
 add_dependencies(tugboat_control_generate_messages tugboat_control_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +127,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS tugboat_control_generate_messages_c
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(tugboat_control
-  "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
@@ -82,7 +177,17 @@ add_custom_target(tugboat_control_generate_messages_eus
 add_dependencies(tugboat_control_generate_messages tugboat_control_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +200,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS tugboat_control_generate_messages_e
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(tugboat_control
-  "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
@@ -115,7 +250,17 @@ add_custom_target(tugboat_control_generate_messages_lisp
 add_dependencies(tugboat_control_generate_messages tugboat_control_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +273,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS tugboat_control_generate_messages_l
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(tugboat_control
-  "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
@@ -148,7 +323,17 @@ add_custom_target(tugboat_control_generate_messages_nodejs
 add_dependencies(tugboat_control_generate_messages tugboat_control_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +346,37 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS tugboat_control_generate_messages_n
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(tugboat_control
-  "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
@@ -181,7 +396,17 @@ add_custom_target(tugboat_control_generate_messages_py
 add_dependencies(tugboat_control_generate_messages tugboat_control_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -203,6 +428,9 @@ endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(tugboat_control_generate_messages_cpp std_msgs_generate_messages_cpp)
 endif()
+if(TARGET geometry_msgs_generate_messages_cpp)
+  add_dependencies(tugboat_control_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+endif()
 if(TARGET tugboat_control_generate_messages_cpp)
   add_dependencies(tugboat_control_generate_messages_cpp tugboat_control_generate_messages_cpp)
 endif()
@@ -216,6 +444,9 @@ if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tu
 endif()
 if(TARGET std_msgs_generate_messages_eus)
   add_dependencies(tugboat_control_generate_messages_eus std_msgs_generate_messages_eus)
+endif()
+if(TARGET geometry_msgs_generate_messages_eus)
+  add_dependencies(tugboat_control_generate_messages_eus geometry_msgs_generate_messages_eus)
 endif()
 if(TARGET tugboat_control_generate_messages_eus)
   add_dependencies(tugboat_control_generate_messages_eus tugboat_control_generate_messages_eus)
@@ -231,6 +462,9 @@ endif()
 if(TARGET std_msgs_generate_messages_lisp)
   add_dependencies(tugboat_control_generate_messages_lisp std_msgs_generate_messages_lisp)
 endif()
+if(TARGET geometry_msgs_generate_messages_lisp)
+  add_dependencies(tugboat_control_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+endif()
 if(TARGET tugboat_control_generate_messages_lisp)
   add_dependencies(tugboat_control_generate_messages_lisp tugboat_control_generate_messages_lisp)
 endif()
@@ -244,6 +478,9 @@ if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_D
 endif()
 if(TARGET std_msgs_generate_messages_nodejs)
   add_dependencies(tugboat_control_generate_messages_nodejs std_msgs_generate_messages_nodejs)
+endif()
+if(TARGET geometry_msgs_generate_messages_nodejs)
+  add_dependencies(tugboat_control_generate_messages_nodejs geometry_msgs_generate_messages_nodejs)
 endif()
 if(TARGET tugboat_control_generate_messages_nodejs)
   add_dependencies(tugboat_control_generate_messages_nodejs tugboat_control_generate_messages_nodejs)
@@ -259,6 +496,9 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugb
 endif()
 if(TARGET std_msgs_generate_messages_py)
   add_dependencies(tugboat_control_generate_messages_py std_msgs_generate_messages_py)
+endif()
+if(TARGET geometry_msgs_generate_messages_py)
+  add_dependencies(tugboat_control_generate_messages_py geometry_msgs_generate_messages_py)
 endif()
 if(TARGET tugboat_control_generate_messages_py)
   add_dependencies(tugboat_control_generate_messages_py tugboat_control_generate_messages_py)

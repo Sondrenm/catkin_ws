@@ -19,6 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/sondre/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"
+  "/home/sondre/catkin_ws/src/tugboat_control/{/usr/local/include/PID_cpp}"
   )
 
 # Targets to which this target links.

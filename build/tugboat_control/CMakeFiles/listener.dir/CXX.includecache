@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatPose.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+geometry_msgs/Pose2D.h
+-
+
 /home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h
 string
 -
@@ -29,6 +47,10 @@ std_msgs/String.h
 /home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/String.h
 tugboat_control/ThrustCommand.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/ThrustCommand.h
+geometry_msgs/Pose2D.h
+/home/sondre/catkin_ws/src/tugboat_control/src/geometry_msgs/Pose2D.h
+tugboat_control/BoatPose.h
+/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/BoatPose.h
 iostream
 -
 
@@ -46,6 +68,22 @@ string
 vector
 -
 time.h
+-
+
+/opt/ros/kinetic/include/geometry_msgs/Pose2D.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/ros/advertise_options.h

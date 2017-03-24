@@ -1,0 +1,8 @@
+prefix=/home/sondre/catkin_ws/devel
+
+Name: rosfeedbackcontrolexample
+Description: Description of rosfeedbackcontrolexample
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/sondre/catkin_ws/devel/lib 
+Requires: geometry_msgs nav_msgs roscpp std_msgs

@@ -56,16 +56,17 @@ CMAKE_BINARY_DIR = /home/sondre/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -89,38 +90,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/local
+install/local/fast: install/local
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -132,6 +111,27 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+tugboat_control/CMakeFiles/TugController.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/TugController.dir/rule
+.PHONY : tugboat_control/CMakeFiles/TugController.dir/rule
+
+# Convenience name for target.
+TugController: tugboat_control/CMakeFiles/TugController.dir/rule
+
+.PHONY : TugController
+
+# fast build rule for target.
+TugController/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/build
+.PHONY : TugController/fast
+
+# Convenience name for target.
 tugboat_control/CMakeFiles/CV.dir/rule:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/CV.dir/rule
 .PHONY : tugboat_control/CMakeFiles/CV.dir/rule
@@ -196,79 +211,34 @@ listener/fast:
 .PHONY : listener/fast
 
 # Convenience name for target.
-tugboat_control/CMakeFiles/talker.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/talker.dir/rule
-.PHONY : tugboat_control/CMakeFiles/talker.dir/rule
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule
 
 # Convenience name for target.
-talker: tugboat_control/CMakeFiles/talker.dir/rule
+_tugboat_control_generate_messages_check_deps_BoatStatus: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule
 
-.PHONY : talker
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatStatus
 
 # fast build rule for target.
-talker/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/build
-.PHONY : talker/fast
+_tugboat_control_generate_messages_check_deps_BoatStatus/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatStatus/fast
 
 # Convenience name for target.
-tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
-.PHONY : tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/rule
 
 # Convenience name for target.
-tugboat_control_genpy: tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
+_tugboat_control_generate_messages_check_deps_TugSetpoints: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/rule
 
-.PHONY : tugboat_control_genpy
+.PHONY : _tugboat_control_generate_messages_check_deps_TugSetpoints
 
 # fast build rule for target.
-tugboat_control_genpy/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build
-.PHONY : tugboat_control_genpy/fast
-
-# Convenience name for target.
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule
-.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tugboat_control_generate_messages_cpp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule
-
-.PHONY : tugboat_control_generate_messages_cpp
-
-# fast build rule for target.
-tugboat_control_generate_messages_cpp/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build
-.PHONY : tugboat_control_generate_messages_cpp/fast
-
-# Convenience name for target.
-tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
-.PHONY : tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
-
-# Convenience name for target.
-tugboat_control_geneus: tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
-
-.PHONY : tugboat_control_geneus
-
-# fast build rule for target.
-tugboat_control_geneus/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_geneus.dir/build.make tugboat_control/CMakeFiles/tugboat_control_geneus.dir/build
-.PHONY : tugboat_control_geneus/fast
-
-# Convenience name for target.
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
-.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tugboat_control_generate_messages_nodejs: tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
-
-.PHONY : tugboat_control_generate_messages_nodejs
-
-# fast build rule for target.
-tugboat_control_generate_messages_nodejs/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build
-.PHONY : tugboat_control_generate_messages_nodejs/fast
+_tugboat_control_generate_messages_check_deps_TugSetpoints/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_TugSetpoints/fast
 
 # Convenience name for target.
 tugboat_control/CMakeFiles/tugboat_control_gencpp.dir/rule:
@@ -286,6 +256,126 @@ tugboat_control_gencpp/fast:
 .PHONY : tugboat_control_gencpp/fast
 
 # Convenience name for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_BoatList: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatList
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_BoatList/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatList/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
+
+# Convenience name for target.
+tugboat_control_geneus: tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
+
+.PHONY : tugboat_control_geneus
+
+# fast build rule for target.
+tugboat_control_geneus/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_geneus.dir/build.make tugboat_control/CMakeFiles/tugboat_control_geneus.dir/build
+.PHONY : tugboat_control_geneus/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_PushingForce: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_PushingForce/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_Thrust: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_Thrust
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_Thrust/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_Thrust/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/talker.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/talker.dir/rule
+.PHONY : tugboat_control/CMakeFiles/talker.dir/rule
+
+# Convenience name for target.
+talker: tugboat_control/CMakeFiles/talker.dir/rule
+
+.PHONY : talker
+
+# fast build rule for target.
+talker/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/rule:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/rule
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/rule
@@ -299,6 +389,36 @@ tugboat_control_generate_messages: tugboat_control/CMakeFiles/tugboat_control_ge
 tugboat_control_generate_messages/fast:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/build
 .PHONY : tugboat_control_generate_messages/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_Waypoint: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_Waypoint
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_Waypoint/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_Waypoint/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/rule:
@@ -316,34 +436,19 @@ tugboat_control_generate_messages_eus/fast:
 .PHONY : tugboat_control_generate_messages_eus/fast
 
 # Convenience name for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ThrustCommand.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ThrustCommand.dir/rule
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ThrustCommand.dir/rule
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-_tugboat_control_generate_messages_check_deps_ThrustCommand: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ThrustCommand.dir/rule
+tugboat_control_generate_messages_cpp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/rule
 
-.PHONY : _tugboat_control_generate_messages_check_deps_ThrustCommand
+.PHONY : tugboat_control_generate_messages_cpp
 
 # fast build rule for target.
-_tugboat_control_generate_messages_check_deps_ThrustCommand/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ThrustCommand.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ThrustCommand.dir/build
-.PHONY : _tugboat_control_generate_messages_check_deps_ThrustCommand/fast
-
-# Convenience name for target.
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule
-.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tugboat_control_generate_messages_lisp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule
-
-.PHONY : tugboat_control_generate_messages_lisp
-
-# fast build rule for target.
-tugboat_control_generate_messages_lisp/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build
-.PHONY : tugboat_control_generate_messages_lisp/fast
+tugboat_control_generate_messages_cpp/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build
+.PHONY : tugboat_control_generate_messages_cpp/fast
 
 # Convenience name for target.
 tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/rule:
@@ -361,19 +466,19 @@ tugboat_control_genlisp/fast:
 .PHONY : tugboat_control_genlisp/fast
 
 # Convenience name for target.
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule
-.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-tugboat_control_generate_messages_py: tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule
+tugboat_control_generate_messages_nodejs: tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
 
-.PHONY : tugboat_control_generate_messages_py
+.PHONY : tugboat_control_generate_messages_nodejs
 
 # fast build rule for target.
-tugboat_control_generate_messages_py/fast:
-	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build
-.PHONY : tugboat_control_generate_messages_py/fast
+tugboat_control_generate_messages_nodejs/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build
+.PHONY : tugboat_control_generate_messages_nodejs/fast
 
 # Convenience name for target.
 tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/rule:
@@ -389,6 +494,66 @@ tugboat_control_gennodejs: tugboat_control/CMakeFiles/tugboat_control_gennodejs.
 tugboat_control_gennodejs/fast:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/build
 .PHONY : tugboat_control_gennodejs/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tugboat_control_generate_messages_py: tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule
+
+.PHONY : tugboat_control_generate_messages_py
+
+# fast build rule for target.
+tugboat_control_generate_messages_py/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build
+.PHONY : tugboat_control_generate_messages_py/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tugboat_control_generate_messages_lisp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/rule
+
+.PHONY : tugboat_control_generate_messages_lisp
+
+# fast build rule for target.
+tugboat_control_generate_messages_lisp/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build
+.PHONY : tugboat_control_generate_messages_lisp/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
+
+# Convenience name for target.
+tugboat_control_genpy: tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
+
+.PHONY : tugboat_control_genpy
+
+# fast build rule for target.
+tugboat_control_genpy/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build
+.PHONY : tugboat_control_genpy/fast
 
 src/CV.o: src/CV.cpp.o
 
@@ -416,6 +581,33 @@ src/CV.s: src/CV.cpp.s
 src/CV.cpp.s:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/CV.dir/build.make tugboat_control/CMakeFiles/CV.dir/src/CV.cpp.s
 .PHONY : src/CV.cpp.s
+
+src/TugController.o: src/TugController.cpp.o
+
+.PHONY : src/TugController.o
+
+# target to build an object file
+src/TugController.cpp.o:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/src/TugController.cpp.o
+.PHONY : src/TugController.cpp.o
+
+src/TugController.i: src/TugController.cpp.i
+
+.PHONY : src/TugController.i
+
+# target to preprocess a source file
+src/TugController.cpp.i:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/src/TugController.cpp.i
+.PHONY : src/TugController.cpp.i
+
+src/TugController.s: src/TugController.cpp.s
+
+.PHONY : src/TugController.s
+
+# target to generate assembly for a file
+src/TugController.cpp.s:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/src/TugController.cpp.s
+.PHONY : src/TugController.cpp.s
 
 src/listener.o: src/listener.cpp.o
 
@@ -477,31 +669,45 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
-	@echo "... CV"
-	@echo "... rebuild_cache"
-	@echo "... listener"
-	@echo "... test"
-	@echo "... talker"
-	@echo "... tugboat_control_genpy"
 	@echo "... install"
-	@echo "... tugboat_control_generate_messages_cpp"
-	@echo "... tugboat_control_geneus"
-	@echo "... tugboat_control_generate_messages_nodejs"
-	@echo "... tugboat_control_gencpp"
-	@echo "... tugboat_control_generate_messages"
-	@echo "... tugboat_control_generate_messages_eus"
-	@echo "... edit_cache"
-	@echo "... _tugboat_control_generate_messages_check_deps_ThrustCommand"
-	@echo "... tugboat_control_generate_messages_lisp"
-	@echo "... tugboat_control_genlisp"
-	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... install/local"
 	@echo "... install/strip"
-	@echo "... tugboat_control_generate_messages_py"
+	@echo "... TugController"
+	@echo "... CV"
+	@echo "... listener"
+	@echo "... _tugboat_control_generate_messages_check_deps_BoatStatus"
+	@echo "... _tugboat_control_generate_messages_check_deps_TugSetpoints"
+	@echo "... tugboat_control_gencpp"
+	@echo "... list_install_components"
+	@echo "... _tugboat_control_generate_messages_check_deps_BoatList"
+	@echo "... edit_cache"
+	@echo "... tugboat_control_geneus"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _tugboat_control_generate_messages_check_deps_PushingForce"
+	@echo "... _tugboat_control_generate_messages_check_deps_Thrust"
+	@echo "... talker"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... tugboat_control_generate_messages"
+	@echo "... _tugboat_control_generate_messages_check_deps_Waypoint"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... tugboat_control_generate_messages_eus"
+	@echo "... tugboat_control_generate_messages_cpp"
+	@echo "... tugboat_control_genlisp"
+	@echo "... tugboat_control_generate_messages_nodejs"
 	@echo "... tugboat_control_gennodejs"
+	@echo "... tugboat_control_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... tugboat_control_generate_messages_lisp"
+	@echo "... tugboat_control_genpy"
 	@echo "... src/CV.o"
 	@echo "... src/CV.i"
 	@echo "... src/CV.s"
+	@echo "... src/TugController.o"
+	@echo "... src/TugController.i"
+	@echo "... src/TugController.s"
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"

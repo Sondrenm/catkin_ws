@@ -1,22 +1,31 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "tugboat_control/ThrustCommand.h"
+#include "geometry_msgs/Pose2D.h"
+#include "tugboat_control/BoatPose.h"
+
 
 #include <iostream>
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
+
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
 {
   ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
-
+/*
 void chatterCallback2(const tugboat_control::ThrustCommand::ConstPtr& cmd)
 {
-    std::cout << "Also: " << (int)cmd->ID << (int)cmd->thrust << (int)cmd->cwturn << "\n";
+    std::cout << "ThrustCommand: " << (int)cmd->ID << "\t" << (int)cmd->thrust << "\t" << (int)cmd->cwturn << "\n";
 }
 
+void chatterCallback3(const tugboat_control::BoatPose::ConstPtr& boats)
+{
+    std::cout << "Poses: 0.x = " << boats->x[0] << "\t1.theta = " << boats->theta[1] << "\n";
+}
+*/
 int main(int argc, char **argv)
 {
   /**
@@ -53,8 +62,10 @@ int main(int argc, char **argv)
    * is the number of messages that will be buffered up before beginning to throw
    * away the oldest ones.
    */
-  ros::Subscriber sub2 = n.subscribe("ThrustCommand", 1000, chatterCallback2);
+
   ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
+  //ros::Subscriber sub2 = n.subscribe("ThrustCommand", 1000, chatterCallback2);
+  //ros::Subscriber sub3 = n.subscribe("CV", 1000, chatterCallback3);
 
   /**
    * ros::spin() will enter a loop, pumping callbacks.  With this version, all

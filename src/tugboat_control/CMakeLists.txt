@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   genmsg
+  geometry_msgs
   message_generation
 )
 
@@ -50,7 +51,12 @@ add_message_files(
 	DIRECTORY
 	msg
 	FILES
-	ThrustCommand.msg
+  BoatList.msg
+  BoatStatus.msg
+  PushingForce.msg
+	Thrust.msg
+  TugSetpoints.msg
+  Waypoint.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -72,6 +78,7 @@ add_message_files(
 generate_messages(
 	DEPENDENCIES
 	std_msgs
+	geometry_msgs
 	tugboat_control
 )
 
@@ -120,6 +127,7 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  {/usr/local/include/PID_cpp}
 )
 
 ## Declare a C++ library
@@ -144,6 +152,10 @@ add_dependencies(listener tugboat_control_generate_messages_cpp)
 add_executable(CV src/CV.cpp)
 target_link_libraries(CV ${catkin_LIBRARIES})
 add_dependencies(CV tugboat_control_generate_messages_cpp)
+
+add_executable(TugController src/TugController.cpp)
+target_link_libraries(TugController ${catkin_LIBRARIES})
+add_dependencies(TugController tugboat_control_generate_messages_cpp)
 
 #############
 ## Install ##

@@ -1,9 +1,11 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-#include "tugboat_control/ThrustCommand.h"
+#include "tugboat_control/Thrust.h"
+#include "tugboat_control/TugSetpoints.h"
 
 #include <iostream>
 #include <sstream>
+#include <unistd.h>
 
 /**
  * This tutorial demonstrates simple sending of messages over the ROS system.
@@ -46,8 +48,9 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  ros::Publisher cmd_pub = n.advertise<tugboat_control::ThrustCommand>("ThrustCommand", 1000);
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  //ros::Publisher cmd_pub = n.advertise<tugboat_control::Thrust>("thrust", 1000);
+  //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+	ros::Publisher ctrl_pub = n.advertise<tugboat_control::TugSetpoints>("control", 1000);
 
   ros::Rate loop_rate(10);
 
@@ -60,7 +63,7 @@ int main(int argc, char **argv)
   {
     /**
      * This is a message object. You stuff it with data, and then publish it.
-     */
+     
 
     
     std_msgs::String msg;
@@ -70,20 +73,25 @@ int main(int argc, char **argv)
     msg.data = ss.str();
 
     ROS_INFO("%s", msg.data.c_str());
+    */
     
-    tugboat_control::ThrustCommand cmd;
-    cmd.ID = 1;
-    cmd.thrust=10;
-    cmd.cwturn=30;
-    std::cout << (int)cmd.ID << (int)cmd.thrust << (int)cmd.cwturn << "\n";
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
-    chatter_pub.publish(msg);
-    cmd_pub.publish(cmd);
+    //tugboat_control::Thrust cmd;
+	tugboat_control::TugSetpoints ctrl;
+
+
+    ctrl.ID = 1;
+    ctrl.orientation=50;
+    ctrl.pushingForce=0;
+    //std::cout << (int)cmd.ID << (int)cmd.thrust << (int)cmd.cwturn << "\n";
+
+    //chatter_pub.publish(msg);
+    ctrl_pub.publish(ctrl);
+    usleep(2000000);
+
+    ctrl.orientation=0;
+    ctrl.pushingForce=50;
+    ctrl_pub.publish(ctrl);
+    usleep(2000000);
 
     ros::spinOnce();
 

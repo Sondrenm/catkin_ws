@@ -40,7 +40,7 @@
   (:serialization-length
    ()
    (+
-    ;; int8 _ID
+    ;; uint8 _ID
     1
     ;; int8 _thrust
     1
@@ -51,7 +51,7 @@
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int8 _ID
+     ;; uint8 _ID
        (write-byte _ID s)
      ;; int8 _thrust
        (write-byte _thrust s)
@@ -61,9 +61,8 @@
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int8 _ID
+   ;; uint8 _ID
      (setq _ID (sys::peek buf ptr- :char)) (incf ptr- 1)
-     (if (> _ID 127) (setq _ID (- _ID 256)))
    ;; int8 _thrust
      (setq _thrust (sys::peek buf ptr- :char)) (incf ptr- 1)
      (if (> _thrust 127) (setq _thrust (- _thrust 256)))
@@ -74,16 +73,17 @@
    self)
   )
 
-(setf (get tugboat_control::ThrustCommand :md5sum-) "fcc2a347632ee0312c19efd7a2a067b6")
+(setf (get tugboat_control::ThrustCommand :md5sum-) "eb36a969d5d22c5ec8c64a8469c7e207")
 (setf (get tugboat_control::ThrustCommand :datatype-) "tugboat_control/ThrustCommand")
 (setf (get tugboat_control::ThrustCommand :definition-)
-      "int8 ID
-int8 thrust
-int8 cwturn
+      "# To Arduino
+uint8 ID
+int8 thrust # In % + 100
+int8 cwturn # In % + 100
 ")
 
 
 
-(provide :tugboat_control/ThrustCommand "fcc2a347632ee0312c19efd7a2a067b6")
+(provide :tugboat_control/ThrustCommand "eb36a969d5d22c5ec8c64a8469c7e207")
 
 

@@ -53,17 +53,58 @@ CMAKE_BINARY_DIR = /home/sondre/catkin_ws/build
 # Include the progress variables for this target.
 include tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/progress.make
 
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h
 
 
-/home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h: /home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg
-/home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from tugboat_control/ThrustCommand.msg"
-	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/ThrustCommand.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h: /home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from tugboat_control/Thrust.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from tugboat_control/BoatList.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h: /home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from tugboat_control/TugSetpoints.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from tugboat_control/BoatStatus.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from tugboat_control/Waypoint.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h: /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg
+/home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from tugboat_control/PushingForce.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/include/tugboat_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 tugboat_control_generate_messages_cpp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp
-tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h
+tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
+tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h
+tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h
+tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h
+tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h
+tugboat_control_generate_messages_cpp: /home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h
 tugboat_control_generate_messages_cpp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build.make
 
 .PHONY : tugboat_control_generate_messages_cpp

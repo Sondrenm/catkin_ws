@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: tugboat_control;version="0.0.0";uses:="geometry_msgs,o
+ rg.jboss.netty.buffer,org.ros.internal.message"
+Bundle-Version: 0.0.0
+Tool: Bnd-2.1.0.20130426-122213
+Bundle-Name: tugboat_control
+Bnd-LastModified: 1489743169000
+Created-By: 1.7.0_60 (Oracle Corporation)
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.ros.rosjava_messages.tugboat_control
+Import-Package: geometry_msgs;version="[1.10,2)",org.jboss.netty.buffe
+ r;version="[3.5,4)",org.ros.internal.message
+

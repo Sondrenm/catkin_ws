@@ -1,83 +1,54 @@
 #include "ros/ros.h"
-#include "std_msgs/String.h"
+#include "geometry_msgs/Pose2D.h"
+#include "tugboat_control/BoatPose.h"
 
-#include <sstream>
+#include <iostream>
 
 /**
  * This tutorial demonstrates simple sending of messages over the ROS system.
  */
 int main(int argc, char **argv)
 {
-  /**
-   * The ros::init() function needs to see argc and argv so that it can perform
-   * any ROS arguments and name remapping that were provided at the command line.
-   * For programmatic remappings you can use a different version of init() which takes
-   * remappings directly, but for most command-line programs, passing argc and argv is
-   * the easiest way to do it.  The third argument to init() is the name of the node.
-   *
-   * You must call one of the versions of ros::init() before using any other
-   * part of the ROS system.
-   */
   ros::init(argc, argv, "CV");
-
-  /**
-   * NodeHandle is the main access point to communications with the ROS system.
-   * The first NodeHandle constructed will fully initialize this node, and the last
-   * NodeHandle destructed will close down the node.
-   */
   ros::NodeHandle n;
-
-  /**
-   * The advertise() function is how you tell ROS that you want to
-   * publish on a given topic name. This invokes a call to the ROS
-   * master node, which keeps a registry of who is publishing and who
-   * is subscribing. After this advertise() call is made, the master
-   * node will notify anyone who is trying to subscribe to this topic name,
-   * and they will in turn negotiate a peer-to-peer connection with this
-   * node.  advertise() returns a Publisher object which allows you to
-   * publish messages on that topic through a call to publish().  Once
-   * all copies of the returned Publisher object are destroyed, the topic
-   * will be automatically unadvertised.
-   *
-   * The second parameter to advertise() is the size of the message queue
-   * used for publishing messages.  If messages are published more quickly
-   * than we can send them, the number here specifies how many messages to
-   * buffer up before throwing some away.
-   */
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-
+  ros::Publisher CV_pub = n.advertise<tugboat_control::BoatPose>("CV", 1);
   ros::Rate loop_rate(10);
 
   /**
-   * A count of how many messages we have sent. This is used to create
-   * a unique string for each message.
+   Do CV-init here:
+   - general init og camera and stuff
+   - find coordinate system and scale
+   - read parameters for each boat (from text file?)
    */
-  int count = 0;
+
   while (ros::ok())
   {
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     */
-    std_msgs::String msg;
+/*
+    tugboat_control::BoatPose boats; //This is hardcoded to contain 11 entries
+    /*
+    //ID is inferred by array index
+    geometry_msgs/Pose2D[] poses
+      float64 x
+      float64 y
+      float64 theta
+    */
 
-    std::stringstream ss;
-    ss << "hello world " << count;
-    msg.data = ss.str();
+    //Scan -> find boats. boat 0 = ship, boats 1-N = tugboats
+    /*
+    boats.Pose[0].x = 1.1;
+    boats.Pose[0].y = 1.2;
+    boats.Pose[0].theta = 1.3;
+    boats.Pose[1].x = 2.1;
+    boats.Pose[1].y = 2.2;
+    boats.Pose[1].theta = 2.3;
 
-    ROS_INFO("%s", msg.data.c_str());
 
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
-    chatter_pub.publish(msg);
-
+    CV_pub.publish(boats);
+*/
     ros::spinOnce();
 
     loop_rate.sleep();
-    ++count;
+    //++count;
   }
 
 
