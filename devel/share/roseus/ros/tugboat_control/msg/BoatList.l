@@ -72,22 +72,22 @@
    self)
   )
 
-(setf (get tugboat_control::BoatList :md5sum-) "7496deb9bbcbc436dc7f31a8e28cfe6d")
+(setf (get tugboat_control::BoatList :md5sum-) "1df20aa31d5e143e5b643777392ea400")
 (setf (get tugboat_control::BoatList :datatype-) "tugboat_control/BoatList")
 (setf (get tugboat_control::BoatList :definition-)
       "float64 timestamp
 tugboat_control/BoatStatus[] boat
 ================================================================================
 MSG: tugboat_control/BoatStatus
-uint8 ID # ID > 99 indicates ship
+uint8 ID # ID == 0 indicates ship
 float64 x #x position in meters
 float64 y #y position in meters
-float64 theta #orientation in radians or degrees?
-float32 PushingForce # Newton
+float64 o #orientation in +-pi radians from \"east\"
+float32 force # Newton
 ")
 
 
 
-(provide :tugboat_control/BoatList "7496deb9bbcbc436dc7f31a8e28cfe6d")
+(provide :tugboat_control/BoatList "1df20aa31d5e143e5b643777392ea400")
 
 

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h"
   "/home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h"
   "/home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h"
+  "/home/sondre/catkin_ws/devel/include/tugboat_control/WaypointRequest.h"
 )
 
 # Per-language clean rules from dependency scanning.

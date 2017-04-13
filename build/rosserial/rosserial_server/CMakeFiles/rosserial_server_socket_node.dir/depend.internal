@@ -15,8 +15,6 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/src/socke
  /home/sondre/catkin_ws/src/rosserial/rosserial_server/include/rosserial_server/tcp_server.h
  /home/sondre/catkin_ws/src/rosserial/rosserial_server/include/rosserial_server/topic_handlers.h
  /home/sondre/catkin_ws/src/rosserial/rosserial_server/src/socket_node.cpp
- /opt/ros/kinetic/include/XmlRpcDecl.h
- /opt/ros/kinetic/include/XmlRpcValue.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -76,3 +74,5 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/src/socke
  /opt/ros/kinetic/include/std_msgs/Time.h
  /opt/ros/kinetic/include/topic_tools/macros.h
  /opt/ros/kinetic/include/topic_tools/shape_shifter.h
+ /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

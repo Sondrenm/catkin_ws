@@ -5,8 +5,6 @@
           X
           Y-VAL
           Y
-          THETA-VAL
-          THETA
           V-VAL
           V
 ))

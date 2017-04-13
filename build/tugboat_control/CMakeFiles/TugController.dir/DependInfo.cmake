@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sondre/catkin_ws/src/tugboat_control/src/TugController.cpp" "/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugController.dir/src/TugController.cpp.o"
+  "/usr/local/include/PID_cpp/pid.cpp" "/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugController.dir/usr/local/include/PID_cpp/pid.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +20,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/sondre/catkin_ws/devel/include"
   "/opt/ros/kinetic/include"
-  "/home/sondre/catkin_ws/src/tugboat_control/{/usr/local/include/PID_cpp}"
+  "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
 # Targets to which this target links.

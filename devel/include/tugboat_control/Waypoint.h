@@ -27,14 +27,12 @@ struct Waypoint_
     : ID(0)
     , x(0.0)
     , y(0.0)
-    , theta(0.0)
     , v(0.0)  {
     }
   Waypoint_(const ContainerAllocator& _alloc)
     : ID(0)
     , x(0.0)
     , y(0.0)
-    , theta(0.0)
     , v(0.0)  {
   (void)_alloc;
     }
@@ -49,9 +47,6 @@ struct Waypoint_
 
    typedef double _y_type;
   _y_type y;
-
-   typedef double _theta_type;
-  _theta_type theta;
 
    typedef double _v_type;
   _v_type v;
@@ -133,12 +128,12 @@ struct MD5Sum< ::tugboat_control::Waypoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "ac21d14c0ba92bbf8f535b458744d831";
+    return "599dfbedb76ef56ba69b3e5141431273";
   }
 
   static const char* value(const ::tugboat_control::Waypoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xac21d14c0ba92bbfULL;
-  static const uint64_t static_value2 = 0x8f535b458744d831ULL;
+  static const uint64_t static_value1 = 0x599dfbedb76ef56bULL;
+  static const uint64_t static_value2 = 0xa69b3e5141431273ULL;
 };
 
 template<class ContainerAllocator>
@@ -160,7 +155,6 @@ struct Definition< ::tugboat_control::Waypoint_<ContainerAllocator> >
     return "uint8 ID\n\
 float64 x #x position in meters\n\
 float64 y #y position in meters\n\
-float64 theta #orientation in radians or degrees?\n\
 float64 v #Velocity in m/s\n\
 ";
   }
@@ -183,7 +177,6 @@ namespace serialization
       stream.next(m.ID);
       stream.next(m.x);
       stream.next(m.y);
-      stream.next(m.theta);
       stream.next(m.v);
     }
 
@@ -209,8 +202,6 @@ struct Printer< ::tugboat_control::Waypoint_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";
     Printer<double>::stream(s, indent + "  ", v.y);
-    s << indent << "theta: ";
-    Printer<double>::stream(s, indent + "  ", v.theta);
     s << indent << "v: ";
     Printer<double>::stream(s, indent + "  ", v.v);
   }

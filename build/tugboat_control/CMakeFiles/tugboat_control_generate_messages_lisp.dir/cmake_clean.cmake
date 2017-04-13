@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatStatus.lisp"
   "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoint.lisp"
   "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/PushingForce.lisp"
+  "/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

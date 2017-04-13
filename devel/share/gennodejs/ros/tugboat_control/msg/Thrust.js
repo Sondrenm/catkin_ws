@@ -5,51 +5,71 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class Thrust {
-  constructor() {
-    this.ID = 0;
-    this.thrust = 0;
-    this.cwturn = 0;
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.ID = null;
+      this.thrust = null;
+      this.cwturn = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('ID')) {
+        this.ID = initObj.ID
+      }
+      else {
+        this.ID = 0;
+      }
+      if (initObj.hasOwnProperty('thrust')) {
+        this.thrust = initObj.thrust
+      }
+      else {
+        this.thrust = 0;
+      }
+      if (initObj.hasOwnProperty('cwturn')) {
+        this.cwturn = initObj.cwturn
+      }
+      else {
+        this.cwturn = 0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Thrust
     // Serialize message field [ID]
-    bufferInfo = _serializer.uint8(obj.ID, bufferInfo);
+    bufferOffset = _serializer.uint8(obj.ID, buffer, bufferOffset);
     // Serialize message field [thrust]
-    bufferInfo = _serializer.int8(obj.thrust, bufferInfo);
+    bufferOffset = _serializer.int8(obj.thrust, buffer, bufferOffset);
     // Serialize message field [cwturn]
-    bufferInfo = _serializer.int8(obj.cwturn, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.int8(obj.cwturn, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type Thrust
-    let tmp;
     let len;
-    let data = new Thrust();
+    let data = new Thrust(null);
     // Deserialize message field [ID]
-    tmp = _deserializer.uint8(buffer);
-    data.ID = tmp.data;
-    buffer = tmp.buffer;
+    data.ID = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [thrust]
-    tmp = _deserializer.int8(buffer);
-    data.thrust = tmp.data;
-    buffer = tmp.buffer;
+    data.thrust = _deserializer.int8(buffer, bufferOffset);
     // Deserialize message field [cwturn]
-    tmp = _deserializer.int8(buffer);
-    data.cwturn = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.cwturn = _deserializer.int8(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    return 3;
   }
 
   static datatype() {
@@ -67,11 +87,40 @@ class Thrust {
     return `
     # To Arduino
     uint8 ID
-    int8 thrust # In % + 100
-    int8 cwturn # In % + 100
+    int8 thrust # In % +- 100
+    int8 cwturn # In % +- 100
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new Thrust(null);
+    if (msg.ID !== undefined) {
+      resolved.ID = msg.ID;
+    }
+    else {
+      resolved.ID = 0
+    }
+
+    if (msg.thrust !== undefined) {
+      resolved.thrust = msg.thrust;
+    }
+    else {
+      resolved.thrust = 0
+    }
+
+    if (msg.cwturn !== undefined) {
+      resolved.cwturn = msg.cwturn;
+    }
+    else {
+      resolved.cwturn = 0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = Thrust;

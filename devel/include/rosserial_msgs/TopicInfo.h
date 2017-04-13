@@ -227,7 +227,7 @@ namespace serialization
       stream.next(m.buffer_size);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct TopicInfo_
 
 } // namespace serialization

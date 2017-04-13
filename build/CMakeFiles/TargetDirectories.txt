@@ -194,7 +194,6 @@
 /home/sondre/catkin_ws/build/rosserial/rosserial_windows/CMakeFiles/test.dir
 /home/sondre/catkin_ws/build/rosserial/rosserial_windows/CMakeFiles/edit_cache.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/install.dir
-/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/rebuild_cache.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/test.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/install/local.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/install/strip.dir
@@ -218,11 +217,14 @@
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/rebuild_cache.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir
-/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_genlisp.dir
-/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir
-/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir
-/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_genpy.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir
-/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_genpy.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_genlisp.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugManager.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir

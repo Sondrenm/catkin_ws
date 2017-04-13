@@ -175,7 +175,7 @@ namespace serialization
       stream.next(m.strings);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct RequestParamResponse_
 
 } // namespace serialization

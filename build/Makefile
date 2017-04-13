@@ -1661,6 +1661,19 @@ tugboat_control_generate_messages_eus/fast:
 .PHONY : tugboat_control_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named _tugboat_control_generate_messages_check_deps_WaypointRequest
+
+# Build rule for target.
+_tugboat_control_generate_messages_check_deps_WaypointRequest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_WaypointRequest
+.PHONY : _tugboat_control_generate_messages_check_deps_WaypointRequest
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_WaypointRequest/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_WaypointRequest/fast
+
+#=============================================================================
 # Target rules for targets named tugboat_control_generate_messages_cpp
 
 # Build rule for target.
@@ -1674,56 +1687,17 @@ tugboat_control_generate_messages_cpp/fast:
 .PHONY : tugboat_control_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named tugboat_control_genlisp
+# Target rules for targets named tugboat_control_genpy
 
 # Build rule for target.
-tugboat_control_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_genlisp
-.PHONY : tugboat_control_genlisp
+tugboat_control_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_genpy
+.PHONY : tugboat_control_genpy
 
 # fast build rule for target.
-tugboat_control_genlisp/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/build
-.PHONY : tugboat_control_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named tugboat_control_generate_messages_nodejs
-
-# Build rule for target.
-tugboat_control_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_generate_messages_nodejs
-.PHONY : tugboat_control_generate_messages_nodejs
-
-# fast build rule for target.
-tugboat_control_generate_messages_nodejs/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build
-.PHONY : tugboat_control_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named tugboat_control_gennodejs
-
-# Build rule for target.
-tugboat_control_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_gennodejs
-.PHONY : tugboat_control_gennodejs
-
-# fast build rule for target.
-tugboat_control_gennodejs/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/build
-.PHONY : tugboat_control_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named tugboat_control_generate_messages_py
-
-# Build rule for target.
-tugboat_control_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_generate_messages_py
-.PHONY : tugboat_control_generate_messages_py
-
-# fast build rule for target.
-tugboat_control_generate_messages_py/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build
-.PHONY : tugboat_control_generate_messages_py/fast
+tugboat_control_genpy/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build
+.PHONY : tugboat_control_genpy/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
@@ -1752,17 +1726,69 @@ tugboat_control_generate_messages_lisp/fast:
 .PHONY : tugboat_control_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named tugboat_control_genpy
+# Target rules for targets named tugboat_control_genlisp
 
 # Build rule for target.
-tugboat_control_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_genpy
-.PHONY : tugboat_control_genpy
+tugboat_control_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_genlisp
+.PHONY : tugboat_control_genlisp
 
 # fast build rule for target.
-tugboat_control_genpy/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build
-.PHONY : tugboat_control_genpy/fast
+tugboat_control_genlisp/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/build
+.PHONY : tugboat_control_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named tugboat_control_generate_messages_nodejs
+
+# Build rule for target.
+tugboat_control_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_generate_messages_nodejs
+.PHONY : tugboat_control_generate_messages_nodejs
+
+# fast build rule for target.
+tugboat_control_generate_messages_nodejs/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build
+.PHONY : tugboat_control_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named TugManager
+
+# Build rule for target.
+TugManager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TugManager
+.PHONY : TugManager
+
+# fast build rule for target.
+TugManager/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/build
+.PHONY : TugManager/fast
+
+#=============================================================================
+# Target rules for targets named tugboat_control_gennodejs
+
+# Build rule for target.
+tugboat_control_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_gennodejs
+.PHONY : tugboat_control_gennodejs
+
+# fast build rule for target.
+tugboat_control_gennodejs/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/build
+.PHONY : tugboat_control_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named tugboat_control_generate_messages_py
+
+# Build rule for target.
+tugboat_control_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control_generate_messages_py
+.PHONY : tugboat_control_generate_messages_py
+
+# fast build rule for target.
+tugboat_control_generate_messages_py/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build
+.PHONY : tugboat_control_generate_messages_py/fast
 
 # Help Target
 help:
@@ -1892,14 +1918,16 @@ help:
 	@echo "... _tugboat_control_generate_messages_check_deps_Waypoint"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... tugboat_control_generate_messages_eus"
+	@echo "... _tugboat_control_generate_messages_check_deps_WaypointRequest"
 	@echo "... tugboat_control_generate_messages_cpp"
-	@echo "... tugboat_control_genlisp"
-	@echo "... tugboat_control_generate_messages_nodejs"
-	@echo "... tugboat_control_gennodejs"
-	@echo "... tugboat_control_generate_messages_py"
+	@echo "... tugboat_control_genpy"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... tugboat_control_generate_messages_lisp"
-	@echo "... tugboat_control_genpy"
+	@echo "... tugboat_control_genlisp"
+	@echo "... tugboat_control_generate_messages_nodejs"
+	@echo "... TugManager"
+	@echo "... tugboat_control_gennodejs"
+	@echo "... tugboat_control_generate_messages_py"
 .PHONY : help
 
 

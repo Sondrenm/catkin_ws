@@ -22,14 +22,14 @@
     :initarg :y
     :type cl:float
     :initform 0.0)
-   (theta
-    :reader theta
-    :initarg :theta
+   (o
+    :reader o
+    :initarg :o
     :type cl:float
     :initform 0.0)
-   (PushingForce
-    :reader PushingForce
-    :initarg :PushingForce
+   (force
+    :reader force
+    :initarg :force
     :type cl:float
     :initform 0.0))
 )
@@ -57,15 +57,15 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:y-val is deprecated.  Use tugboat_control-msg:y instead.")
   (y m))
 
-(cl:ensure-generic-function 'theta-val :lambda-list '(m))
-(cl:defmethod theta-val ((m <BoatStatus>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:theta-val is deprecated.  Use tugboat_control-msg:theta instead.")
-  (theta m))
+(cl:ensure-generic-function 'o-val :lambda-list '(m))
+(cl:defmethod o-val ((m <BoatStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:o-val is deprecated.  Use tugboat_control-msg:o instead.")
+  (o m))
 
-(cl:ensure-generic-function 'PushingForce-val :lambda-list '(m))
-(cl:defmethod PushingForce-val ((m <BoatStatus>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:PushingForce-val is deprecated.  Use tugboat_control-msg:PushingForce instead.")
-  (PushingForce m))
+(cl:ensure-generic-function 'force-val :lambda-list '(m))
+(cl:defmethod force-val ((m <BoatStatus>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:force-val is deprecated.  Use tugboat_control-msg:force instead.")
+  (force m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <BoatStatus>) ostream)
   "Serializes a message object of type '<BoatStatus>"
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) ostream)
@@ -87,7 +87,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'theta))))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'o))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -96,7 +96,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'PushingForce))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'force))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -134,13 +134,13 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'theta) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'o) (roslisp-utils:decode-double-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'PushingForce) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'force) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<BoatStatus>)))
@@ -151,16 +151,16 @@
   "tugboat_control/BoatStatus")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<BoatStatus>)))
   "Returns md5sum for a message object of type '<BoatStatus>"
-  "c456c1039b34e445f3d3bf38126f7305")
+  "2567430f0fee0ed87837dda5f3903f11")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'BoatStatus)))
   "Returns md5sum for a message object of type 'BoatStatus"
-  "c456c1039b34e445f3d3bf38126f7305")
+  "2567430f0fee0ed87837dda5f3903f11")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<BoatStatus>)))
   "Returns full string definition for message of type '<BoatStatus>"
-  (cl:format cl:nil "uint8 ID # ID > 99 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 theta #orientation in radians or degrees?~%float32 PushingForce # Newton~%~%"))
+  (cl:format cl:nil "uint8 ID # ID == 0 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 o #orientation in +-pi radians from \"east\"~%float32 force # Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'BoatStatus)))
   "Returns full string definition for message of type 'BoatStatus"
-  (cl:format cl:nil "uint8 ID # ID > 99 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 theta #orientation in radians or degrees?~%float32 PushingForce # Newton~%~%"))
+  (cl:format cl:nil "uint8 ID # ID == 0 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 o #orientation in +-pi radians from \"east\"~%float32 force # Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <BoatStatus>))
   (cl:+ 0
      1
@@ -175,6 +175,6 @@
     (cl:cons ':ID (ID msg))
     (cl:cons ':x (x msg))
     (cl:cons ':y (y msg))
-    (cl:cons ':theta (theta msg))
-    (cl:cons ':PushingForce (PushingForce msg))
+    (cl:cons ':o (o msg))
+    (cl:cons ':force (force msg))
 ))

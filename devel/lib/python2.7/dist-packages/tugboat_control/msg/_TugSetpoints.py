@@ -7,13 +7,13 @@ import struct
 
 
 class TugSetpoints(genpy.Message):
-  _md5sum = "0b1a644af72e0374fc50096b433f3946"
+  _md5sum = "8794df36994479d46b6355b637b13061"
   _type = "tugboat_control/TugSetpoints"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """uint8 ID
-float64 orientation
-float64 pushingForce"""
-  __slots__ = ['ID','orientation','pushingForce']
+float64 o
+float64 force"""
+  __slots__ = ['ID','o','force']
   _slot_types = ['uint8','float64','float64']
 
   def __init__(self, *args, **kwds):
@@ -24,7 +24,7 @@ float64 pushingForce"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       ID,orientation,pushingForce
+       ID,o,force
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -35,14 +35,14 @@ float64 pushingForce"""
       #message fields cannot be None, assign default values for those that are
       if self.ID is None:
         self.ID = 0
-      if self.orientation is None:
-        self.orientation = 0.
-      if self.pushingForce is None:
-        self.pushingForce = 0.
+      if self.o is None:
+        self.o = 0.
+      if self.force is None:
+        self.force = 0.
     else:
       self.ID = 0
-      self.orientation = 0.
-      self.pushingForce = 0.
+      self.o = 0.
+      self.force = 0.
 
   def _get_types(self):
     """
@@ -57,7 +57,7 @@ float64 pushingForce"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B2d().pack(_x.ID, _x.orientation, _x.pushingForce))
+      buff.write(_get_struct_B2d().pack(_x.ID, _x.o, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -71,7 +71,7 @@ float64 pushingForce"""
       _x = self
       start = end
       end += 17
-      (_x.ID, _x.orientation, _x.pushingForce,) = _get_struct_B2d().unpack(str[start:end])
+      (_x.ID, _x.o, _x.force,) = _get_struct_B2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -85,7 +85,7 @@ float64 pushingForce"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B2d().pack(_x.ID, _x.orientation, _x.pushingForce))
+      buff.write(_get_struct_B2d().pack(_x.ID, _x.o, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -100,7 +100,7 @@ float64 pushingForce"""
       _x = self
       start = end
       end += 17
-      (_x.ID, _x.orientation, _x.pushingForce,) = _get_struct_B2d().unpack(str[start:end])
+      (_x.ID, _x.o, _x.force,) = _get_struct_B2d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill

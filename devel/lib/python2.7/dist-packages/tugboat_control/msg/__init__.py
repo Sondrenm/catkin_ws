@@ -11,3 +11,4 @@ from ._TugSetpoints import *
 from ._TugStatus import *
 from ._TugWaypoint import *
 from ._Waypoint import *
+from ._WaypointRequest import *

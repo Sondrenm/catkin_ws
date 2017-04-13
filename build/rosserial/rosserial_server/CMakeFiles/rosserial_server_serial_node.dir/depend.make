@@ -14,8 +14,6 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/seria
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /home/sondre/catkin_ws/src/rosserial/rosserial_server/include/rosserial_server/session.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /home/sondre/catkin_ws/src/rosserial/rosserial_server/include/rosserial_server/topic_handlers.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /home/sondre/catkin_ws/src/rosserial/rosserial_server/src/serial_node.cpp
-rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/XmlRpcDecl.h
-rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/XmlRpcValue.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -75,4 +73,6 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/seria
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Time.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/topic_tools/macros.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/topic_tools/shape_shifter.h
+rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

@@ -87,16 +87,16 @@
   "tugboat_control/BoatList")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<BoatList>)))
   "Returns md5sum for a message object of type '<BoatList>"
-  "7496deb9bbcbc436dc7f31a8e28cfe6d")
+  "1df20aa31d5e143e5b643777392ea400")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'BoatList)))
   "Returns md5sum for a message object of type 'BoatList"
-  "7496deb9bbcbc436dc7f31a8e28cfe6d")
+  "1df20aa31d5e143e5b643777392ea400")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<BoatList>)))
   "Returns full string definition for message of type '<BoatList>"
-  (cl:format cl:nil "float64 timestamp~%tugboat_control/BoatStatus[] boat~%================================================================================~%MSG: tugboat_control/BoatStatus~%uint8 ID # ID > 99 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 theta #orientation in radians or degrees?~%float32 PushingForce # Newton~%~%"))
+  (cl:format cl:nil "float64 timestamp~%tugboat_control/BoatStatus[] boat~%================================================================================~%MSG: tugboat_control/BoatStatus~%uint8 ID # ID == 0 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 o #orientation in +-pi radians from \"east\"~%float32 force # Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'BoatList)))
   "Returns full string definition for message of type 'BoatList"
-  (cl:format cl:nil "float64 timestamp~%tugboat_control/BoatStatus[] boat~%================================================================================~%MSG: tugboat_control/BoatStatus~%uint8 ID # ID > 99 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 theta #orientation in radians or degrees?~%float32 PushingForce # Newton~%~%"))
+  (cl:format cl:nil "float64 timestamp~%tugboat_control/BoatStatus[] boat~%================================================================================~%MSG: tugboat_control/BoatStatus~%uint8 ID # ID == 0 indicates ship~%float64 x #x position in meters~%float64 y #y position in meters~%float64 o #orientation in +-pi radians from \"east\"~%float32 force # Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <BoatList>))
   (cl:+ 0
      8

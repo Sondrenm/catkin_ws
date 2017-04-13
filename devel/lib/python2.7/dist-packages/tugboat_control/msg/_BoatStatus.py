@@ -7,15 +7,15 @@ import struct
 
 
 class BoatStatus(genpy.Message):
-  _md5sum = "c456c1039b34e445f3d3bf38126f7305"
+  _md5sum = "2567430f0fee0ed87837dda5f3903f11"
   _type = "tugboat_control/BoatStatus"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """uint8 ID # ID > 99 indicates ship
+  _full_text = """uint8 ID # ID == 0 indicates ship
 float64 x #x position in meters
 float64 y #y position in meters
-float64 theta #orientation in radians or degrees?
-float32 PushingForce # Newton"""
-  __slots__ = ['ID','x','y','theta','PushingForce']
+float64 o #orientation in +-pi radians from "east"
+float32 force # Newton"""
+  __slots__ = ['ID','x','y','o','force']
   _slot_types = ['uint8','float64','float64','float64','float32']
 
   def __init__(self, *args, **kwds):
@@ -26,7 +26,7 @@ float32 PushingForce # Newton"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       ID,x,y,theta,PushingForce
+       ID,x,y,o,force
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -41,16 +41,16 @@ float32 PushingForce # Newton"""
         self.x = 0.
       if self.y is None:
         self.y = 0.
-      if self.theta is None:
-        self.theta = 0.
-      if self.PushingForce is None:
-        self.PushingForce = 0.
+      if self.o is None:
+        self.o = 0.
+      if self.force is None:
+        self.force = 0.
     else:
       self.ID = 0
       self.x = 0.
       self.y = 0.
-      self.theta = 0.
-      self.PushingForce = 0.
+      self.o = 0.
+      self.force = 0.
 
   def _get_types(self):
     """
@@ -65,7 +65,7 @@ float32 PushingForce # Newton"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce))
+      buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.o, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -79,7 +79,7 @@ float32 PushingForce # Newton"""
       _x = self
       start = end
       end += 29
-      (_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce,) = _get_struct_B3df().unpack(str[start:end])
+      (_x.ID, _x.x, _x.y, _x.o, _x.force,) = _get_struct_B3df().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -93,7 +93,7 @@ float32 PushingForce # Newton"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce))
+      buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.o, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,7 +108,7 @@ float32 PushingForce # Newton"""
       _x = self
       start = end
       end += 29
-      (_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce,) = _get_struct_B3df().unpack(str[start:end])
+      (_x.ID, _x.x, _x.y, _x.o, _x.force,) = _get_struct_B3df().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill

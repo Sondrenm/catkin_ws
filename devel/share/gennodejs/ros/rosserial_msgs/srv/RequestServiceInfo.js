@@ -5,9 +5,12 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
@@ -15,30 +18,41 @@ let _finder = require('../find.js');
 //-----------------------------------------------------------
 
 class RequestServiceInfoRequest {
-  constructor() {
-    this.service = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.service = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('service')) {
+        this.service = initObj.service
+      }
+      else {
+        this.service = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type RequestServiceInfoRequest
     // Serialize message field [service]
-    bufferInfo = _serializer.string(obj.service, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.service, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type RequestServiceInfoRequest
-    let tmp;
     let len;
-    let data = new RequestServiceInfoRequest();
+    let data = new RequestServiceInfoRequest(null);
     // Deserialize message field [service]
-    tmp = _deserializer.string(buffer);
-    data.service = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.service = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.service.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -60,47 +74,83 @@ class RequestServiceInfoRequest {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new RequestServiceInfoRequest(null);
+    if (msg.service !== undefined) {
+      resolved.service = msg.service;
+    }
+    else {
+      resolved.service = ''
+    }
+
+    return resolved;
+    }
 };
 
 class RequestServiceInfoResponse {
-  constructor() {
-    this.service_md5 = '';
-    this.request_md5 = '';
-    this.response_md5 = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.service_md5 = null;
+      this.request_md5 = null;
+      this.response_md5 = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('service_md5')) {
+        this.service_md5 = initObj.service_md5
+      }
+      else {
+        this.service_md5 = '';
+      }
+      if (initObj.hasOwnProperty('request_md5')) {
+        this.request_md5 = initObj.request_md5
+      }
+      else {
+        this.request_md5 = '';
+      }
+      if (initObj.hasOwnProperty('response_md5')) {
+        this.response_md5 = initObj.response_md5
+      }
+      else {
+        this.response_md5 = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type RequestServiceInfoResponse
     // Serialize message field [service_md5]
-    bufferInfo = _serializer.string(obj.service_md5, bufferInfo);
+    bufferOffset = _serializer.string(obj.service_md5, buffer, bufferOffset);
     // Serialize message field [request_md5]
-    bufferInfo = _serializer.string(obj.request_md5, bufferInfo);
+    bufferOffset = _serializer.string(obj.request_md5, buffer, bufferOffset);
     // Serialize message field [response_md5]
-    bufferInfo = _serializer.string(obj.response_md5, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.response_md5, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type RequestServiceInfoResponse
-    let tmp;
     let len;
-    let data = new RequestServiceInfoResponse();
+    let data = new RequestServiceInfoResponse(null);
     // Deserialize message field [service_md5]
-    tmp = _deserializer.string(buffer);
-    data.service_md5 = tmp.data;
-    buffer = tmp.buffer;
+    data.service_md5 = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [request_md5]
-    tmp = _deserializer.string(buffer);
-    data.request_md5 = tmp.data;
-    buffer = tmp.buffer;
+    data.request_md5 = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [response_md5]
-    tmp = _deserializer.string(buffer);
-    data.response_md5 = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.response_md5 = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.service_md5.length;
+    length += object.request_md5.length;
+    length += object.response_md5.length;
+    return length + 12;
   }
 
   static datatype() {
@@ -124,9 +174,40 @@ class RequestServiceInfoResponse {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new RequestServiceInfoResponse(null);
+    if (msg.service_md5 !== undefined) {
+      resolved.service_md5 = msg.service_md5;
+    }
+    else {
+      resolved.service_md5 = ''
+    }
+
+    if (msg.request_md5 !== undefined) {
+      resolved.request_md5 = msg.request_md5;
+    }
+    else {
+      resolved.request_md5 = ''
+    }
+
+    if (msg.response_md5 !== undefined) {
+      resolved.response_md5 = msg.response_md5;
+    }
+    else {
+      resolved.response_md5 = ''
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = {
   Request: RequestServiceInfoRequest,
-  Response: RequestServiceInfoResponse
+  Response: RequestServiceInfoResponse,
+  md5sum() { return '0961604b984b94b0b68e8074882be071'; },
+  datatype() { return 'rosserial_msgs/RequestServiceInfo'; }
 };

@@ -28,4 +28,8 @@
     (:file "_package_Waypoint" :depends-on ("_package"))
     (:file "Waypoint" :depends-on ("_package_Waypoint"))
     (:file "_package_Waypoint" :depends-on ("_package"))
+    (:file "WaypointRequest" :depends-on ("_package_WaypointRequest"))
+    (:file "_package_WaypointRequest" :depends-on ("_package"))
+    (:file "WaypointRequest" :depends-on ("_package_WaypointRequest"))
+    (:file "_package_WaypointRequest" :depends-on ("_package"))
   ))

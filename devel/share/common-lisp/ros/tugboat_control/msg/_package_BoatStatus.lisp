@@ -5,8 +5,8 @@
           X
           Y-VAL
           Y
-          THETA-VAL
-          THETA
-          PUSHINGFORCE-VAL
-          PUSHINGFORCE
+          O-VAL
+          O
+          FORCE-VAL
+          FORCE
 ))

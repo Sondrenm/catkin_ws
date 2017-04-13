@@ -12,8 +12,8 @@ class Thrust(genpy.Message):
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# To Arduino
 uint8 ID
-int8 thrust # In % + 100
-int8 cwturn # In % + 100"""
+int8 thrust # In % +- 100
+int8 cwturn # In % +- 100"""
   __slots__ = ['ID','thrust','cwturn']
   _slot_types = ['uint8','int8','int8']
 

@@ -14,7 +14,7 @@
 
 (defclass tugboat_control::BoatStatus
   :super ros::object
-  :slots (_ID _x _y _theta _PushingForce ))
+  :slots (_ID _x _y _o _force ))
 
 (defmethod tugboat_control::BoatStatus
   (:init
@@ -22,15 +22,15 @@
     ((:ID __ID) 0)
     ((:x __x) 0.0)
     ((:y __y) 0.0)
-    ((:theta __theta) 0.0)
-    ((:PushingForce __PushingForce) 0.0)
+    ((:o __o) 0.0)
+    ((:force __force) 0.0)
     )
    (send-super :init)
    (setq _ID (round __ID))
    (setq _x (float __x))
    (setq _y (float __y))
-   (setq _theta (float __theta))
-   (setq _PushingForce (float __PushingForce))
+   (setq _o (float __o))
+   (setq _force (float __force))
    self)
   (:ID
    (&optional __ID)
@@ -41,12 +41,12 @@
   (:y
    (&optional __y)
    (if __y (setq _y __y)) _y)
-  (:theta
-   (&optional __theta)
-   (if __theta (setq _theta __theta)) _theta)
-  (:PushingForce
-   (&optional __PushingForce)
-   (if __PushingForce (setq _PushingForce __PushingForce)) _PushingForce)
+  (:o
+   (&optional __o)
+   (if __o (setq _o __o)) _o)
+  (:force
+   (&optional __force)
+   (if __force (setq _force __force)) _force)
   (:serialization-length
    ()
    (+
@@ -56,9 +56,9 @@
     8
     ;; float64 _y
     8
-    ;; float64 _theta
+    ;; float64 _o
     8
-    ;; float32 _PushingForce
+    ;; float32 _force
     4
     ))
   (:serialize
@@ -71,10 +71,10 @@
        (sys::poke _x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _y
        (sys::poke _y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _theta
-       (sys::poke _theta (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float32 _PushingForce
-       (sys::poke _PushingForce (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float64 _o
+       (sys::poke _o (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float32 _force
+       (sys::poke _force (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -85,26 +85,26 @@
      (setq _x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _y
      (setq _y (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _theta
-     (setq _theta (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float32 _PushingForce
-     (setq _PushingForce (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float64 _o
+     (setq _o (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float32 _force
+     (setq _force (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get tugboat_control::BoatStatus :md5sum-) "c456c1039b34e445f3d3bf38126f7305")
+(setf (get tugboat_control::BoatStatus :md5sum-) "2567430f0fee0ed87837dda5f3903f11")
 (setf (get tugboat_control::BoatStatus :datatype-) "tugboat_control/BoatStatus")
 (setf (get tugboat_control::BoatStatus :definition-)
-      "uint8 ID # ID > 99 indicates ship
+      "uint8 ID # ID == 0 indicates ship
 float64 x #x position in meters
 float64 y #y position in meters
-float64 theta #orientation in radians or degrees?
-float32 PushingForce # Newton
+float64 o #orientation in +-pi radians from \"east\"
+float32 force # Newton
 ")
 
 
 
-(provide :tugboat_control/BoatStatus "c456c1039b34e445f3d3bf38126f7305")
+(provide :tugboat_control/BoatStatus "2567430f0fee0ed87837dda5f3903f11")
 
 

@@ -149,8 +149,8 @@ struct Definition< ::tugboat_control::Thrust_<ContainerAllocator> >
   {
     return "# To Arduino\n\
 uint8 ID\n\
-int8 thrust # In % + 100\n\
-int8 cwturn # In % + 100\n\
+int8 thrust # In % +- 100\n\
+int8 cwturn # In % +- 100\n\
 ";
   }
 
@@ -174,7 +174,7 @@ namespace serialization
       stream.next(m.cwturn);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct Thrust_
 
 } // namespace serialization

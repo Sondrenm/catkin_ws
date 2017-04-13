@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
 string
 -
@@ -57,37 +73,23 @@ ros/message_operations.h
 /home/sondre/catkin_ws/src/tugboat_control/src/TugController.cpp
 ros/ros.h
 /home/sondre/catkin_ws/src/tugboat_control/src/ros/ros.h
-std_msgs/String.h
-/home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/String.h
 tugboat_control/Thrust.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/Thrust.h
 tugboat_control/TugSetpoints.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/TugSetpoints.h
 tugboat_control/Waypoint.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/Waypoint.h
+tugboat_control/BoatStatus.h
+/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/BoatStatus.h
+/usr/local/include/PID_cpp/pid.h
+-
 iostream
 -
 sstream
 -
 unistd.h
 -
-/usr/local/include/PID_cpp/pid.h
--
-
-/opt/ros/kinetic/include/XmlRpcDecl.h
-ros/macros.h
--
-
-/opt/ros/kinetic/include/XmlRpcValue.h
-XmlRpcDecl.h
-/opt/ros/kinetic/include/XmlRpcDecl.h
-map
--
-string
--
-vector
--
-time.h
+math.h
 -
 
 /opt/ros/kinetic/include/ros/advertise_options.h
@@ -720,21 +722,31 @@ ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
 
-/opt/ros/kinetic/include/std_msgs/String.h
+/opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ros/macros.h
+-
+
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
+xmlrpcpp/XmlRpcDecl.h
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/xmlrpcpp/XmlRpcDecl.h
+map
+-
 string
 -
 vector
 -
-map
+time.h
 -
-ros/types.h
+
+/usr/local/include/PID_cpp/pid.cpp
+iostream
 -
-ros/serialization.h
+cmath
 -
-ros/builtin_message_traits.h
+chrono
 -
-ros/message_operations.h
--
+pid.h
+/usr/local/include/PID_cpp/pid.h
 
 /usr/local/include/PID_cpp/pid.h
 

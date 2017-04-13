@@ -14,18 +14,18 @@ let _finder = require('../find.js');
 class TugSetpoints {
   constructor() {
     this.ID = 0;
-    this.orientation = 0.0;
-    this.pushingForce = 0.0;
+    this.o = 0.0;
+    this.force = 0.0;
   }
 
   static serialize(obj, bufferInfo) {
     // Serializes a message object of type TugSetpoints
     // Serialize message field [ID]
     bufferInfo = _serializer.uint8(obj.ID, bufferInfo);
-    // Serialize message field [orientation]
-    bufferInfo = _serializer.float64(obj.orientation, bufferInfo);
-    // Serialize message field [pushingForce]
-    bufferInfo = _serializer.float64(obj.pushingForce, bufferInfo);
+    // Serialize message field [o]
+    bufferInfo = _serializer.float64(obj.o, bufferInfo);
+    // Serialize message field [force]
+    bufferInfo = _serializer.float64(obj.force, bufferInfo);
     return bufferInfo;
   }
 
@@ -38,13 +38,13 @@ class TugSetpoints {
     tmp = _deserializer.uint8(buffer);
     data.ID = tmp.data;
     buffer = tmp.buffer;
-    // Deserialize message field [orientation]
+    // Deserialize message field [o]
     tmp = _deserializer.float64(buffer);
-    data.orientation = tmp.data;
+    data.o = tmp.data;
     buffer = tmp.buffer;
-    // Deserialize message field [pushingForce]
+    // Deserialize message field [force]
     tmp = _deserializer.float64(buffer);
-    data.pushingForce = tmp.data;
+    data.force = tmp.data;
     buffer = tmp.buffer;
     return {
       data: data,
@@ -59,15 +59,15 @@ class TugSetpoints {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '0b1a644af72e0374fc50096b433f3946';
+    return '8794df36994479d46b6355b637b13061';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     uint8 ID
-    float64 orientation
-    float64 pushingForce
+    float64 o
+    float64 force
     `;
   }
 

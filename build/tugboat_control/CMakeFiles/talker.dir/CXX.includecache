@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
 string
 -
@@ -47,27 +63,13 @@ tugboat_control/Thrust.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/Thrust.h
 tugboat_control/TugSetpoints.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/TugSetpoints.h
+tugboat_control/BoatStatus.h
+/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/BoatStatus.h
 iostream
 -
 sstream
 -
 unistd.h
--
-
-/opt/ros/kinetic/include/XmlRpcDecl.h
-ros/macros.h
--
-
-/opt/ros/kinetic/include/XmlRpcValue.h
-XmlRpcDecl.h
-/opt/ros/kinetic/include/XmlRpcDecl.h
-map
--
-string
--
-vector
--
-time.h
 -
 
 /opt/ros/kinetic/include/ros/advertise_options.h
@@ -714,5 +716,21 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ros/macros.h
+-
+
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
+xmlrpcpp/XmlRpcDecl.h
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/xmlrpcpp/XmlRpcDecl.h
+map
+-
+string
+-
+vector
+-
+time.h
 -
 

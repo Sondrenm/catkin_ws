@@ -59,6 +59,7 @@ tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp: /home/sondre/
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatStatus.lisp
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoint.lisp
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/PushingForce.lisp
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp
 
 
 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Thrust.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
@@ -92,6 +93,11 @@ tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp: /home/sondre/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from tugboat_control/PushingForce.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg
 
+/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp: /home/sondre/catkin_ws/src/tugboat_control/msg/WaypointRequest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from tugboat_control/WaypointRequest.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/sondre/catkin_ws/src/tugboat_control/msg/WaypointRequest.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg
+
 tugboat_control_generate_messages_lisp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp
 tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Thrust.lisp
 tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatList.lisp
@@ -99,6 +105,7 @@ tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/commo
 tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatStatus.lisp
 tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoint.lisp
 tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/PushingForce.lisp
+tugboat_control_generate_messages_lisp: /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp
 tugboat_control_generate_messages_lisp: tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build.make
 
 .PHONY : tugboat_control_generate_messages_lisp

@@ -14,15 +14,15 @@ let _finder = require('../find.js');
 class PushingForce {
   constructor() {
     this.ID = 0;
-    this.Newton = 0.0;
+    this.force = 0.0;
   }
 
   static serialize(obj, bufferInfo) {
     // Serializes a message object of type PushingForce
     // Serialize message field [ID]
     bufferInfo = _serializer.uint8(obj.ID, bufferInfo);
-    // Serialize message field [Newton]
-    bufferInfo = _serializer.float32(obj.Newton, bufferInfo);
+    // Serialize message field [force]
+    bufferInfo = _serializer.float32(obj.force, bufferInfo);
     return bufferInfo;
   }
 
@@ -35,9 +35,9 @@ class PushingForce {
     tmp = _deserializer.uint8(buffer);
     data.ID = tmp.data;
     buffer = tmp.buffer;
-    // Deserialize message field [Newton]
+    // Deserialize message field [force]
     tmp = _deserializer.float32(buffer);
-    data.Newton = tmp.data;
+    data.force = tmp.data;
     buffer = tmp.buffer;
     return {
       data: data,
@@ -52,7 +52,7 @@ class PushingForce {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'f1e8c141d7c72b50fc72611355ca6d95';
+    return 'a7005a38011551613bbcdafc2f85d46e';
   }
 
   static messageDefinition() {
@@ -60,7 +60,7 @@ class PushingForce {
     return `
     # From Arduino
     uint8 ID
-    float32 Newton
+    float32 force #in Newton
     `;
   }
 

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sondre/catkin_ws/src/tugboat_control/src/pid.cpp
+iostream
+-
+cmath
+-
+chrono
+-
+pid.h
+/home/sondre/catkin_ws/src/tugboat_control/src/pid.h
+
+/home/sondre/catkin_ws/src/tugboat_control/src/pid.h
+

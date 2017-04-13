@@ -27,15 +27,15 @@ struct BoatStatus_
     : ID(0)
     , x(0.0)
     , y(0.0)
-    , theta(0.0)
-    , PushingForce(0.0)  {
+    , o(0.0)
+    , force(0.0)  {
     }
   BoatStatus_(const ContainerAllocator& _alloc)
     : ID(0)
     , x(0.0)
     , y(0.0)
-    , theta(0.0)
-    , PushingForce(0.0)  {
+    , o(0.0)
+    , force(0.0)  {
   (void)_alloc;
     }
 
@@ -50,11 +50,11 @@ struct BoatStatus_
    typedef double _y_type;
   _y_type y;
 
-   typedef double _theta_type;
-  _theta_type theta;
+   typedef double _o_type;
+  _o_type o;
 
-   typedef float _PushingForce_type;
-  _PushingForce_type PushingForce;
+   typedef float _force_type;
+  _force_type force;
 
 
 
@@ -133,12 +133,12 @@ struct MD5Sum< ::tugboat_control::BoatStatus_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "c456c1039b34e445f3d3bf38126f7305";
+    return "2567430f0fee0ed87837dda5f3903f11";
   }
 
   static const char* value(const ::tugboat_control::BoatStatus_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xc456c1039b34e445ULL;
-  static const uint64_t static_value2 = 0xf3d3bf38126f7305ULL;
+  static const uint64_t static_value1 = 0x2567430f0fee0ed8ULL;
+  static const uint64_t static_value2 = 0x7837dda5f3903f11ULL;
 };
 
 template<class ContainerAllocator>
@@ -157,11 +157,11 @@ struct Definition< ::tugboat_control::BoatStatus_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "uint8 ID # ID > 99 indicates ship\n\
+    return "uint8 ID # ID == 0 indicates ship\n\
 float64 x #x position in meters\n\
 float64 y #y position in meters\n\
-float64 theta #orientation in radians or degrees?\n\
-float32 PushingForce # Newton\n\
+float64 o #orientation in +-pi radians from \"east\"\n\
+float32 force # Newton\n\
 ";
   }
 
@@ -183,8 +183,8 @@ namespace serialization
       stream.next(m.ID);
       stream.next(m.x);
       stream.next(m.y);
-      stream.next(m.theta);
-      stream.next(m.PushingForce);
+      stream.next(m.o);
+      stream.next(m.force);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -209,10 +209,10 @@ struct Printer< ::tugboat_control::BoatStatus_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";
     Printer<double>::stream(s, indent + "  ", v.y);
-    s << indent << "theta: ";
-    Printer<double>::stream(s, indent + "  ", v.theta);
-    s << indent << "PushingForce: ";
-    Printer<float>::stream(s, indent + "  ", v.PushingForce);
+    s << indent << "o: ";
+    Printer<double>::stream(s, indent + "  ", v.o);
+    s << indent << "force: ";
+    Printer<float>::stream(s, indent + "  ", v.force);
   }
 };
 

@@ -190,22 +190,6 @@ ros/ros.h
 rosserial_server/serial_session.h
 /home/sondre/catkin_ws/src/rosserial/rosserial_server/src/rosserial_server/serial_session.h
 
-/opt/ros/kinetic/include/XmlRpcDecl.h
-ros/macros.h
--
-
-/opt/ros/kinetic/include/XmlRpcValue.h
-XmlRpcDecl.h
-/opt/ros/kinetic/include/XmlRpcDecl.h
-map
--
-string
--
-vector
--
-time.h
--
-
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
@@ -393,8 +377,8 @@ common.h
 /opt/ros/kinetic/include/ros/master.h
 forwards.h
 /opt/ros/kinetic/include/ros/forwards.h
-XmlRpcValue.h
-/opt/ros/kinetic/include/ros/XmlRpcValue.h
+xmlrpcpp/XmlRpcValue.h
+/opt/ros/kinetic/include/ros/xmlrpcpp/XmlRpcValue.h
 common.h
 /opt/ros/kinetic/include/ros/common.h
 
@@ -505,7 +489,7 @@ common.h
 /opt/ros/kinetic/include/ros/common.h
 boost/bind.hpp
 -
-XmlRpcValue.h
+xmlrpcpp/XmlRpcValue.h
 -
 
 /opt/ros/kinetic/include/ros/param.h
@@ -513,8 +497,8 @@ forwards.h
 /opt/ros/kinetic/include/ros/forwards.h
 common.h
 /opt/ros/kinetic/include/ros/common.h
-XmlRpcValue.h
-/opt/ros/kinetic/include/ros/XmlRpcValue.h
+xmlrpcpp/XmlRpcValue.h
+/opt/ros/kinetic/include/ros/xmlrpcpp/XmlRpcValue.h
 vector
 -
 map
@@ -903,4 +887,20 @@ ros/message_traits.h
 -
 macros.h
 /opt/ros/kinetic/include/topic_tools/macros.h
+
+/opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ros/macros.h
+-
+
+/opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
+xmlrpcpp/XmlRpcDecl.h
+/opt/ros/kinetic/include/xmlrpcpp/xmlrpcpp/XmlRpcDecl.h
+map
+-
+string
+-
+vector
+-
+time.h
+-
 

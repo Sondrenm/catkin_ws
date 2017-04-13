@@ -22,11 +22,6 @@
     :initarg :y
     :type cl:float
     :initform 0.0)
-   (theta
-    :reader theta
-    :initarg :theta
-    :type cl:float
-    :initform 0.0)
    (v
     :reader v
     :initarg :v
@@ -57,11 +52,6 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:y-val is deprecated.  Use tugboat_control-msg:y instead.")
   (y m))
 
-(cl:ensure-generic-function 'theta-val :lambda-list '(m))
-(cl:defmethod theta-val ((m <Waypoint>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:theta-val is deprecated.  Use tugboat_control-msg:theta instead.")
-  (theta m))
-
 (cl:ensure-generic-function 'v-val :lambda-list '(m))
 (cl:defmethod v-val ((m <Waypoint>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:v-val is deprecated.  Use tugboat_control-msg:v instead.")
@@ -79,15 +69,6 @@
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'y))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'theta))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -138,16 +119,6 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'theta) (roslisp-utils:decode-double-float-bits bits)))
-    (cl:let ((bits 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'v) (roslisp-utils:decode-double-float-bits bits)))
   msg
 )
@@ -159,20 +130,19 @@
   "tugboat_control/Waypoint")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Waypoint>)))
   "Returns md5sum for a message object of type '<Waypoint>"
-  "ac21d14c0ba92bbf8f535b458744d831")
+  "599dfbedb76ef56ba69b3e5141431273")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Waypoint)))
   "Returns md5sum for a message object of type 'Waypoint"
-  "ac21d14c0ba92bbf8f535b458744d831")
+  "599dfbedb76ef56ba69b3e5141431273")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Waypoint>)))
   "Returns full string definition for message of type '<Waypoint>"
-  (cl:format cl:nil "uint8 ID~%float64 x #x position in meters~%float64 y #y position in meters~%float64 theta #orientation in radians or degrees?~%float64 v #Velocity in m/s~%~%"))
+  (cl:format cl:nil "uint8 ID~%float64 x #x position in meters~%float64 y #y position in meters~%float64 v #Velocity in m/s~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Waypoint)))
   "Returns full string definition for message of type 'Waypoint"
-  (cl:format cl:nil "uint8 ID~%float64 x #x position in meters~%float64 y #y position in meters~%float64 theta #orientation in radians or degrees?~%float64 v #Velocity in m/s~%~%"))
+  (cl:format cl:nil "uint8 ID~%float64 x #x position in meters~%float64 y #y position in meters~%float64 v #Velocity in m/s~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Waypoint>))
   (cl:+ 0
      1
-     8
      8
      8
      8
@@ -183,6 +153,5 @@
     (cl:cons ':ID (ID msg))
     (cl:cons ':x (x msg))
     (cl:cons ':y (y msg))
-    (cl:cons ':theta (theta msg))
     (cl:cons ':v (v msg))
 ))

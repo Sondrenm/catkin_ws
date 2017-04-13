@@ -59,6 +59,7 @@ tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs: /home/sondr
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatStatus.js
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/PushingForce.js
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js
 
 
 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Thrust.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
@@ -92,6 +93,11 @@ tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs: /home/sondr
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from tugboat_control/PushingForce.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg
 
+/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js: /home/sondre/catkin_ws/src/tugboat_control/msg/WaypointRequest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from tugboat_control/WaypointRequest.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sondre/catkin_ws/src/tugboat_control/msg/WaypointRequest.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg
+
 tugboat_control_generate_messages_nodejs: tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs
 tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Thrust.js
 tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatList.js
@@ -99,6 +105,7 @@ tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gen
 tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatStatus.js
 tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js
 tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/PushingForce.js
+tugboat_control_generate_messages_nodejs: /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js
 tugboat_control_generate_messages_nodejs: tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make
 
 .PHONY : tugboat_control_generate_messages_nodejs

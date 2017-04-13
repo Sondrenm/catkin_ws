@@ -5,9 +5,12 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
@@ -15,30 +18,41 @@ let _finder = require('../find.js');
 //-----------------------------------------------------------
 
 class RequestParamRequest {
-  constructor() {
-    this.name = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.name = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('name')) {
+        this.name = initObj.name
+      }
+      else {
+        this.name = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type RequestParamRequest
     // Serialize message field [name]
-    bufferInfo = _serializer.string(obj.name, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.name, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type RequestParamRequest
-    let tmp;
     let len;
-    let data = new RequestParamRequest();
+    let data = new RequestParamRequest(null);
     // Deserialize message field [name]
-    tmp = _deserializer.string(buffer);
-    data.name = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.name = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.name.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -60,80 +74,85 @@ class RequestParamRequest {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new RequestParamRequest(null);
+    if (msg.name !== undefined) {
+      resolved.name = msg.name;
+    }
+    else {
+      resolved.name = ''
+    }
+
+    return resolved;
+    }
 };
 
 class RequestParamResponse {
-  constructor() {
-    this.ints = [];
-    this.floats = [];
-    this.strings = [];
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.ints = null;
+      this.floats = null;
+      this.strings = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('ints')) {
+        this.ints = initObj.ints
+      }
+      else {
+        this.ints = [];
+      }
+      if (initObj.hasOwnProperty('floats')) {
+        this.floats = initObj.floats
+      }
+      else {
+        this.floats = [];
+      }
+      if (initObj.hasOwnProperty('strings')) {
+        this.strings = initObj.strings
+      }
+      else {
+        this.strings = [];
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type RequestParamResponse
-    // Serialize the length for message field [ints]
-    bufferInfo = _serializer.uint32(obj.ints.length, bufferInfo);
     // Serialize message field [ints]
-    obj.ints.forEach((val) => {
-      bufferInfo = _serializer.int32(val, bufferInfo);
-    });
-    // Serialize the length for message field [floats]
-    bufferInfo = _serializer.uint32(obj.floats.length, bufferInfo);
+    bufferOffset = _arraySerializer.int32(obj.ints, buffer, bufferOffset, null);
     // Serialize message field [floats]
-    obj.floats.forEach((val) => {
-      bufferInfo = _serializer.float32(val, bufferInfo);
-    });
-    // Serialize the length for message field [strings]
-    bufferInfo = _serializer.uint32(obj.strings.length, bufferInfo);
+    bufferOffset = _arraySerializer.float32(obj.floats, buffer, bufferOffset, null);
     // Serialize message field [strings]
-    obj.strings.forEach((val) => {
-      bufferInfo = _serializer.string(val, bufferInfo);
-    });
-    return bufferInfo;
+    bufferOffset = _arraySerializer.string(obj.strings, buffer, bufferOffset, null);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type RequestParamResponse
-    let tmp;
     let len;
-    let data = new RequestParamResponse();
-    // Deserialize array length for message field [ints]
-    tmp = _deserializer.uint32(buffer);
-    len = tmp.data;
-    buffer = tmp.buffer;
+    let data = new RequestParamResponse(null);
     // Deserialize message field [ints]
-    data.ints = new Array(len);
-    for (let i = 0; i < len; ++i) {
-      tmp = _deserializer.int32(buffer);
-      data.ints[i] = tmp.data;
-      buffer = tmp.buffer;
-    }
-    // Deserialize array length for message field [floats]
-    tmp = _deserializer.uint32(buffer);
-    len = tmp.data;
-    buffer = tmp.buffer;
+    data.ints = _arrayDeserializer.int32(buffer, bufferOffset, null)
     // Deserialize message field [floats]
-    data.floats = new Array(len);
-    for (let i = 0; i < len; ++i) {
-      tmp = _deserializer.float32(buffer);
-      data.floats[i] = tmp.data;
-      buffer = tmp.buffer;
-    }
-    // Deserialize array length for message field [strings]
-    tmp = _deserializer.uint32(buffer);
-    len = tmp.data;
-    buffer = tmp.buffer;
+    data.floats = _arrayDeserializer.float32(buffer, bufferOffset, null)
     // Deserialize message field [strings]
-    data.strings = new Array(len);
-    for (let i = 0; i < len; ++i) {
-      tmp = _deserializer.string(buffer);
-      data.strings[i] = tmp.data;
-      buffer = tmp.buffer;
-    }
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.strings = _arrayDeserializer.string(buffer, bufferOffset, null)
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += 4 * object.ints.length;
+    length += 4 * object.floats.length;
+    object.strings.forEach((val) => {
+      length += 4 + val.length;
+    });
+    return length + 12;
   }
 
   static datatype() {
@@ -158,9 +177,40 @@ class RequestParamResponse {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new RequestParamResponse(null);
+    if (msg.ints !== undefined) {
+      resolved.ints = msg.ints;
+    }
+    else {
+      resolved.ints = []
+    }
+
+    if (msg.floats !== undefined) {
+      resolved.floats = msg.floats;
+    }
+    else {
+      resolved.floats = []
+    }
+
+    if (msg.strings !== undefined) {
+      resolved.strings = msg.strings;
+    }
+    else {
+      resolved.strings = []
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = {
   Request: RequestParamRequest,
-  Response: RequestParamResponse
+  Response: RequestParamResponse,
+  md5sum() { return 'd7a0c2be00c9fd03cc69f2863de9c4d9'; },
+  datatype() { return 'rosserial_msgs/RequestParam'; }
 };

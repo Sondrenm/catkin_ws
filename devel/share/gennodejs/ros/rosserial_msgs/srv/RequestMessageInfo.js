@@ -5,9 +5,12 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
@@ -15,30 +18,41 @@ let _finder = require('../find.js');
 //-----------------------------------------------------------
 
 class RequestMessageInfoRequest {
-  constructor() {
-    this.type = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.type = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('type')) {
+        this.type = initObj.type
+      }
+      else {
+        this.type = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type RequestMessageInfoRequest
     // Serialize message field [type]
-    bufferInfo = _serializer.string(obj.type, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.type, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type RequestMessageInfoRequest
-    let tmp;
     let len;
-    let data = new RequestMessageInfoRequest();
+    let data = new RequestMessageInfoRequest(null);
     // Deserialize message field [type]
-    tmp = _deserializer.string(buffer);
-    data.type = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.type = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.type.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -60,40 +74,71 @@ class RequestMessageInfoRequest {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new RequestMessageInfoRequest(null);
+    if (msg.type !== undefined) {
+      resolved.type = msg.type;
+    }
+    else {
+      resolved.type = ''
+    }
+
+    return resolved;
+    }
 };
 
 class RequestMessageInfoResponse {
-  constructor() {
-    this.md5 = '';
-    this.definition = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.md5 = null;
+      this.definition = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('md5')) {
+        this.md5 = initObj.md5
+      }
+      else {
+        this.md5 = '';
+      }
+      if (initObj.hasOwnProperty('definition')) {
+        this.definition = initObj.definition
+      }
+      else {
+        this.definition = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type RequestMessageInfoResponse
     // Serialize message field [md5]
-    bufferInfo = _serializer.string(obj.md5, bufferInfo);
+    bufferOffset = _serializer.string(obj.md5, buffer, bufferOffset);
     // Serialize message field [definition]
-    bufferInfo = _serializer.string(obj.definition, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.definition, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type RequestMessageInfoResponse
-    let tmp;
     let len;
-    let data = new RequestMessageInfoResponse();
+    let data = new RequestMessageInfoResponse(null);
     // Deserialize message field [md5]
-    tmp = _deserializer.string(buffer);
-    data.md5 = tmp.data;
-    buffer = tmp.buffer;
+    data.md5 = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [definition]
-    tmp = _deserializer.string(buffer);
-    data.definition = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.definition = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.md5.length;
+    length += object.definition.length;
+    return length + 8;
   }
 
   static datatype() {
@@ -118,9 +163,33 @@ class RequestMessageInfoResponse {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new RequestMessageInfoResponse(null);
+    if (msg.md5 !== undefined) {
+      resolved.md5 = msg.md5;
+    }
+    else {
+      resolved.md5 = ''
+    }
+
+    if (msg.definition !== undefined) {
+      resolved.definition = msg.definition;
+    }
+    else {
+      resolved.definition = ''
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = {
   Request: RequestMessageInfoRequest,
-  Response: RequestMessageInfoResponse
+  Response: RequestMessageInfoResponse,
+  md5sum() { return '6416d80296dfbbdd5f7b2cee839f9316'; },
+  datatype() { return 'rosserial_msgs/RequestMessageInfo'; }
 };

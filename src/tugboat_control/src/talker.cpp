@@ -2,6 +2,7 @@
 #include "std_msgs/String.h"
 #include "tugboat_control/Thrust.h"
 #include "tugboat_control/TugSetpoints.h"
+#include "tugboat_control/BoatStatus.h"
 
 #include <iostream>
 #include <sstream>
@@ -51,6 +52,7 @@ int main(int argc, char **argv)
   //ros::Publisher cmd_pub = n.advertise<tugboat_control::Thrust>("thrust", 1000);
   //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 	ros::Publisher ctrl_pub = n.advertise<tugboat_control::TugSetpoints>("control", 1000);
+	ros::Publisher status_pub = n.advertise<tugboat_control::BoatStatus>("status", 1000);
 
   ros::Rate loop_rate(10);
 
@@ -76,23 +78,29 @@ int main(int argc, char **argv)
     */
     
     //tugboat_control::Thrust cmd;
-	tugboat_control::TugSetpoints ctrl;
-
-
-    ctrl.ID = 1;
-    ctrl.orientation=50;
-    ctrl.pushingForce=0;
-    //std::cout << (int)cmd.ID << (int)cmd.thrust << (int)cmd.cwturn << "\n";
-
-    //chatter_pub.publish(msg);
-    ctrl_pub.publish(ctrl);
-    usleep(2000000);
-
+	//tugboat_control::TugSetpoints ctrl;
+	//tugboat_control::BoatStatus status;
+//
+//
+    //ctrl.ID = 1;
+    //ctrl.orientation=1;
+    //ctrl.pushingForce=50;
+//
+    //status.ID = 1;
+    //status.orientation=0;
+    //status.pushingForce=0;
+    ////std::cout << (int)cmd.ID << (int)cmd.thrust << (int)cmd.cwturn << "\n";
+//
+    ////chatter_pub.publish(msg);
+    //ctrl_pub.publish(ctrl);
+    //status_pub.publish(status);
+    //usleep(2000000);
+/*
     ctrl.orientation=0;
     ctrl.pushingForce=50;
     ctrl_pub.publish(ctrl);
     usleep(2000000);
-
+*/
     ros::spinOnce();
 
     loop_rate.sleep();

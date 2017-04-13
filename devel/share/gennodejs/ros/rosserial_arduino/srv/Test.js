@@ -5,9 +5,12 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
@@ -15,30 +18,41 @@ let _finder = require('../find.js');
 //-----------------------------------------------------------
 
 class TestRequest {
-  constructor() {
-    this.input = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.input = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('input')) {
+        this.input = initObj.input
+      }
+      else {
+        this.input = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type TestRequest
     // Serialize message field [input]
-    bufferInfo = _serializer.string(obj.input, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.input, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type TestRequest
-    let tmp;
     let len;
-    let data = new TestRequest();
+    let data = new TestRequest(null);
     // Deserialize message field [input]
-    tmp = _deserializer.string(buffer);
-    data.input = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.input = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.input.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -59,33 +73,59 @@ class TestRequest {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new TestRequest(null);
+    if (msg.input !== undefined) {
+      resolved.input = msg.input;
+    }
+    else {
+      resolved.input = ''
+    }
+
+    return resolved;
+    }
 };
 
 class TestResponse {
-  constructor() {
-    this.output = '';
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.output = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('output')) {
+        this.output = initObj.output
+      }
+      else {
+        this.output = '';
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type TestResponse
     // Serialize message field [output]
-    bufferInfo = _serializer.string(obj.output, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.string(obj.output, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type TestResponse
-    let tmp;
     let len;
-    let data = new TestResponse();
+    let data = new TestResponse(null);
     // Deserialize message field [output]
-    tmp = _deserializer.string(buffer);
-    data.output = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.output = _deserializer.string(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    let length = 0;
+    length += object.output.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -107,9 +147,26 @@ class TestResponse {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new TestResponse(null);
+    if (msg.output !== undefined) {
+      resolved.output = msg.output;
+    }
+    else {
+      resolved.output = ''
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = {
   Request: TestRequest,
-  Response: TestResponse
+  Response: TestResponse,
+  md5sum() { return 'c63e85f503b805d84df783e71c6bb0d2'; },
+  datatype() { return 'rosserial_arduino/Test'; }
 };

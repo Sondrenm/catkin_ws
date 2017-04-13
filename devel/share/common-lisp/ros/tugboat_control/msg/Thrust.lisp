@@ -81,10 +81,10 @@
   "eb36a969d5d22c5ec8c64a8469c7e207")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Thrust>)))
   "Returns full string definition for message of type '<Thrust>"
-  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % + 100~%int8 cwturn # In % + 100~%~%"))
+  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % +- 100~%int8 cwturn # In % +- 100~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Thrust)))
   "Returns full string definition for message of type 'Thrust"
-  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % + 100~%int8 cwturn # In % + 100~%~%"))
+  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % +- 100~%int8 cwturn # In % +- 100~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Thrust>))
   (cl:+ 0
      1

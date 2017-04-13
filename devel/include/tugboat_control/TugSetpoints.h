@@ -25,13 +25,13 @@ struct TugSetpoints_
 
   TugSetpoints_()
     : ID(0)
-    , orientation(0.0)
-    , pushingForce(0.0)  {
+    , o(0.0)
+    , force(0.0)  {
     }
   TugSetpoints_(const ContainerAllocator& _alloc)
     : ID(0)
-    , orientation(0.0)
-    , pushingForce(0.0)  {
+    , o(0.0)
+    , force(0.0)  {
   (void)_alloc;
     }
 
@@ -40,11 +40,11 @@ struct TugSetpoints_
    typedef uint8_t _ID_type;
   _ID_type ID;
 
-   typedef double _orientation_type;
-  _orientation_type orientation;
+   typedef double _o_type;
+  _o_type o;
 
-   typedef double _pushingForce_type;
-  _pushingForce_type pushingForce;
+   typedef double _force_type;
+  _force_type force;
 
 
 
@@ -123,12 +123,12 @@ struct MD5Sum< ::tugboat_control::TugSetpoints_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "0b1a644af72e0374fc50096b433f3946";
+    return "8794df36994479d46b6355b637b13061";
   }
 
   static const char* value(const ::tugboat_control::TugSetpoints_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x0b1a644af72e0374ULL;
-  static const uint64_t static_value2 = 0xfc50096b433f3946ULL;
+  static const uint64_t static_value1 = 0x8794df36994479d4ULL;
+  static const uint64_t static_value2 = 0x6b6355b637b13061ULL;
 };
 
 template<class ContainerAllocator>
@@ -148,8 +148,8 @@ struct Definition< ::tugboat_control::TugSetpoints_<ContainerAllocator> >
   static const char* value()
   {
     return "uint8 ID\n\
-float64 orientation\n\
-float64 pushingForce\n\
+float64 o\n\
+float64 force\n\
 ";
   }
 
@@ -169,8 +169,8 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.ID);
-      stream.next(m.orientation);
-      stream.next(m.pushingForce);
+      stream.next(m.o);
+      stream.next(m.force);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -191,10 +191,10 @@ struct Printer< ::tugboat_control::TugSetpoints_<ContainerAllocator> >
   {
     s << indent << "ID: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.ID);
-    s << indent << "orientation: ";
-    Printer<double>::stream(s, indent + "  ", v.orientation);
-    s << indent << "pushingForce: ";
-    Printer<double>::stream(s, indent + "  ", v.pushingForce);
+    s << indent << "o: ";
+    Printer<double>::stream(s, indent + "  ", v.o);
+    s << indent << "force: ";
+    Printer<double>::stream(s, indent + "  ", v.force);
   }
 };
 

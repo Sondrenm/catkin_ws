@@ -5,72 +5,104 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class Adc {
-  constructor() {
-    this.adc0 = 0;
-    this.adc1 = 0;
-    this.adc2 = 0;
-    this.adc3 = 0;
-    this.adc4 = 0;
-    this.adc5 = 0;
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.adc0 = null;
+      this.adc1 = null;
+      this.adc2 = null;
+      this.adc3 = null;
+      this.adc4 = null;
+      this.adc5 = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('adc0')) {
+        this.adc0 = initObj.adc0
+      }
+      else {
+        this.adc0 = 0;
+      }
+      if (initObj.hasOwnProperty('adc1')) {
+        this.adc1 = initObj.adc1
+      }
+      else {
+        this.adc1 = 0;
+      }
+      if (initObj.hasOwnProperty('adc2')) {
+        this.adc2 = initObj.adc2
+      }
+      else {
+        this.adc2 = 0;
+      }
+      if (initObj.hasOwnProperty('adc3')) {
+        this.adc3 = initObj.adc3
+      }
+      else {
+        this.adc3 = 0;
+      }
+      if (initObj.hasOwnProperty('adc4')) {
+        this.adc4 = initObj.adc4
+      }
+      else {
+        this.adc4 = 0;
+      }
+      if (initObj.hasOwnProperty('adc5')) {
+        this.adc5 = initObj.adc5
+      }
+      else {
+        this.adc5 = 0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Adc
     // Serialize message field [adc0]
-    bufferInfo = _serializer.uint16(obj.adc0, bufferInfo);
+    bufferOffset = _serializer.uint16(obj.adc0, buffer, bufferOffset);
     // Serialize message field [adc1]
-    bufferInfo = _serializer.uint16(obj.adc1, bufferInfo);
+    bufferOffset = _serializer.uint16(obj.adc1, buffer, bufferOffset);
     // Serialize message field [adc2]
-    bufferInfo = _serializer.uint16(obj.adc2, bufferInfo);
+    bufferOffset = _serializer.uint16(obj.adc2, buffer, bufferOffset);
     // Serialize message field [adc3]
-    bufferInfo = _serializer.uint16(obj.adc3, bufferInfo);
+    bufferOffset = _serializer.uint16(obj.adc3, buffer, bufferOffset);
     // Serialize message field [adc4]
-    bufferInfo = _serializer.uint16(obj.adc4, bufferInfo);
+    bufferOffset = _serializer.uint16(obj.adc4, buffer, bufferOffset);
     // Serialize message field [adc5]
-    bufferInfo = _serializer.uint16(obj.adc5, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.uint16(obj.adc5, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type Adc
-    let tmp;
     let len;
-    let data = new Adc();
+    let data = new Adc(null);
     // Deserialize message field [adc0]
-    tmp = _deserializer.uint16(buffer);
-    data.adc0 = tmp.data;
-    buffer = tmp.buffer;
+    data.adc0 = _deserializer.uint16(buffer, bufferOffset);
     // Deserialize message field [adc1]
-    tmp = _deserializer.uint16(buffer);
-    data.adc1 = tmp.data;
-    buffer = tmp.buffer;
+    data.adc1 = _deserializer.uint16(buffer, bufferOffset);
     // Deserialize message field [adc2]
-    tmp = _deserializer.uint16(buffer);
-    data.adc2 = tmp.data;
-    buffer = tmp.buffer;
+    data.adc2 = _deserializer.uint16(buffer, bufferOffset);
     // Deserialize message field [adc3]
-    tmp = _deserializer.uint16(buffer);
-    data.adc3 = tmp.data;
-    buffer = tmp.buffer;
+    data.adc3 = _deserializer.uint16(buffer, bufferOffset);
     // Deserialize message field [adc4]
-    tmp = _deserializer.uint16(buffer);
-    data.adc4 = tmp.data;
-    buffer = tmp.buffer;
+    data.adc4 = _deserializer.uint16(buffer, bufferOffset);
     // Deserialize message field [adc5]
-    tmp = _deserializer.uint16(buffer);
-    data.adc5 = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.adc5 = _deserializer.uint16(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    return 12;
   }
 
   static datatype() {
@@ -96,6 +128,56 @@ class Adc {
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new Adc(null);
+    if (msg.adc0 !== undefined) {
+      resolved.adc0 = msg.adc0;
+    }
+    else {
+      resolved.adc0 = 0
+    }
+
+    if (msg.adc1 !== undefined) {
+      resolved.adc1 = msg.adc1;
+    }
+    else {
+      resolved.adc1 = 0
+    }
+
+    if (msg.adc2 !== undefined) {
+      resolved.adc2 = msg.adc2;
+    }
+    else {
+      resolved.adc2 = 0
+    }
+
+    if (msg.adc3 !== undefined) {
+      resolved.adc3 = msg.adc3;
+    }
+    else {
+      resolved.adc3 = 0
+    }
+
+    if (msg.adc4 !== undefined) {
+      resolved.adc4 = msg.adc4;
+    }
+    else {
+      resolved.adc4 = 0
+    }
+
+    if (msg.adc5 !== undefined) {
+      resolved.adc5 = msg.adc5;
+    }
+    else {
+      resolved.adc5 = 0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = Adc;

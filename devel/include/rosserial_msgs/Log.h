@@ -189,7 +189,7 @@ namespace serialization
       stream.next(m.msg);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct Log_
 
 } // namespace serialization

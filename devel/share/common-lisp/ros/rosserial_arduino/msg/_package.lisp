@@ -3,5 +3,9 @@
   (:export
    "<ADC>"
    "ADC"
+   "<PUSHINGFORCE>"
+   "PUSHINGFORCE"
+   "<THRUSTCOMMAND>"
+   "THRUSTCOMMAND"
   ))
 

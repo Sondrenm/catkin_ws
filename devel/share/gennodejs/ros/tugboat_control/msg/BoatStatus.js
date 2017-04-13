@@ -16,8 +16,8 @@ class BoatStatus {
     this.ID = 0;
     this.x = 0.0;
     this.y = 0.0;
-    this.theta = 0.0;
-    this.PushingForce = 0.0;
+    this.o = 0.0;
+    this.force = 0.0;
   }
 
   static serialize(obj, bufferInfo) {
@@ -28,10 +28,10 @@ class BoatStatus {
     bufferInfo = _serializer.float64(obj.x, bufferInfo);
     // Serialize message field [y]
     bufferInfo = _serializer.float64(obj.y, bufferInfo);
-    // Serialize message field [theta]
-    bufferInfo = _serializer.float64(obj.theta, bufferInfo);
-    // Serialize message field [PushingForce]
-    bufferInfo = _serializer.float32(obj.PushingForce, bufferInfo);
+    // Serialize message field [o]
+    bufferInfo = _serializer.float64(obj.o, bufferInfo);
+    // Serialize message field [force]
+    bufferInfo = _serializer.float32(obj.force, bufferInfo);
     return bufferInfo;
   }
 
@@ -52,13 +52,13 @@ class BoatStatus {
     tmp = _deserializer.float64(buffer);
     data.y = tmp.data;
     buffer = tmp.buffer;
-    // Deserialize message field [theta]
+    // Deserialize message field [o]
     tmp = _deserializer.float64(buffer);
-    data.theta = tmp.data;
+    data.o = tmp.data;
     buffer = tmp.buffer;
-    // Deserialize message field [PushingForce]
+    // Deserialize message field [force]
     tmp = _deserializer.float32(buffer);
-    data.PushingForce = tmp.data;
+    data.force = tmp.data;
     buffer = tmp.buffer;
     return {
       data: data,
@@ -73,17 +73,17 @@ class BoatStatus {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'c456c1039b34e445f3d3bf38126f7305';
+    return '2567430f0fee0ed87837dda5f3903f11';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    uint8 ID # ID > 99 indicates ship
+    uint8 ID # ID == 0 indicates ship
     float64 x #x position in meters
     float64 y #y position in meters
-    float64 theta #orientation in radians or degrees?
-    float32 PushingForce # Newton
+    float64 o #orientation in +-pi radians from "east"
+    float32 force # Newton
     `;
   }
 

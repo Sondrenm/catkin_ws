@@ -25,11 +25,11 @@ struct PushingForce_
 
   PushingForce_()
     : ID(0)
-    , Newton(0.0)  {
+    , force(0.0)  {
     }
   PushingForce_(const ContainerAllocator& _alloc)
     : ID(0)
-    , Newton(0.0)  {
+    , force(0.0)  {
   (void)_alloc;
     }
 
@@ -38,8 +38,8 @@ struct PushingForce_
    typedef uint8_t _ID_type;
   _ID_type ID;
 
-   typedef float _Newton_type;
-  _Newton_type Newton;
+   typedef float _force_type;
+  _force_type force;
 
 
 
@@ -118,12 +118,12 @@ struct MD5Sum< ::tugboat_control::PushingForce_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "f1e8c141d7c72b50fc72611355ca6d95";
+    return "a7005a38011551613bbcdafc2f85d46e";
   }
 
   static const char* value(const ::tugboat_control::PushingForce_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xf1e8c141d7c72b50ULL;
-  static const uint64_t static_value2 = 0xfc72611355ca6d95ULL;
+  static const uint64_t static_value1 = 0xa7005a3801155161ULL;
+  static const uint64_t static_value2 = 0x3bbcdafc2f85d46eULL;
 };
 
 template<class ContainerAllocator>
@@ -144,7 +144,7 @@ struct Definition< ::tugboat_control::PushingForce_<ContainerAllocator> >
   {
     return "# From Arduino\n\
 uint8 ID\n\
-float32 Newton\n\
+float32 force #in Newton\n\
 ";
   }
 
@@ -164,7 +164,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.ID);
-      stream.next(m.Newton);
+      stream.next(m.force);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -185,8 +185,8 @@ struct Printer< ::tugboat_control::PushingForce_<ContainerAllocator> >
   {
     s << indent << "ID: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.ID);
-    s << indent << "Newton: ";
-    Printer<float>::stream(s, indent + "  ", v.Newton);
+    s << indent << "force: ";
+    Printer<float>::stream(s, indent + "  ", v.force);
   }
 };
 

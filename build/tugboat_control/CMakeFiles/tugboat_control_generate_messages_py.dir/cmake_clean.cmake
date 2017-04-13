@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatStatus.py"
   "/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py"
   "/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py"
+  "/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_WaypointRequest.py"
   "/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py"
 )
 

@@ -14,7 +14,7 @@
 
 (defclass tugboat_control::Waypoint
   :super ros::object
-  :slots (_ID _x _y _theta _v ))
+  :slots (_ID _x _y _v ))
 
 (defmethod tugboat_control::Waypoint
   (:init
@@ -22,14 +22,12 @@
     ((:ID __ID) 0)
     ((:x __x) 0.0)
     ((:y __y) 0.0)
-    ((:theta __theta) 0.0)
     ((:v __v) 0.0)
     )
    (send-super :init)
    (setq _ID (round __ID))
    (setq _x (float __x))
    (setq _y (float __y))
-   (setq _theta (float __theta))
    (setq _v (float __v))
    self)
   (:ID
@@ -41,9 +39,6 @@
   (:y
    (&optional __y)
    (if __y (setq _y __y)) _y)
-  (:theta
-   (&optional __theta)
-   (if __theta (setq _theta __theta)) _theta)
   (:v
    (&optional __v)
    (if __v (setq _v __v)) _v)
@@ -55,8 +50,6 @@
     ;; float64 _x
     8
     ;; float64 _y
-    8
-    ;; float64 _theta
     8
     ;; float64 _v
     8
@@ -71,8 +64,6 @@
        (sys::poke _x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _y
        (sys::poke _y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _theta
-       (sys::poke _theta (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _v
        (sys::poke _v (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
@@ -85,26 +76,23 @@
      (setq _x (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _y
      (setq _y (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _theta
-     (setq _theta (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _v
      (setq _v (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get tugboat_control::Waypoint :md5sum-) "ac21d14c0ba92bbf8f535b458744d831")
+(setf (get tugboat_control::Waypoint :md5sum-) "599dfbedb76ef56ba69b3e5141431273")
 (setf (get tugboat_control::Waypoint :datatype-) "tugboat_control/Waypoint")
 (setf (get tugboat_control::Waypoint :definition-)
       "uint8 ID
 float64 x #x position in meters
 float64 y #y position in meters
-float64 theta #orientation in radians or degrees?
 float64 v #Velocity in m/s
 ")
 
 
 
-(provide :tugboat_control/Waypoint "ac21d14c0ba92bbf8f535b458744d831")
+(provide :tugboat_control/Waypoint "599dfbedb76ef56ba69b3e5141431273")
 
 

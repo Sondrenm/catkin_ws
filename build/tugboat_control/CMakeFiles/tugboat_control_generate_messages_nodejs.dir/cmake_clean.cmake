@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatStatus.js"
   "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js"
   "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/PushingForce.js"
+  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js"
 )
 
 # Per-language clean rules from dependency scanning.

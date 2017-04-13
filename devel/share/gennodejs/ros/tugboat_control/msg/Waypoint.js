@@ -16,7 +16,6 @@ class Waypoint {
     this.ID = 0;
     this.x = 0.0;
     this.y = 0.0;
-    this.theta = 0.0;
     this.v = 0.0;
   }
 
@@ -28,8 +27,6 @@ class Waypoint {
     bufferInfo = _serializer.float64(obj.x, bufferInfo);
     // Serialize message field [y]
     bufferInfo = _serializer.float64(obj.y, bufferInfo);
-    // Serialize message field [theta]
-    bufferInfo = _serializer.float64(obj.theta, bufferInfo);
     // Serialize message field [v]
     bufferInfo = _serializer.float64(obj.v, bufferInfo);
     return bufferInfo;
@@ -52,10 +49,6 @@ class Waypoint {
     tmp = _deserializer.float64(buffer);
     data.y = tmp.data;
     buffer = tmp.buffer;
-    // Deserialize message field [theta]
-    tmp = _deserializer.float64(buffer);
-    data.theta = tmp.data;
-    buffer = tmp.buffer;
     // Deserialize message field [v]
     tmp = _deserializer.float64(buffer);
     data.v = tmp.data;
@@ -73,7 +66,7 @@ class Waypoint {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'ac21d14c0ba92bbf8f535b458744d831';
+    return '599dfbedb76ef56ba69b3e5141431273';
   }
 
   static messageDefinition() {
@@ -82,7 +75,6 @@ class Waypoint {
     uint8 ID
     float64 x #x position in meters
     float64 y #y position in meters
-    float64 theta #orientation in radians or degrees?
     float64 v #Velocity in m/s
     `;
   }

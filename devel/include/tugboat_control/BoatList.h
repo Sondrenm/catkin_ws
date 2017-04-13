@@ -119,12 +119,12 @@ struct MD5Sum< ::tugboat_control::BoatList_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "7496deb9bbcbc436dc7f31a8e28cfe6d";
+    return "1df20aa31d5e143e5b643777392ea400";
   }
 
   static const char* value(const ::tugboat_control::BoatList_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x7496deb9bbcbc436ULL;
-  static const uint64_t static_value2 = 0xdc7f31a8e28cfe6dULL;
+  static const uint64_t static_value1 = 0x1df20aa31d5e143eULL;
+  static const uint64_t static_value2 = 0x5b643777392ea400ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,11 +147,11 @@ struct Definition< ::tugboat_control::BoatList_<ContainerAllocator> >
 tugboat_control/BoatStatus[] boat\n\
 ================================================================================\n\
 MSG: tugboat_control/BoatStatus\n\
-uint8 ID # ID > 99 indicates ship\n\
+uint8 ID # ID == 0 indicates ship\n\
 float64 x #x position in meters\n\
 float64 y #y position in meters\n\
-float64 theta #orientation in radians or degrees?\n\
-float32 PushingForce # Newton\n\
+float64 o #orientation in +-pi radians from \"east\"\n\
+float32 force # Newton\n\
 ";
   }
 

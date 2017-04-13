@@ -12,9 +12,9 @@
     :initarg :ID
     :type cl:fixnum
     :initform 0)
-   (Newton
-    :reader Newton
-    :initarg :Newton
+   (force
+    :reader force
+    :initarg :force
     :type cl:float
     :initform 0.0))
 )
@@ -32,14 +32,14 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:ID-val is deprecated.  Use tugboat_control-msg:ID instead.")
   (ID m))
 
-(cl:ensure-generic-function 'Newton-val :lambda-list '(m))
-(cl:defmethod Newton-val ((m <PushingForce>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:Newton-val is deprecated.  Use tugboat_control-msg:Newton instead.")
-  (Newton m))
+(cl:ensure-generic-function 'force-val :lambda-list '(m))
+(cl:defmethod force-val ((m <PushingForce>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:force-val is deprecated.  Use tugboat_control-msg:force instead.")
+  (force m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <PushingForce>) ostream)
   "Serializes a message object of type '<PushingForce>"
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) ostream)
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'Newton))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'force))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -53,7 +53,7 @@
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'Newton) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'force) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<PushingForce>)))
@@ -64,16 +64,16 @@
   "tugboat_control/PushingForce")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<PushingForce>)))
   "Returns md5sum for a message object of type '<PushingForce>"
-  "f1e8c141d7c72b50fc72611355ca6d95")
+  "a7005a38011551613bbcdafc2f85d46e")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'PushingForce)))
   "Returns md5sum for a message object of type 'PushingForce"
-  "f1e8c141d7c72b50fc72611355ca6d95")
+  "a7005a38011551613bbcdafc2f85d46e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PushingForce>)))
   "Returns full string definition for message of type '<PushingForce>"
-  (cl:format cl:nil "# From Arduino~%uint8 ID~%float32 Newton~%~%"))
+  (cl:format cl:nil "# From Arduino~%uint8 ID~%float32 force #in Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PushingForce)))
   "Returns full string definition for message of type 'PushingForce"
-  (cl:format cl:nil "# From Arduino~%uint8 ID~%float32 Newton~%~%"))
+  (cl:format cl:nil "# From Arduino~%uint8 ID~%float32 force #in Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PushingForce>))
   (cl:+ 0
      1
@@ -83,5 +83,5 @@
   "Converts a ROS message object to a list"
   (cl:list 'PushingForce
     (cl:cons ':ID (ID msg))
-    (cl:cons ':Newton (Newton msg))
+    (cl:cons ':force (force msg))
 ))

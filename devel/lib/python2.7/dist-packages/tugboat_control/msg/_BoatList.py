@@ -8,18 +8,18 @@ import struct
 import tugboat_control.msg
 
 class BoatList(genpy.Message):
-  _md5sum = "7496deb9bbcbc436dc7f31a8e28cfe6d"
+  _md5sum = "1df20aa31d5e143e5b643777392ea400"
   _type = "tugboat_control/BoatList"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """float64 timestamp
 tugboat_control/BoatStatus[] boat
 ================================================================================
 MSG: tugboat_control/BoatStatus
-uint8 ID # ID > 99 indicates ship
+uint8 ID # ID == 0 indicates ship
 float64 x #x position in meters
 float64 y #y position in meters
-float64 theta #orientation in radians or degrees?
-float32 PushingForce # Newton"""
+float64 o #orientation in +-pi radians from "east"
+float32 force # Newton"""
   __slots__ = ['timestamp','boat']
   _slot_types = ['float64','tugboat_control/BoatStatus[]']
 
@@ -65,7 +65,7 @@ float32 PushingForce # Newton"""
       buff.write(_struct_I.pack(length))
       for val1 in self.boat:
         _x = val1
-        buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce))
+        buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.o, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -90,7 +90,7 @@ float32 PushingForce # Newton"""
         _x = val1
         start = end
         end += 29
-        (_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce,) = _get_struct_B3df().unpack(str[start:end])
+        (_x.ID, _x.x, _x.y, _x.o, _x.force,) = _get_struct_B3df().unpack(str[start:end])
         self.boat.append(val1)
       return self
     except struct.error as e:
@@ -109,7 +109,7 @@ float32 PushingForce # Newton"""
       buff.write(_struct_I.pack(length))
       for val1 in self.boat:
         _x = val1
-        buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce))
+        buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.o, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -135,7 +135,7 @@ float32 PushingForce # Newton"""
         _x = val1
         start = end
         end += 29
-        (_x.ID, _x.x, _x.y, _x.theta, _x.PushingForce,) = _get_struct_B3df().unpack(str[start:end])
+        (_x.ID, _x.x, _x.y, _x.o, _x.force,) = _get_struct_B3df().unpack(str[start:end])
         self.boat.append(val1)
       return self
     except struct.error as e:

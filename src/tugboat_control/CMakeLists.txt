@@ -57,6 +57,7 @@ add_message_files(
 	Thrust.msg
   TugSetpoints.msg
   Waypoint.msg
+  WaypointRequest.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -122,13 +123,16 @@ catkin_package(
 ## Build ##
 ###########
 
+add_definitions(-std=c++11)
+
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  {/usr/local/include/PID_cpp}
 )
+
+find_package( OpenCV REQUIRED )
 
 ## Declare a C++ library
 # add_library(tugboat_control
@@ -150,12 +154,16 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener tugboat_control_generate_messages_cpp)
 
 add_executable(CV src/CV.cpp)
-target_link_libraries(CV ${catkin_LIBRARIES})
+target_link_libraries(CV ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(CV tugboat_control_generate_messages_cpp)
 
-add_executable(TugController src/TugController.cpp)
+add_executable(TugController src/TugController.cpp /usr/local/include/PID_cpp/pid.cpp)
 target_link_libraries(TugController ${catkin_LIBRARIES})
 add_dependencies(TugController tugboat_control_generate_messages_cpp)
+
+add_executable(TugManager src/TugManager.cpp)
+target_link_libraries(TugManager ${catkin_LIBRARIES})
+add_dependencies(TugManager tugboat_control_generate_messages_cpp)
 
 #############
 ## Install ##

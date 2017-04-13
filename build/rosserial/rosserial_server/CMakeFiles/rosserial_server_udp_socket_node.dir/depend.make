@@ -15,8 +15,6 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/u
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /home/sondre/catkin_ws/src/rosserial/rosserial_server/include/rosserial_server/udp_socket_session.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /home/sondre/catkin_ws/src/rosserial/rosserial_server/include/rosserial_server/udp_stream.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /home/sondre/catkin_ws/src/rosserial/rosserial_server/src/udp_socket_node.cpp
-rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/XmlRpcDecl.h
-rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/XmlRpcValue.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -76,4 +74,6 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/u
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Time.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/topic_tools/macros.h
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/topic_tools/shape_shifter.h
+rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

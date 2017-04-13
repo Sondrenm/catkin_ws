@@ -7,13 +7,13 @@ import struct
 
 
 class PushingForce(genpy.Message):
-  _md5sum = "f1e8c141d7c72b50fc72611355ca6d95"
+  _md5sum = "a7005a38011551613bbcdafc2f85d46e"
   _type = "tugboat_control/PushingForce"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# From Arduino
 uint8 ID
-float32 Newton"""
-  __slots__ = ['ID','Newton']
+float32 force #in Newton"""
+  __slots__ = ['ID','force']
   _slot_types = ['uint8','float32']
 
   def __init__(self, *args, **kwds):
@@ -24,7 +24,7 @@ float32 Newton"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       ID,Newton
+       ID,force
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -35,11 +35,11 @@ float32 Newton"""
       #message fields cannot be None, assign default values for those that are
       if self.ID is None:
         self.ID = 0
-      if self.Newton is None:
-        self.Newton = 0.
+      if self.force is None:
+        self.force = 0.
     else:
       self.ID = 0
-      self.Newton = 0.
+      self.force = 0.
 
   def _get_types(self):
     """
@@ -54,7 +54,7 @@ float32 Newton"""
     """
     try:
       _x = self
-      buff.write(_get_struct_Bf().pack(_x.ID, _x.Newton))
+      buff.write(_get_struct_Bf().pack(_x.ID, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -68,7 +68,7 @@ float32 Newton"""
       _x = self
       start = end
       end += 5
-      (_x.ID, _x.Newton,) = _get_struct_Bf().unpack(str[start:end])
+      (_x.ID, _x.force,) = _get_struct_Bf().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -82,7 +82,7 @@ float32 Newton"""
     """
     try:
       _x = self
-      buff.write(_get_struct_Bf().pack(_x.ID, _x.Newton))
+      buff.write(_get_struct_Bf().pack(_x.ID, _x.force))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -97,7 +97,7 @@ float32 Newton"""
       _x = self
       start = end
       end += 5
-      (_x.ID, _x.Newton,) = _get_struct_Bf().unpack(str[start:end])
+      (_x.ID, _x.force,) = _get_struct_Bf().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
