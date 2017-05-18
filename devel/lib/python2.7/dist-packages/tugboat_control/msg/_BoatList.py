@@ -8,11 +8,10 @@ import struct
 import tugboat_control.msg
 
 class BoatList(genpy.Message):
-  _md5sum = "1df20aa31d5e143e5b643777392ea400"
+  _md5sum = "fb1531b66e8422b2c672c2aeeec4a39f"
   _type = "tugboat_control/BoatList"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """float64 timestamp
-tugboat_control/BoatStatus[] boat
+  _full_text = """tugboat_control/BoatStatus[50] boat
 ================================================================================
 MSG: tugboat_control/BoatStatus
 uint8 ID # ID == 0 indicates ship
@@ -20,8 +19,8 @@ float64 x #x position in meters
 float64 y #y position in meters
 float64 o #orientation in +-pi radians from "east"
 float32 force # Newton"""
-  __slots__ = ['timestamp','boat']
-  _slot_types = ['float64','tugboat_control/BoatStatus[]']
+  __slots__ = ['boat']
+  _slot_types = ['tugboat_control/BoatStatus[50]']
 
   def __init__(self, *args, **kwds):
     """
@@ -31,7 +30,7 @@ float32 force # Newton"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       timestamp,boat
+       boat
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -40,13 +39,10 @@ float32 force # Newton"""
     if args or kwds:
       super(BoatList, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.timestamp is None:
-        self.timestamp = 0.
       if self.boat is None:
-        self.boat = []
+        self.boat = [tugboat_control.msg.BoatStatus() for _ in range(50)]
     else:
-      self.timestamp = 0.
-      self.boat = []
+      self.boat = [tugboat_control.msg.BoatStatus() for _ in range(50)]
 
   def _get_types(self):
     """
@@ -60,9 +56,6 @@ float32 force # Newton"""
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_d().pack(self.timestamp))
-      length = len(self.boat)
-      buff.write(_struct_I.pack(length))
       for val1 in self.boat:
         _x = val1
         buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.o, _x.force))
@@ -78,14 +71,8 @@ float32 force # Newton"""
       if self.boat is None:
         self.boat = None
       end = 0
-      start = end
-      end += 8
-      (self.timestamp,) = _get_struct_d().unpack(str[start:end])
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
       self.boat = []
-      for i in range(0, length):
+      for i in range(0, 50):
         val1 = tugboat_control.msg.BoatStatus()
         _x = val1
         start = end
@@ -104,9 +91,6 @@ float32 force # Newton"""
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_d().pack(self.timestamp))
-      length = len(self.boat)
-      buff.write(_struct_I.pack(length))
       for val1 in self.boat:
         _x = val1
         buff.write(_get_struct_B3df().pack(_x.ID, _x.x, _x.y, _x.o, _x.force))
@@ -123,14 +107,8 @@ float32 force # Newton"""
       if self.boat is None:
         self.boat = None
       end = 0
-      start = end
-      end += 8
-      (self.timestamp,) = _get_struct_d().unpack(str[start:end])
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
       self.boat = []
-      for i in range(0, length):
+      for i in range(0, 50):
         val1 = tugboat_control.msg.BoatStatus()
         _x = val1
         start = end
@@ -151,9 +129,3 @@ def _get_struct_B3df():
     if _struct_B3df is None:
         _struct_B3df = struct.Struct("<B3df")
     return _struct_B3df
-_struct_d = None
-def _get_struct_d():
-    global _struct_d
-    if _struct_d is None:
-        _struct_d = struct.Struct("<d")
-    return _struct_d

@@ -3,6 +3,6 @@
           ID
           THRUST-VAL
           THRUST
-          CWTURN-VAL
-          CWTURN
+          CCWTURN-VAL
+          CCWTURN
 ))

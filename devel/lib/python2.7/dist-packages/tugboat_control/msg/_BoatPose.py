@@ -5,23 +5,17 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
-import geometry_msgs.msg
 
 class BoatPose(genpy.Message):
-  _md5sum = "fac719579a6887c70b1bfc580630888c"
+  _md5sum = "e95f3e67135784b4229f3c4a980afa6c"
   _type = "tugboat_control/BoatPose"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """float64 timestamp
-geometry_msgs/Pose2D[11] Pose
-================================================================================
-MSG: geometry_msgs/Pose2D
-# This expresses a position and orientation on a 2D manifold.
-
-float64 x
-float64 y
-float64 theta"""
-  __slots__ = ['timestamp','Pose']
-  _slot_types = ['float64','geometry_msgs/Pose2D[11]']
+  _full_text = """uint8 ID # ID
+float64 x #x position in meters
+float64 y #y position in meters
+float64 o #orientation in +-pi radians from x-axis"""
+  __slots__ = ['ID','x','y','o']
+  _slot_types = ['uint8','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -31,7 +25,7 @@ float64 theta"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       timestamp,Pose
+       ID,x,y,o
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -40,13 +34,19 @@ float64 theta"""
     if args or kwds:
       super(BoatPose, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.timestamp is None:
-        self.timestamp = 0.
-      if self.Pose is None:
-        self.Pose = [geometry_msgs.msg.Pose2D()] * 11
+      if self.ID is None:
+        self.ID = 0
+      if self.x is None:
+        self.x = 0.
+      if self.y is None:
+        self.y = 0.
+      if self.o is None:
+        self.o = 0.
     else:
-      self.timestamp = 0.
-      self.Pose = [geometry_msgs.msg.Pose2D()] * 11
+      self.ID = 0
+      self.x = 0.
+      self.y = 0.
+      self.o = 0.
 
   def _get_types(self):
     """
@@ -60,10 +60,8 @@ float64 theta"""
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_d().pack(self.timestamp))
-      for val1 in self.Pose:
-        _x = val1
-        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.theta))
+      _x = self
+      buff.write(_get_struct_B3d().pack(_x.ID, _x.x, _x.y, _x.o))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -73,20 +71,11 @@ float64 theta"""
     :param str: byte array of serialized message, ``str``
     """
     try:
-      if self.Pose is None:
-        self.Pose = None
       end = 0
+      _x = self
       start = end
-      end += 8
-      (self.timestamp,) = _get_struct_d().unpack(str[start:end])
-      self.Pose = []
-      for i in range(0, 11):
-        val1 = geometry_msgs.msg.Pose2D()
-        _x = val1
-        start = end
-        end += 24
-        (_x.x, _x.y, _x.theta,) = _get_struct_3d().unpack(str[start:end])
-        self.Pose.append(val1)
+      end += 25
+      (_x.ID, _x.x, _x.y, _x.o,) = _get_struct_B3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -99,10 +88,8 @@ float64 theta"""
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_d().pack(self.timestamp))
-      for val1 in self.Pose:
-        _x = val1
-        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.theta))
+      _x = self
+      buff.write(_get_struct_B3d().pack(_x.ID, _x.x, _x.y, _x.o))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -113,20 +100,11 @@ float64 theta"""
     :param numpy: numpy python module
     """
     try:
-      if self.Pose is None:
-        self.Pose = None
       end = 0
+      _x = self
       start = end
-      end += 8
-      (self.timestamp,) = _get_struct_d().unpack(str[start:end])
-      self.Pose = []
-      for i in range(0, 11):
-        val1 = geometry_msgs.msg.Pose2D()
-        _x = val1
-        start = end
-        end += 24
-        (_x.x, _x.y, _x.theta,) = _get_struct_3d().unpack(str[start:end])
-        self.Pose.append(val1)
+      end += 25
+      (_x.ID, _x.x, _x.y, _x.o,) = _get_struct_B3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -135,15 +113,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_d = None
-def _get_struct_d():
-    global _struct_d
-    if _struct_d is None:
-        _struct_d = struct.Struct("<d")
-    return _struct_d
-_struct_3d = None
-def _get_struct_3d():
-    global _struct_3d
-    if _struct_3d is None:
-        _struct_3d = struct.Struct("<3d")
-    return _struct_3d
+_struct_B3d = None
+def _get_struct_B3d():
+    global _struct_B3d
+    if _struct_B3d is None:
+        _struct_B3d = struct.Struct("<B3d")
+    return _struct_B3d

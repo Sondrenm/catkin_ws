@@ -63,8 +63,7 @@
 (setf (get tugboat_control::PushingForce :md5sum-) "a7005a38011551613bbcdafc2f85d46e")
 (setf (get tugboat_control::PushingForce :datatype-) "tugboat_control/PushingForce")
 (setf (get tugboat_control::PushingForce :definition-)
-      "# From Arduino
-uint8 ID
+      "uint8 ID # ID == 0 indicates ship
 float32 force #in Newton
 ")
 

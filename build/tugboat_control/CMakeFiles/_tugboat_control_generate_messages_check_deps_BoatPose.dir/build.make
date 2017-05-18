@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/sondre/catkin_ws/build
 include tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/progress.make
 
 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose:
-	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py tugboat_control /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg geometry_msgs/Pose2D
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py tugboat_control /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg 
 
 _tugboat_control_generate_messages_check_deps_BoatPose: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose
 _tugboat_control_generate_messages_check_deps_BoatPose: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build.make

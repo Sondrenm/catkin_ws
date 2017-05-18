@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/WaypointRequest.msg"
-services_str = ""
+messages_str = "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+services_str = "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv;/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
 pkg_name = "tugboat_control"
 dependencies_str = "std_msgs;geometry_msgs;tugboat_control"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

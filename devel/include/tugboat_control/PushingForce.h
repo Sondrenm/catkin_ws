@@ -142,8 +142,7 @@ struct Definition< ::tugboat_control::PushingForce_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "# From Arduino\n\
-uint8 ID\n\
+    return "uint8 ID # ID == 0 indicates ship\n\
 float32 force #in Newton\n\
 ";
   }
@@ -167,7 +166,7 @@ namespace serialization
       stream.next(m.force);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct PushingForce_
 
 } // namespace serialization

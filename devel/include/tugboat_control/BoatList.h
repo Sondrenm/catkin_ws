@@ -25,21 +25,17 @@ struct BoatList_
   typedef BoatList_<ContainerAllocator> Type;
 
   BoatList_()
-    : timestamp(0.0)
-    , boat()  {
+    : boat()  {
     }
   BoatList_(const ContainerAllocator& _alloc)
-    : timestamp(0.0)
-    , boat(_alloc)  {
+    : boat()  {
   (void)_alloc;
-    }
+      boat.assign( ::tugboat_control::BoatStatus_<ContainerAllocator> (_alloc));
+  }
 
 
 
-   typedef double _timestamp_type;
-  _timestamp_type timestamp;
-
-   typedef std::vector< ::tugboat_control::BoatStatus_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::tugboat_control::BoatStatus_<ContainerAllocator> >::other >  _boat_type;
+   typedef boost::array< ::tugboat_control::BoatStatus_<ContainerAllocator> , 50>  _boat_type;
   _boat_type boat;
 
 
@@ -75,7 +71,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
+// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
 // {'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'tugboat_control': ['/home/sondre/catkin_ws/src/tugboat_control/msg', '/home/sondre/catkin_ws/src/tugboat_control/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
@@ -85,12 +81,12 @@ namespace message_traits
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::tugboat_control::BoatList_<ContainerAllocator> >
-  : FalseType
+  : TrueType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::tugboat_control::BoatList_<ContainerAllocator> const>
-  : FalseType
+  : TrueType
   { };
 
 template <class ContainerAllocator>
@@ -119,12 +115,12 @@ struct MD5Sum< ::tugboat_control::BoatList_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "1df20aa31d5e143e5b643777392ea400";
+    return "fb1531b66e8422b2c672c2aeeec4a39f";
   }
 
   static const char* value(const ::tugboat_control::BoatList_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x1df20aa31d5e143eULL;
-  static const uint64_t static_value2 = 0x5b643777392ea400ULL;
+  static const uint64_t static_value1 = 0xfb1531b66e8422b2ULL;
+  static const uint64_t static_value2 = 0xc672c2aeeec4a39fULL;
 };
 
 template<class ContainerAllocator>
@@ -143,8 +139,7 @@ struct Definition< ::tugboat_control::BoatList_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float64 timestamp\n\
-tugboat_control/BoatStatus[] boat\n\
+    return "tugboat_control/BoatStatus[50] boat\n\
 ================================================================================\n\
 MSG: tugboat_control/BoatStatus\n\
 uint8 ID # ID == 0 indicates ship\n\
@@ -170,11 +165,10 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.timestamp);
       stream.next(m.boat);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct BoatList_
 
 } // namespace serialization
@@ -190,8 +184,6 @@ struct Printer< ::tugboat_control::BoatList_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::tugboat_control::BoatList_<ContainerAllocator>& v)
   {
-    s << indent << "timestamp: ";
-    Printer<double>::stream(s, indent + "  ", v.timestamp);
     s << indent << "boat[]" << std::endl;
     for (size_t i = 0; i < v.boat.size(); ++i)
     {

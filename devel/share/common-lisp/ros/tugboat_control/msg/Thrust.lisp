@@ -17,9 +17,9 @@
     :initarg :thrust
     :type cl:fixnum
     :initform 0)
-   (cwturn
-    :reader cwturn
-    :initarg :cwturn
+   (ccwturn
+    :reader ccwturn
+    :initarg :ccwturn
     :type cl:fixnum
     :initform 0))
 )
@@ -42,17 +42,17 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:thrust-val is deprecated.  Use tugboat_control-msg:thrust instead.")
   (thrust m))
 
-(cl:ensure-generic-function 'cwturn-val :lambda-list '(m))
-(cl:defmethod cwturn-val ((m <Thrust>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:cwturn-val is deprecated.  Use tugboat_control-msg:cwturn instead.")
-  (cwturn m))
+(cl:ensure-generic-function 'ccwturn-val :lambda-list '(m))
+(cl:defmethod ccwturn-val ((m <Thrust>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:ccwturn-val is deprecated.  Use tugboat_control-msg:ccwturn instead.")
+  (ccwturn m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <Thrust>) ostream)
   "Serializes a message object of type '<Thrust>"
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) ostream)
   (cl:let* ((signed (cl:slot-value msg 'thrust)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     )
-  (cl:let* ((signed (cl:slot-value msg 'cwturn)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'ccwturn)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     )
 )
@@ -64,7 +64,7 @@
       (cl:setf (cl:slot-value msg 'thrust) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'cwturn) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+      (cl:setf (cl:slot-value msg 'ccwturn) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Thrust>)))
@@ -75,16 +75,16 @@
   "tugboat_control/Thrust")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Thrust>)))
   "Returns md5sum for a message object of type '<Thrust>"
-  "eb36a969d5d22c5ec8c64a8469c7e207")
+  "06f7728b8ee5a6c967559af514f9b25c")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Thrust)))
   "Returns md5sum for a message object of type 'Thrust"
-  "eb36a969d5d22c5ec8c64a8469c7e207")
+  "06f7728b8ee5a6c967559af514f9b25c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Thrust>)))
   "Returns full string definition for message of type '<Thrust>"
-  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % +- 100~%int8 cwturn # In % +- 100~%~%"))
+  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % +- 100~%int8 ccwturn # In % +- 100~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Thrust)))
   "Returns full string definition for message of type 'Thrust"
-  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % +- 100~%int8 cwturn # In % +- 100~%~%"))
+  (cl:format cl:nil "# To Arduino~%uint8 ID~%int8 thrust # In % +- 100~%int8 ccwturn # In % +- 100~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Thrust>))
   (cl:+ 0
      1
@@ -96,5 +96,5 @@
   (cl:list 'Thrust
     (cl:cons ':ID (ID msg))
     (cl:cons ':thrust (thrust msg))
-    (cl:cons ':cwturn (cwturn msg))
+    (cl:cons ':ccwturn (ccwturn msg))
 ))

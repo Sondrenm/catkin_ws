@@ -7,4 +7,6 @@
           Y
           V-VAL
           V
+          O-VAL
+          O
 ))

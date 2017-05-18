@@ -34,13 +34,18 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tugboat_control/msg" TYPE FILE FILES
-    "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatList.msg"
-    "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatStatus.msg"
+    "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
-    "/home/sondre/catkin_ws/src/tugboat_control/msg/WaypointRequest.msg"
+    )
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tugboat_control/srv" TYPE FILE FILES
+    "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
+    "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
     )
 endif()
 

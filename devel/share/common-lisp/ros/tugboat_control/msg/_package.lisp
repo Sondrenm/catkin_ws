@@ -1,14 +1,10 @@
 (cl:defpackage tugboat_control-msg
   (:use )
   (:export
-   "<BOATLIST>"
-   "BOATLIST"
-   "<BOATLIST>"
-   "BOATLIST"
-   "<BOATSTATUS>"
-   "BOATSTATUS"
-   "<BOATSTATUS>"
-   "BOATSTATUS"
+   "<BOATPOSE>"
+   "BOATPOSE"
+   "<BOATPOSE>"
+   "BOATPOSE"
    "<PUSHINGFORCE>"
    "PUSHINGFORCE"
    "<PUSHINGFORCE>"
@@ -25,9 +21,5 @@
    "WAYPOINT"
    "<WAYPOINT>"
    "WAYPOINT"
-   "<WAYPOINTREQUEST>"
-   "WAYPOINTREQUEST"
-   "<WAYPOINTREQUEST>"
-   "WAYPOINTREQUEST"
   ))
 

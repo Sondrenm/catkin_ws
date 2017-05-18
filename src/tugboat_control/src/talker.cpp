@@ -2,7 +2,8 @@
 #include "std_msgs/String.h"
 #include "tugboat_control/Thrust.h"
 #include "tugboat_control/TugSetpoints.h"
-#include "tugboat_control/BoatStatus.h"
+#include "tugboat_control/BoatPose.h"
+#include "tugboat_control/Waypoint.h"
 
 #include <iostream>
 #include <sstream>
@@ -49,12 +50,13 @@ int main(int argc, char **argv)
    * than we can send them, the number here specifies how many messages to
    * buffer up before throwing some away.
    */
-  //ros::Publisher cmd_pub = n.advertise<tugboat_control::Thrust>("thrust", 1000);
-  //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher cmd_pub = n.advertise<tugboat_control::Thrust>("thrust", 1000);
 	ros::Publisher ctrl_pub = n.advertise<tugboat_control::TugSetpoints>("control", 1000);
-	ros::Publisher status_pub = n.advertise<tugboat_control::BoatStatus>("status", 1000);
+  ros::Publisher pose_pub = n.advertise<tugboat_control::BoatPose>("pose", 10);
+  ros::Publisher wayp_pub = n.advertise<tugboat_control::Waypoint>("waypoint", 10);
 
-  ros::Rate loop_rate(10);
+  ros::Rate loop_rate(1);
 
   /**
    * A count of how many messages we have sent. This is used to create
@@ -63,11 +65,7 @@ int main(int argc, char **argv)
   int count = 0;
   while (ros::ok())
   {
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     
-
-    
+    /*
     std_msgs::String msg;
 
     std::stringstream ss;
@@ -75,36 +73,63 @@ int main(int argc, char **argv)
     msg.data = ss.str();
 
     ROS_INFO("%s", msg.data.c_str());
+    chatter_pub.publish(msg);
     */
+
+    /*
+    tugboat_control::Thrust cmd;
+    cmd.ID = 1;
+    cmd.thrust = 0;
+    cmd.ccwturn = 0;
+    cmd_pub.publish(cmd);
+    */
+
+
+    //x: -1.1, y: -0.35 
+    count++;
     
-    //tugboat_control::Thrust cmd;
-	//tugboat_control::TugSetpoints ctrl;
-	//tugboat_control::BoatStatus status;
-//
-//
-    //ctrl.ID = 1;
-    //ctrl.orientation=1;
-    //ctrl.pushingForce=50;
-//
-    //status.ID = 1;
-    //status.orientation=0;
-    //status.pushingForce=0;
-    ////std::cout << (int)cmd.ID << (int)cmd.thrust << (int)cmd.cwturn << "\n";
-//
-    ////chatter_pub.publish(msg);
-    //ctrl_pub.publish(ctrl);
-    //status_pub.publish(status);
-    //usleep(2000000);
-/*
-    ctrl.orientation=0;
+    tugboat_control::Waypoint wayp;
+    wayp.ID = 3;
+    wayp.x = -0.22;
+    wayp.y = -0.22;
+    wayp.v = 0.05;
+    wayp.o = 4;
+    wayp_pub.publish(wayp);
+    
+    wayp.ID = 4;
+    wayp_pub.publish(wayp);
+
+    /*
+    tugboat_control::Waypoint wayp1;
+    wayp1.ID = 1;
+    wayp1.x = 1;
+    wayp1.y = 1;
+    wayp1.v = 0.1;
+    wayp_pub.publish(wayp1);    
+    */
+    /*
+    tugboat_control::TugSetpoints ctrl;
+    ctrl.ID = 1;
+    ctrl.orientation=1;
     ctrl.pushingForce=50;
     ctrl_pub.publish(ctrl);
-    usleep(2000000);
-*/
-    ros::spinOnce();
+    */
 
+    /*
+	  tugboat_control::BoatPose pose;
+    pose.ID = 0;
+    pose.o = 0;
+    pose.x = 0;
+    pose.y = 0;
+    pose_pub.publish(pose);
+    */
+    //std::cout << (int)cmd.ID << (int)cmd.thrust << (int)cmd.ccwturn << "\n";
+//
+
+    //pose_pub.publish(pose);
+
+    ros::spinOnce();
     loop_rate.sleep();
-    ++count;
   }
 
 

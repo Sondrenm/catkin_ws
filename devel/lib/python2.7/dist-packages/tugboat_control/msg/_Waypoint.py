@@ -7,15 +7,16 @@ import struct
 
 
 class Waypoint(genpy.Message):
-  _md5sum = "599dfbedb76ef56ba69b3e5141431273"
+  _md5sum = "c592f2f44627833d28a713dd2e088458"
   _type = "tugboat_control/Waypoint"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """uint8 ID
-float64 x #x position in meters
-float64 y #y position in meters
-float64 v #Velocity in m/s"""
-  __slots__ = ['ID','x','y','v']
-  _slot_types = ['uint8','float64','float64','float64']
+float64 x #	x position in meters
+float64 y #	y position in meters
+float64 v #	Velocity in m/s
+float64 o #	Orientation in +- pi radians from x-axis, for ship. Set outside scope to ignore Orientation"""
+  __slots__ = ['ID','x','y','v','o']
+  _slot_types = ['uint8','float64','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -25,7 +26,7 @@ float64 v #Velocity in m/s"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       ID,x,y,v
+       ID,x,y,v,o
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -42,11 +43,14 @@ float64 v #Velocity in m/s"""
         self.y = 0.
       if self.v is None:
         self.v = 0.
+      if self.o is None:
+        self.o = 0.
     else:
       self.ID = 0
       self.x = 0.
       self.y = 0.
       self.v = 0.
+      self.o = 0.
 
   def _get_types(self):
     """
@@ -61,7 +65,7 @@ float64 v #Velocity in m/s"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B3d().pack(_x.ID, _x.x, _x.y, _x.v))
+      buff.write(_get_struct_B4d().pack(_x.ID, _x.x, _x.y, _x.v, _x.o))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -74,8 +78,8 @@ float64 v #Velocity in m/s"""
       end = 0
       _x = self
       start = end
-      end += 25
-      (_x.ID, _x.x, _x.y, _x.v,) = _get_struct_B3d().unpack(str[start:end])
+      end += 33
+      (_x.ID, _x.x, _x.y, _x.v, _x.o,) = _get_struct_B4d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -89,7 +93,7 @@ float64 v #Velocity in m/s"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B3d().pack(_x.ID, _x.x, _x.y, _x.v))
+      buff.write(_get_struct_B4d().pack(_x.ID, _x.x, _x.y, _x.v, _x.o))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -103,8 +107,8 @@ float64 v #Velocity in m/s"""
       end = 0
       _x = self
       start = end
-      end += 25
-      (_x.ID, _x.x, _x.y, _x.v,) = _get_struct_B3d().unpack(str[start:end])
+      end += 33
+      (_x.ID, _x.x, _x.y, _x.v, _x.o,) = _get_struct_B4d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -113,9 +117,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_B3d = None
-def _get_struct_B3d():
-    global _struct_B3d
-    if _struct_B3d is None:
-        _struct_B3d = struct.Struct("<B3d")
-    return _struct_B3d
+_struct_B4d = None
+def _get_struct_B4d():
+    global _struct_B4d
+    if _struct_B4d is None:
+        _struct_B4d = struct.Struct("<B4d")
+    return _struct_B4d

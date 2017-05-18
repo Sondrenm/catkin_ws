@@ -22,6 +22,8 @@ f602af765eb5096e436c40a0b0679a5d /home/sondre/catkin_ws/devel/include/tugboat_co
 0ad77f88f3b878d447af75c28415362c /home/sondre/catkin_ws/devel/include/tugboat_control/TugWaypoint.h
 e2560e29b4f4d5085bec843022b70dea /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h
 484b1cd36d9e4062a068f1674cb82313 /home/sondre/catkin_ws/devel/include/tugboat_control/WaypointRequest.h
+47b6a563b3d00ced9c60d881a323cde2 /home/sondre/catkin_ws/devel/include/tugboat_control/addOneTug.h
+c578f10ad5686d8c4ae8f8834261cc8e /home/sondre/catkin_ws/devel/include/tugboat_control/removeOneTug.h
 ae4115f4c86143cb5af59431ebf0da3a /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_arduino/msg/_Adc.py
 e84d6b56816445db6f1ce92e0613ae39 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_arduino/msg/__init__.py
 460929871867c6743ed521c6dff3326f /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_arduino/srv/_Test.py
@@ -52,6 +54,9 @@ e491691e42539311042d63ad4bcbef64 /home/sondre/catkin_ws/devel/lib/python2.7/dist
 23eedb5df3f687994d1d2c3db924c3e9 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py
 6fb042296b32f88bd5898ce0bd8d284f /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_WaypointRequest.py
 63e9f04f659e95ab207a678f2addc2f5 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py
+3bcbf3f6d42ce6648be62ecd54a40c7a /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py
+723215437eb08fe6b9c65e36060fd8a6 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py
+89a290bee4791d7fb701c504abf70bda /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py
 36894785464d39661913f5ec233d320d /home/sondre/catkin_ws/devel/share/common-lisp/ros/rosserial_arduino/msg/Adc.lisp
 84e0174a6f2cc0c767a9999c9a5189cb /home/sondre/catkin_ws/devel/share/common-lisp/ros/rosserial_arduino/srv/Test.lisp
 6f20b109fef513d61879224e76a943f1 /home/sondre/catkin_ws/devel/share/common-lisp/ros/rosserial_mbed/msg/Adc.lisp
@@ -75,6 +80,8 @@ c75d8f9beaa7bd0df51a9491bafb5f5e /home/sondre/catkin_ws/devel/share/common-lisp/
 e739b64b0fcc1a2535d05768ed613a10 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/TugWaypoint.lisp
 81bbb0827880fa2702126acd5011a0a5 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoint.lisp
 a306cf2df68c6e0e3959bf175e4df469 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp
+f1d551dfcb062e77a3993f07cc2a0bf5 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/srv/addOneTug.lisp
+249fc589b0d6bbc785fba02e9dca7a85 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/srv/removeOneTug.lisp
 9da41bd5fc4f95f452fb58911a7ecc1d /home/sondre/catkin_ws/devel/share/gennodejs/ros/rosserial_arduino/msg/Adc.js
 a71565c2137b2235e9161028983de8ba /home/sondre/catkin_ws/devel/share/gennodejs/ros/rosserial_arduino/srv/Test.js
 30827c8b0c61a374fa3b2c52fbbba00b /home/sondre/catkin_ws/devel/share/gennodejs/ros/rosserial_mbed/msg/Adc.js
@@ -98,6 +105,8 @@ c9eebf0580c87163be0f5de21cdaf4d9 /home/sondre/catkin_ws/devel/share/gennodejs/ro
 f9af51970df706e45eaa4d71d2f0d4b9 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/TugWaypoint.js
 96e2737543194a1193351ca1802a5da6 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js
 9a5e7aaa4643556ce55e09d517c42ffe /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js
+51e887d45377799c05b73184c2d6b2e5 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/addOneTug.js
+3bc37a7115ced45e3eed90e495e66313 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/removeOneTug.js
 8083fe29c7d2fed4dbc8b7e545062213 /home/sondre/catkin_ws/devel/share/roseus/ros/rosserial_arduino/manifest.l
 f61c61e4689f728f1c4bd9bb4a33997f /home/sondre/catkin_ws/devel/share/roseus/ros/rosserial_arduino/msg/Adc.l
 6b5cb17b2b375d48ec91db35dab16b02 /home/sondre/catkin_ws/devel/share/roseus/ros/rosserial_arduino/srv/Test.l
@@ -125,6 +134,8 @@ b9df7e4688a357449923f7f5e6699aeb /home/sondre/catkin_ws/devel/share/roseus/ros/t
 c27c9cc268b8afcbc1e20484b55a988e /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/TugWaypoint.l
 e71a75d7867aeeef1f95a46aa6bef471 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoint.l
 5581cd9ba5130497da1458a7fba3e146 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/WaypointRequest.l
+b933506a962a2a07aefd42d58459aa3a /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l
+a60d9aed3fd9d77abe6d2c6c3afde87b /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/removeOneTug.l
 3ba12c6d48d161941d158a78c983eaac CMakeFiles/clean_test_results
 acd63966662bc8557aa3d62988bb02b7 rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Adc
 496221452c5ea22198e6792b50b74e1f rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test
@@ -164,13 +175,13 @@ a8b4846168f2f6e34cc4edc8d0d4d678 rosserial/rosserial_test/CMakeFiles/rosserial_t
 964c0770ea56646480f1bb81e587981e rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_serial.test
 057fd5d8ab5d240c80e0265557c25822 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_socket.test
 4adb4895ac151d19ade3044d41807316 rosserial/rosserial_test/include/rosserial
-1048d928d4ae41419d5728ff3ebc5164 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList
-03f13de4c41108373c3deddeb326fc49 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus
+1bd14b9a0a125d11d00e94d1c8ef4961 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose
 1f4393a2fb616b66b9e43837b6b8704d tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce
 1d17cf5dcb789f7547d7bb5dc91a1653 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust
 4dd129683fbb0471a28e0cc4899ca6a9 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints
 047d6969fe2213f1822673867acebb78 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint
-8249b7ac6ec705d2c347f7f31f34f5cd tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest
+17c0c67faed6daa97762d79bf0842f65 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug
+975f80a839a2a9ac32b4873df55b21f1 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug
 e77712cc39800a7f0c446667c0dd1291 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp
 e77712cc39800a7f0c446667c0dd1291 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus
 e77712cc39800a7f0c446667c0dd1291 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp

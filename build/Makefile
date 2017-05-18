@@ -1427,6 +1427,32 @@ run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast:
 .PHONY : run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast
 
 #=============================================================================
+# Target rules for targets named TugSim
+
+# Build rule for target.
+TugSim: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TugSim
+.PHONY : TugSim
+
+# fast build rule for target.
+TugSim/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/TugSim.dir/build.make tugboat_control/CMakeFiles/TugSim.dir/build
+.PHONY : TugSim/fast
+
+#=============================================================================
+# Target rules for targets named TugMaster
+
+# Build rule for target.
+TugMaster: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TugMaster
+.PHONY : TugMaster
+
+# fast build rule for target.
+TugMaster/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/TugMaster.dir/build.make tugboat_control/CMakeFiles/TugMaster.dir/build
+.PHONY : TugMaster/fast
+
+#=============================================================================
 # Target rules for targets named TugController
 
 # Build rule for target.
@@ -1466,19 +1492,6 @@ listener/fast:
 .PHONY : listener/fast
 
 #=============================================================================
-# Target rules for targets named _tugboat_control_generate_messages_check_deps_BoatStatus
-
-# Build rule for target.
-_tugboat_control_generate_messages_check_deps_BoatStatus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_BoatStatus
-.PHONY : _tugboat_control_generate_messages_check_deps_BoatStatus
-
-# fast build rule for target.
-_tugboat_control_generate_messages_check_deps_BoatStatus/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build
-.PHONY : _tugboat_control_generate_messages_check_deps_BoatStatus/fast
-
-#=============================================================================
 # Target rules for targets named _tugboat_control_generate_messages_check_deps_TugSetpoints
 
 # Build rule for target.
@@ -1505,17 +1518,17 @@ tugboat_control_gencpp/fast:
 .PHONY : tugboat_control_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named _tugboat_control_generate_messages_check_deps_BoatList
+# Target rules for targets named _tugboat_control_generate_messages_check_deps_removeOneTug
 
 # Build rule for target.
-_tugboat_control_generate_messages_check_deps_BoatList: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_BoatList
-.PHONY : _tugboat_control_generate_messages_check_deps_BoatList
+_tugboat_control_generate_messages_check_deps_removeOneTug: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_removeOneTug
+.PHONY : _tugboat_control_generate_messages_check_deps_removeOneTug
 
 # fast build rule for target.
-_tugboat_control_generate_messages_check_deps_BoatList/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build
-.PHONY : _tugboat_control_generate_messages_check_deps_BoatList/fast
+_tugboat_control_generate_messages_check_deps_removeOneTug/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_removeOneTug/fast
 
 #=============================================================================
 # Target rules for targets named tugboat_control_geneus
@@ -1529,84 +1542,6 @@ tugboat_control_geneus: cmake_check_build_system
 tugboat_control_geneus/fast:
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_geneus.dir/build.make tugboat_control/CMakeFiles/tugboat_control_geneus.dir/build
 .PHONY : tugboat_control_geneus/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named _tugboat_control_generate_messages_check_deps_PushingForce
-
-# Build rule for target.
-_tugboat_control_generate_messages_check_deps_PushingForce: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_PushingForce
-.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce
-
-# fast build rule for target.
-_tugboat_control_generate_messages_check_deps_PushingForce/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build
-.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce/fast
-
-#=============================================================================
-# Target rules for targets named _tugboat_control_generate_messages_check_deps_Thrust
-
-# Build rule for target.
-_tugboat_control_generate_messages_check_deps_Thrust: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_Thrust
-.PHONY : _tugboat_control_generate_messages_check_deps_Thrust
-
-# fast build rule for target.
-_tugboat_control_generate_messages_check_deps_Thrust/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build
-.PHONY : _tugboat_control_generate_messages_check_deps_Thrust/fast
-
-#=============================================================================
-# Target rules for targets named talker
-
-# Build rule for target.
-talker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 talker
-.PHONY : talker
-
-# fast build rule for target.
-talker/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/build
-.PHONY : talker/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_nodejs
-
-# Build rule for target.
-geometry_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named tugboat_control_generate_messages
@@ -1661,17 +1596,108 @@ tugboat_control_generate_messages_eus/fast:
 .PHONY : tugboat_control_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named _tugboat_control_generate_messages_check_deps_WaypointRequest
+# Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
-_tugboat_control_generate_messages_check_deps_WaypointRequest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_WaypointRequest
-.PHONY : _tugboat_control_generate_messages_check_deps_WaypointRequest
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
 
 # fast build rule for target.
-_tugboat_control_generate_messages_check_deps_WaypointRequest/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build
-.PHONY : _tugboat_control_generate_messages_check_deps_WaypointRequest/fast
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named ShipControl_Generic
+
+# Build rule for target.
+ShipControl_Generic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ShipControl_Generic
+.PHONY : ShipControl_Generic
+
+# fast build rule for target.
+ShipControl_Generic/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/build
+.PHONY : ShipControl_Generic/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named talker
+
+# Build rule for target.
+talker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 talker
+.PHONY : talker
+
+# fast build rule for target.
+talker/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geometry_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _tugboat_control_generate_messages_check_deps_PushingForce
+
+# Build rule for target.
+_tugboat_control_generate_messages_check_deps_PushingForce: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_PushingForce
+.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_PushingForce/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce/fast
+
+#=============================================================================
+# Target rules for targets named _tugboat_control_generate_messages_check_deps_Thrust
+
+# Build rule for target.
+_tugboat_control_generate_messages_check_deps_Thrust: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_Thrust
+.PHONY : _tugboat_control_generate_messages_check_deps_Thrust
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_Thrust/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_Thrust/fast
+
+#=============================================================================
+# Target rules for targets named _tugboat_control_generate_messages_check_deps_addOneTug
+
+# Build rule for target.
+_tugboat_control_generate_messages_check_deps_addOneTug: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_addOneTug
+.PHONY : _tugboat_control_generate_messages_check_deps_addOneTug
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_addOneTug/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_addOneTug/fast
 
 #=============================================================================
 # Target rules for targets named tugboat_control_generate_messages_cpp
@@ -1698,6 +1724,19 @@ tugboat_control_genpy: cmake_check_build_system
 tugboat_control_genpy/fast:
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build.make tugboat_control/CMakeFiles/tugboat_control_genpy.dir/build
 .PHONY : tugboat_control_genpy/fast
+
+#=============================================================================
+# Target rules for targets named _tugboat_control_generate_messages_check_deps_BoatPose
+
+# Build rule for target.
+_tugboat_control_generate_messages_check_deps_BoatPose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _tugboat_control_generate_messages_check_deps_BoatPose
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatPose
+
+# fast build rule for target.
+_tugboat_control_generate_messages_check_deps_BoatPose/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatPose/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
@@ -1750,19 +1789,6 @@ tugboat_control_generate_messages_nodejs: cmake_check_build_system
 tugboat_control_generate_messages_nodejs/fast:
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build
 .PHONY : tugboat_control_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named TugManager
-
-# Build rule for target.
-TugManager: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TugManager
-.PHONY : TugManager
-
-# fast build rule for target.
-TugManager/fast:
-	$(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/build
-.PHONY : TugManager/fast
 
 #=============================================================================
 # Target rules for targets named tugboat_control_gennodejs
@@ -1900,32 +1926,34 @@ help:
 	@echo "... clean_test_results_rosserial_test"
 	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_python_socket.test"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
+	@echo "... TugSim"
+	@echo "... TugMaster"
 	@echo "... TugController"
 	@echo "... CV"
 	@echo "... listener"
-	@echo "... _tugboat_control_generate_messages_check_deps_BoatStatus"
 	@echo "... _tugboat_control_generate_messages_check_deps_TugSetpoints"
 	@echo "... tugboat_control_gencpp"
-	@echo "... _tugboat_control_generate_messages_check_deps_BoatList"
+	@echo "... _tugboat_control_generate_messages_check_deps_removeOneTug"
 	@echo "... tugboat_control_geneus"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... _tugboat_control_generate_messages_check_deps_PushingForce"
-	@echo "... _tugboat_control_generate_messages_check_deps_Thrust"
-	@echo "... talker"
-	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... tugboat_control_generate_messages"
 	@echo "... _tugboat_control_generate_messages_check_deps_Waypoint"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... tugboat_control_generate_messages_eus"
-	@echo "... _tugboat_control_generate_messages_check_deps_WaypointRequest"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... ShipControl_Generic"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... talker"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... _tugboat_control_generate_messages_check_deps_PushingForce"
+	@echo "... _tugboat_control_generate_messages_check_deps_Thrust"
+	@echo "... _tugboat_control_generate_messages_check_deps_addOneTug"
 	@echo "... tugboat_control_generate_messages_cpp"
 	@echo "... tugboat_control_genpy"
+	@echo "... _tugboat_control_generate_messages_check_deps_BoatPose"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... tugboat_control_generate_messages_lisp"
 	@echo "... tugboat_control_genlisp"
 	@echo "... tugboat_control_generate_messages_nodejs"
-	@echo "... TugManager"
 	@echo "... tugboat_control_gennodejs"
 	@echo "... tugboat_control_generate_messages_py"
 .PHONY : help

@@ -27,13 +27,15 @@ struct Waypoint_
     : ID(0)
     , x(0.0)
     , y(0.0)
-    , v(0.0)  {
+    , v(0.0)
+    , o(0.0)  {
     }
   Waypoint_(const ContainerAllocator& _alloc)
     : ID(0)
     , x(0.0)
     , y(0.0)
-    , v(0.0)  {
+    , v(0.0)
+    , o(0.0)  {
   (void)_alloc;
     }
 
@@ -50,6 +52,9 @@ struct Waypoint_
 
    typedef double _v_type;
   _v_type v;
+
+   typedef double _o_type;
+  _o_type o;
 
 
 
@@ -128,12 +133,12 @@ struct MD5Sum< ::tugboat_control::Waypoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "599dfbedb76ef56ba69b3e5141431273";
+    return "c592f2f44627833d28a713dd2e088458";
   }
 
   static const char* value(const ::tugboat_control::Waypoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x599dfbedb76ef56bULL;
-  static const uint64_t static_value2 = 0xa69b3e5141431273ULL;
+  static const uint64_t static_value1 = 0xc592f2f44627833dULL;
+  static const uint64_t static_value2 = 0x28a713dd2e088458ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,9 +158,10 @@ struct Definition< ::tugboat_control::Waypoint_<ContainerAllocator> >
   static const char* value()
   {
     return "uint8 ID\n\
-float64 x #x position in meters\n\
-float64 y #y position in meters\n\
-float64 v #Velocity in m/s\n\
+float64 x #	x position in meters\n\
+float64 y #	y position in meters\n\
+float64 v #	Velocity in m/s\n\
+float64 o #	Orientation in +- pi radians from x-axis, for ship. Set outside scope to ignore Orientation\n\
 ";
   }
 
@@ -178,9 +184,10 @@ namespace serialization
       stream.next(m.x);
       stream.next(m.y);
       stream.next(m.v);
+      stream.next(m.o);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct Waypoint_
 
 } // namespace serialization
@@ -204,6 +211,8 @@ struct Printer< ::tugboat_control::Waypoint_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.y);
     s << indent << "v: ";
     Printer<double>::stream(s, indent + "  ", v.v);
+    s << indent << "o: ";
+    Printer<double>::stream(s, indent + "  ", v.o);
   }
 };
 

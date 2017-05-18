@@ -10,82 +10,89 @@
 
 (in-package "ROS")
 ;;//! \htmlinclude BoatPose.msg.html
-(if (not (find-package "GEOMETRY_MSGS"))
-  (ros::roseus-add-msgs "geometry_msgs"))
 
 
 (defclass tugboat_control::BoatPose
   :super ros::object
-  :slots (_timestamp _Pose ))
+  :slots (_ID _x _y _o ))
 
 (defmethod tugboat_control::BoatPose
   (:init
    (&key
-    ((:timestamp __timestamp) 0.0)
-    ((:Pose __Pose) (let (r) (dotimes (i 11) (push (instance geometry_msgs::Pose2D :init) r)) r))
+    ((:ID __ID) 0)
+    ((:x __x) 0.0)
+    ((:y __y) 0.0)
+    ((:o __o) 0.0)
     )
    (send-super :init)
-   (setq _timestamp (float __timestamp))
-   (setq _Pose __Pose)
+   (setq _ID (round __ID))
+   (setq _x (float __x))
+   (setq _y (float __y))
+   (setq _o (float __o))
    self)
-  (:timestamp
-   (&optional __timestamp)
-   (if __timestamp (setq _timestamp __timestamp)) _timestamp)
-  (:Pose
-   (&rest __Pose)
-   (if (keywordp (car __Pose))
-       (send* _Pose __Pose)
-     (progn
-       (if __Pose (setq _Pose (car __Pose)))
-       _Pose)))
+  (:ID
+   (&optional __ID)
+   (if __ID (setq _ID __ID)) _ID)
+  (:x
+   (&optional __x)
+   (if __x (setq _x __x)) _x)
+  (:y
+   (&optional __y)
+   (if __y (setq _y __y)) _y)
+  (:o
+   (&optional __o)
+   (if __o (setq _o __o)) _o)
   (:serialization-length
    ()
    (+
-    ;; float64 _timestamp
+    ;; uint8 _ID
+    1
+    ;; float64 _x
     8
-    ;; geometry_msgs/Pose2D[11] _Pose
-    (apply #'+ (send-all _Pose :serialization-length))
+    ;; float64 _y
+    8
+    ;; float64 _o
+    8
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; float64 _timestamp
-       (sys::poke _timestamp (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; geometry_msgs/Pose2D[11] _Pose
-     (dolist (elem _Pose)
-       (send elem :serialize s)
-       )
+     ;; uint8 _ID
+       (write-byte _ID s)
+     ;; float64 _x
+       (sys::poke _x (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _y
+       (sys::poke _y (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _o
+       (sys::poke _o (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; float64 _timestamp
-     (setq _timestamp (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; geometry_msgs/Pose2D[11] _Pose
-   (dotimes (i 11)
-     (send (elt _Pose i) :deserialize buf ptr-) (incf ptr- (send (elt _Pose i) :serialization-length))
-     )
+   ;; uint8 _ID
+     (setq _ID (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; float64 _x
+     (setq _x (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _y
+     (setq _y (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _o
+     (setq _o (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get tugboat_control::BoatPose :md5sum-) "fac719579a6887c70b1bfc580630888c")
+(setf (get tugboat_control::BoatPose :md5sum-) "e95f3e67135784b4229f3c4a980afa6c")
 (setf (get tugboat_control::BoatPose :datatype-) "tugboat_control/BoatPose")
 (setf (get tugboat_control::BoatPose :definition-)
-      "float64 timestamp
-geometry_msgs/Pose2D[11] Pose
-================================================================================
-MSG: geometry_msgs/Pose2D
-# This expresses a position and orientation on a 2D manifold.
-
-float64 x
-float64 y
-float64 theta
+      "uint8 ID # ID
+float64 x #x position in meters
+float64 y #y position in meters
+float64 o #orientation in +-pi radians from x-axis
 ")
 
 
 
-(provide :tugboat_control/BoatPose "fac719579a6887c70b1bfc580630888c")
+(provide :tugboat_control/BoatPose "e95f3e67135784b4229f3c4a980afa6c")
 
 

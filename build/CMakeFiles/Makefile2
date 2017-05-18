@@ -248,12 +248,12 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=8,9 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=12 "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gtest.dir/rule
@@ -280,7 +280,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=13,14 "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -425,7 +425,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.di
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=21,22,23 "Built target rosserial_arduino_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=24,25,26 "Built target rosserial_arduino_generate_messages_py"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -490,7 +490,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodej
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=19,20 "Built target rosserial_arduino_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=22,23 "Built target rosserial_arduino_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -523,12 +523,12 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.d
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=15,16 "Built target rosserial_arduino_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=18,19,20 "Built target rosserial_arduino_generate_messages_eus"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_eus.dir/rule
@@ -592,7 +592,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/all: rosseri
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_gencpp.dir/rule
@@ -620,12 +620,12 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.d
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=13,14 "Built target rosserial_arduino_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=17 "Built target rosserial_arduino_generate_messages_cpp"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/rule
@@ -666,7 +666,7 @@ all: rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/rule
@@ -730,7 +730,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_geneus.dir/all: rosseri
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_geneus.dir/rule
@@ -758,12 +758,12 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all: rosserial/rosserial_arduino/CMakeFiles/_rosserial_arduino_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=17,18 "Built target rosserial_arduino_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=21 "Built target rosserial_arduino_generate_messages_lisp"
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/rule
@@ -795,7 +795,7 @@ rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/all: rosser
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_genlisp.dir/rule
@@ -885,7 +885,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/all:
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=32,33,34 "Built target rosserial_mbed_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=34,35,36 "Built target rosserial_mbed_generate_messages_py"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -922,7 +922,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/all: rosserial/
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_gennodejs.dir/rule
@@ -950,7 +950,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=24,25 "Built target rosserial_mbed_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=27,28 "Built target rosserial_mbed_generate_messages_cpp"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -983,7 +983,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/all
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=26,27 "Built target rosserial_mbed_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=29,30 "Built target rosserial_mbed_generate_messages_eus"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1093,7 +1093,7 @@ all: rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/al
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages.dir/rule
@@ -1121,12 +1121,12 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=30,31 "Built target rosserial_mbed_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=33 "Built target rosserial_mbed_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_nodejs.dir/rule
@@ -1186,7 +1186,7 @@ rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/al
 rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all: rosserial/rosserial_mbed/CMakeFiles/_rosserial_mbed_generate_messages_check_deps_Test.dir/all
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build.make rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=28,29 "Built target rosserial_mbed_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=31,32 "Built target rosserial_mbed_generate_messages_lisp"
 .PHONY : rosserial/rosserial_mbed/CMakeFiles/rosserial_mbed_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1424,7 +1424,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestServiceInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=35,36,37,38 "Built target rosserial_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=37,38,39,40 "Built target rosserial_msgs_generate_messages_cpp"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1493,7 +1493,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genpy.dir/all: rosserial/ross
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_genpy.dir/rule
@@ -1652,7 +1652,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/al
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestServiceInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=44,45,46,47 "Built target rosserial_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=46,47,48,49 "Built target rosserial_msgs_generate_messages_lisp"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1720,12 +1720,12 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestServiceInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=48,49,50,51,52 "Built target rosserial_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=50,51,52,53 "Built target rosserial_msgs_generate_messages_nodejs"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_nodejs.dir/rule
@@ -1757,7 +1757,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/all: rosserial/
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gennodejs.dir/rule
@@ -1788,12 +1788,12 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all:
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestServiceInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=53,54,55,56,57 "Built target rosserial_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=54,55,56,57,58,59 "Built target rosserial_msgs_generate_messages_py"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/rule
@@ -1824,7 +1824,7 @@ rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all: rosserial/rosserial_msgs/CMakeFiles/_rosserial_msgs_generate_messages_check_deps_RequestServiceInfo.dir/all
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=39,40,41,42,43 "Built target rosserial_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=41,42,43,44,45 "Built target rosserial_msgs_generate_messages_eus"
 .PHONY : rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2037,7 +2037,7 @@ rosserial/rosserial_client/CMakeFiles/float64_test.dir/all: gtest/CMakeFiles/gte
 rosserial/rosserial_client/CMakeFiles/float64_test.dir/all: gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/float64_test.dir/build.make rosserial/rosserial_client/CMakeFiles/float64_test.dir/depend
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/float64_test.dir/build.make rosserial/rosserial_client/CMakeFiles/float64_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=6,7 "Built target float64_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=10,11 "Built target float64_test"
 .PHONY : rosserial/rosserial_client/CMakeFiles/float64_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2070,7 +2070,7 @@ rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all: gtest/CMakeFiles/
 rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all: gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/depend
 	$(MAKE) -f rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build.make rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=66,67 "Built target subscriber_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=67,68 "Built target subscriber_test"
 .PHONY : rosserial/rosserial_client/CMakeFiles/subscriber_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2780,7 +2780,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all: 
 rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/depend
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=62,63 "Built target rosserial_server_udp_socket_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=63,64 "Built target rosserial_server_udp_socket_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/all
 
 # Include target in all.
@@ -3033,7 +3033,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all: ross
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/depend
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=58,59 "Built target rosserial_server_serial_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=60 "Built target rosserial_server_serial_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 
 # Include target in all.
@@ -3043,7 +3043,7 @@ all: rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 24
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/rule
@@ -3126,7 +3126,7 @@ rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all: ross
 rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/depend
 	$(MAKE) -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=60,61 "Built target rosserial_server_socket_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=61,62 "Built target rosserial_server_socket_node"
 .PHONY : rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/all
 
 # Include target in all.
@@ -3332,7 +3332,7 @@ rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all: rosser
 rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all: rosserial/rosserial_server/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/depend
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=65 "Built target rosserial_test_rosserial_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=66 "Built target rosserial_test_rosserial_lib"
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3498,12 +3498,12 @@ rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all: gt
 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all: rosserial/rosserial_test/CMakeFiles/rosserial_test_rosserial_lib.dir/all
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/depend
 	$(MAKE) -f rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build.make rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=64 "Built target rosserial_test_publish_subscribe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=65 "Built target rosserial_test_publish_subscribe"
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all
 
 # Build rule for subdir invocation for target.
 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 26
 	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : rosserial/rosserial_test/CMakeFiles/rosserial_test_publish_subscribe.dir/rule
@@ -3674,42 +3674,46 @@ rosserial/rosserial_windows/preinstall:
 # Directory level rules for directory tugboat_control
 
 # Convenience name for "all" pass in the directory.
+tugboat_control/all: tugboat_control/CMakeFiles/TugSim.dir/all
+tugboat_control/all: tugboat_control/CMakeFiles/TugMaster.dir/all
 tugboat_control/all: tugboat_control/CMakeFiles/TugController.dir/all
 tugboat_control/all: tugboat_control/CMakeFiles/CV.dir/all
 tugboat_control/all: tugboat_control/CMakeFiles/listener.dir/all
-tugboat_control/all: tugboat_control/CMakeFiles/talker.dir/all
 tugboat_control/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/all
-tugboat_control/all: tugboat_control/CMakeFiles/TugManager.dir/all
+tugboat_control/all: tugboat_control/CMakeFiles/ShipControl_Generic.dir/all
+tugboat_control/all: tugboat_control/CMakeFiles/talker.dir/all
 
 .PHONY : tugboat_control/all
 
 # Convenience name for "clean" pass in the directory.
+tugboat_control/clean: tugboat_control/CMakeFiles/TugSim.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/TugMaster.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/TugController.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/CV.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/listener.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_gencpp.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_geneus.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/talker.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/ShipControl_Generic.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/talker.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_genpy.dir/clean
+tugboat_control/clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/clean
-tugboat_control/clean: tugboat_control/CMakeFiles/TugManager.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/clean
 tugboat_control/clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/clean
 
@@ -3721,13 +3725,87 @@ tugboat_control/preinstall:
 .PHONY : tugboat_control/preinstall
 
 #=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/TugSim.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/TugSim.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
+	$(MAKE) -f tugboat_control/CMakeFiles/TugSim.dir/build.make tugboat_control/CMakeFiles/TugSim.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/TugSim.dir/build.make tugboat_control/CMakeFiles/TugSim.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=9 "Built target TugSim"
+.PHONY : tugboat_control/CMakeFiles/TugSim.dir/all
+
+# Include target in all.
+all: tugboat_control/CMakeFiles/TugSim.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/TugSim.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/TugSim.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/TugSim.dir/rule
+
+# Convenience name for target.
+TugSim: tugboat_control/CMakeFiles/TugSim.dir/rule
+
+.PHONY : TugSim
+
+# clean rule for target.
+tugboat_control/CMakeFiles/TugSim.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/TugSim.dir/build.make tugboat_control/CMakeFiles/TugSim.dir/clean
+.PHONY : tugboat_control/CMakeFiles/TugSim.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/TugSim.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/TugMaster.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/TugMaster.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
+	$(MAKE) -f tugboat_control/CMakeFiles/TugMaster.dir/build.make tugboat_control/CMakeFiles/TugMaster.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/TugMaster.dir/build.make tugboat_control/CMakeFiles/TugMaster.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=7,8 "Built target TugMaster"
+.PHONY : tugboat_control/CMakeFiles/TugMaster.dir/all
+
+# Include target in all.
+all: tugboat_control/CMakeFiles/TugMaster.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/TugMaster.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/TugMaster.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/TugMaster.dir/rule
+
+# Convenience name for target.
+TugMaster: tugboat_control/CMakeFiles/TugMaster.dir/rule
+
+.PHONY : TugMaster
+
+# clean rule for target.
+tugboat_control/CMakeFiles/TugMaster.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/TugMaster.dir/build.make tugboat_control/CMakeFiles/TugMaster.dir/clean
+.PHONY : tugboat_control/CMakeFiles/TugMaster.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/TugMaster.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target tugboat_control/CMakeFiles/TugController.dir
 
 # All Build rule for target.
 tugboat_control/CMakeFiles/TugController.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=2,3,4 "Built target TugController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=5,6 "Built target TugController"
 .PHONY : tugboat_control/CMakeFiles/TugController.dir/all
 
 # Include target in all.
@@ -3737,7 +3815,7 @@ all: tugboat_control/CMakeFiles/TugController.dir/all
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/TugController.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/TugController.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/TugController.dir/rule
@@ -3801,7 +3879,7 @@ clean: tugboat_control/CMakeFiles/CV.dir/clean
 tugboat_control/CMakeFiles/listener.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/listener.dir/build.make tugboat_control/CMakeFiles/listener.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/listener.dir/build.make tugboat_control/CMakeFiles/listener.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=11,12 "Built target listener"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=15,16 "Built target listener"
 .PHONY : tugboat_control/CMakeFiles/listener.dir/all
 
 # Include target in all.
@@ -3828,38 +3906,6 @@ tugboat_control/CMakeFiles/listener.dir/clean:
 
 # clean rule for target.
 clean: tugboat_control/CMakeFiles/listener.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_BoatStatus"
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule
-
-# Convenience name for target.
-_tugboat_control_generate_messages_check_deps_BoatStatus: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/rule
-
-.PHONY : _tugboat_control_generate_messages_check_deps_BoatStatus
-
-# clean rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/clean
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/clean
 
 .PHONY : clean
 
@@ -3928,34 +3974,34 @@ clean: tugboat_control/CMakeFiles/tugboat_control_gencpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir
+# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir
 
 # All Build rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_BoatList"
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_removeOneTug"
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
 
 # Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule: cmake_check_build_system
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/rule
 
 # Convenience name for target.
-_tugboat_control_generate_messages_check_deps_BoatList: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/rule
+_tugboat_control_generate_messages_check_deps_removeOneTug: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/rule
 
-.PHONY : _tugboat_control_generate_messages_check_deps_BoatList
-
-# clean rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/clean
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/clean
+.PHONY : _tugboat_control_generate_messages_check_deps_removeOneTug
 
 # clean rule for target.
-clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/clean
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/clean
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/clean
 
 .PHONY : clean
 
@@ -3971,7 +4017,7 @@ tugboat_control/CMakeFiles/tugboat_control_geneus.dir/all: tugboat_control/CMake
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_geneus.dir/rule
@@ -3988,203 +4034,6 @@ tugboat_control/CMakeFiles/tugboat_control_geneus.dir/clean:
 
 # clean rule for target.
 clean: tugboat_control/CMakeFiles/tugboat_control_geneus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# clean rule for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# clean rule for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_PushingForce"
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
-
-# Convenience name for target.
-_tugboat_control_generate_messages_check_deps_PushingForce: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
-
-.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce
-
-# clean rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_Thrust"
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
-
-# Convenience name for target.
-_tugboat_control_generate_messages_check_deps_Thrust: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
-
-.PHONY : _tugboat_control_generate_messages_check_deps_Thrust
-
-# clean rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/talker.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/talker.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
-	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=68 "Built target talker"
-.PHONY : tugboat_control/CMakeFiles/talker.dir/all
-
-# Include target in all.
-all: tugboat_control/CMakeFiles/talker.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/talker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/talker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/talker.dir/rule
-
-# Convenience name for target.
-talker: tugboat_control/CMakeFiles/talker.dir/rule
-
-.PHONY : talker
-
-# clean rule for target.
-tugboat_control/CMakeFiles/talker.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/clean
-.PHONY : tugboat_control/CMakeFiles/talker.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/talker.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# clean rule for target.
-tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 
 .PHONY : clean
 
@@ -4209,7 +4058,7 @@ all: tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 31
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages.dir/rule
@@ -4298,22 +4147,22 @@ clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 
 # All Build rule for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: rosserial/rosserial_server/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=75,76,77,78,79,80,81 "Built target tugboat_control_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=76,77,78,79,80,81 "Built target tugboat_control_generate_messages_eus"
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/rule
@@ -4334,34 +4183,268 @@ clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/clea
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir
+# Target rules for target tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_WaypointRequest"
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/rule: cmake_check_build_system
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/rule
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-_tugboat_control_generate_messages_check_deps_WaypointRequest: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/rule
+geometry_msgs_generate_messages_cpp: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : _tugboat_control_generate_messages_check_deps_WaypointRequest
-
-# clean rule for target.
-tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/clean
-.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/clean
+.PHONY : geometry_msgs_generate_messages_cpp
 
 # clean rule for target.
-clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/clean
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/ShipControl_Generic.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/ShipControl_Generic.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
+	$(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=2,3,4 "Built target ShipControl_Generic"
+.PHONY : tugboat_control/CMakeFiles/ShipControl_Generic.dir/all
+
+# Include target in all.
+all: tugboat_control/CMakeFiles/ShipControl_Generic.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/ShipControl_Generic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/ShipControl_Generic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/ShipControl_Generic.dir/rule
+
+# Convenience name for target.
+ShipControl_Generic: tugboat_control/CMakeFiles/ShipControl_Generic.dir/rule
+
+.PHONY : ShipControl_Generic
+
+# clean rule for target.
+tugboat_control/CMakeFiles/ShipControl_Generic.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/clean
+.PHONY : tugboat_control/CMakeFiles/ShipControl_Generic.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/ShipControl_Generic.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# clean rule for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/talker.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/talker.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
+	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=69 "Built target talker"
+.PHONY : tugboat_control/CMakeFiles/talker.dir/all
+
+# Include target in all.
+all: tugboat_control/CMakeFiles/talker.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/talker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/talker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/talker.dir/rule
+
+# Convenience name for target.
+talker: tugboat_control/CMakeFiles/talker.dir/rule
+
+.PHONY : talker
+
+# clean rule for target.
+tugboat_control/CMakeFiles/talker.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/talker.dir/build.make tugboat_control/CMakeFiles/talker.dir/clean
+.PHONY : tugboat_control/CMakeFiles/talker.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/talker.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# clean rule for target.
+tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+.PHONY : tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_PushingForce"
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_PushingForce: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_PushingForce
+
+# clean rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_Thrust"
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_Thrust: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_Thrust
+
+# clean rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_addOneTug"
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_addOneTug: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_addOneTug
+
+# clean rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/clean
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/clean
 
 .PHONY : clean
 
@@ -4370,17 +4453,17 @@ clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_
 
 # All Build rule for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: rosserial/rosserial_server/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=69,70,71,72,73,74 "Built target tugboat_control_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=70,71,72,73,74,75 "Built target tugboat_control_generate_messages_cpp"
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4417,7 +4500,7 @@ tugboat_control/CMakeFiles/tugboat_control_genpy.dir/all: tugboat_control/CMakeF
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_genpy.dir/rule
@@ -4434,6 +4517,38 @@ tugboat_control/CMakeFiles/tugboat_control_genpy.dir/clean:
 
 # clean rule for target.
 clean: tugboat_control/CMakeFiles/tugboat_control_genpy.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir
+
+# All Build rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/depend
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num= "Built target _tugboat_control_generate_messages_check_deps_BoatPose"
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
+
+# Build rule for subdir invocation for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/rule
+
+# Convenience name for target.
+_tugboat_control_generate_messages_check_deps_BoatPose: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/rule
+
+.PHONY : _tugboat_control_generate_messages_check_deps_BoatPose
+
+# clean rule for target.
+tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/clean:
+	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/clean
+.PHONY : tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/clean
+
+# clean rule for target.
+clean: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/clean
 
 .PHONY : clean
 
@@ -4474,13 +4589,13 @@ clean: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 
 # All Build rule for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: rosserial/rosserial_server/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/all: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_lisp.dir/build
@@ -4546,22 +4661,22 @@ clean: tugboat_control/CMakeFiles/tugboat_control_genlisp.dir/clean
 
 # All Build rule for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: rosserial/rosserial_server/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=88,89,90,91,92,93 "Built target tugboat_control_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=88,89,90,91,92 "Built target tugboat_control_generate_messages_nodejs"
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/rule
@@ -4582,43 +4697,6 @@ clean: tugboat_control/CMakeFiles/tugboat_control_generate_messages_nodejs.dir/c
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target tugboat_control/CMakeFiles/TugManager.dir
-
-# All Build rule for target.
-tugboat_control/CMakeFiles/TugManager.dir/all: tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp.dir/all
-	$(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/depend
-	$(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=5 "Built target TugManager"
-.PHONY : tugboat_control/CMakeFiles/TugManager.dir/all
-
-# Include target in all.
-all: tugboat_control/CMakeFiles/TugManager.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-tugboat_control/CMakeFiles/TugManager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/TugManager.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
-.PHONY : tugboat_control/CMakeFiles/TugManager.dir/rule
-
-# Convenience name for target.
-TugManager: tugboat_control/CMakeFiles/TugManager.dir/rule
-
-.PHONY : TugManager
-
-# clean rule for target.
-tugboat_control/CMakeFiles/TugManager.dir/clean:
-	$(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/clean
-.PHONY : tugboat_control/CMakeFiles/TugManager.dir/clean
-
-# clean rule for target.
-clean: tugboat_control/CMakeFiles/TugManager.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir
 
 # All Build rule for target.
@@ -4630,7 +4708,7 @@ tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/all: tugboat_control/CM
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/rule
@@ -4655,22 +4733,22 @@ clean: tugboat_control/CMakeFiles/tugboat_control_gennodejs.dir/clean
 
 # All Build rule for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: rosserial/rosserial_server/CMakeFiles/std_msgs_generate_messages_py.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatStatus.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatList.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint.dir/all
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointRequest.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug.dir/all
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all: tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose.dir/all
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/depend
 	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build.make tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=94,95,96,97,98,99,100 "Built target tugboat_control_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=93,94,95,96,97,98,99,100 "Built target tugboat_control_generate_messages_py"
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sondre/catkin_ws/build/CMakeFiles 0
 .PHONY : tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/rule

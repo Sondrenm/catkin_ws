@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tugboat_control_generate_messages_nodejs"
-  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Thrust.js"
-  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatList.js"
   "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/TugSetpoints.js"
-  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatStatus.js"
-  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js"
   "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/PushingForce.js"
-  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js"
+  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatPose.js"
+  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js"
+  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Thrust.js"
+  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/addOneTug.js"
+  "/home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/removeOneTug.js"
 )
 
 # Per-language clean rules from dependency scanning.

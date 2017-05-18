@@ -7,16 +7,26 @@
 ;//! \htmlinclude BoatPose.msg.html
 
 (cl:defclass <BoatPose> (roslisp-msg-protocol:ros-message)
-  ((timestamp
-    :reader timestamp
-    :initarg :timestamp
+  ((ID
+    :reader ID
+    :initarg :ID
+    :type cl:fixnum
+    :initform 0)
+   (x
+    :reader x
+    :initarg :x
     :type cl:float
     :initform 0.0)
-   (Pose
-    :reader Pose
-    :initarg :Pose
-    :type (cl:vector geometry_msgs-msg:Pose2D)
-   :initform (cl:make-array 11 :element-type 'geometry_msgs-msg:Pose2D :initial-element (cl:make-instance 'geometry_msgs-msg:Pose2D))))
+   (y
+    :reader y
+    :initarg :y
+    :type cl:float
+    :initform 0.0)
+   (o
+    :reader o
+    :initarg :o
+    :type cl:float
+    :initform 0.0))
 )
 
 (cl:defclass BoatPose (<BoatPose>)
@@ -27,18 +37,29 @@
   (cl:unless (cl:typep m 'BoatPose)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name tugboat_control-msg:<BoatPose> is deprecated: use tugboat_control-msg:BoatPose instead.")))
 
-(cl:ensure-generic-function 'timestamp-val :lambda-list '(m))
-(cl:defmethod timestamp-val ((m <BoatPose>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:timestamp-val is deprecated.  Use tugboat_control-msg:timestamp instead.")
-  (timestamp m))
+(cl:ensure-generic-function 'ID-val :lambda-list '(m))
+(cl:defmethod ID-val ((m <BoatPose>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:ID-val is deprecated.  Use tugboat_control-msg:ID instead.")
+  (ID m))
 
-(cl:ensure-generic-function 'Pose-val :lambda-list '(m))
-(cl:defmethod Pose-val ((m <BoatPose>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:Pose-val is deprecated.  Use tugboat_control-msg:Pose instead.")
-  (Pose m))
+(cl:ensure-generic-function 'x-val :lambda-list '(m))
+(cl:defmethod x-val ((m <BoatPose>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:x-val is deprecated.  Use tugboat_control-msg:x instead.")
+  (x m))
+
+(cl:ensure-generic-function 'y-val :lambda-list '(m))
+(cl:defmethod y-val ((m <BoatPose>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:y-val is deprecated.  Use tugboat_control-msg:y instead.")
+  (y m))
+
+(cl:ensure-generic-function 'o-val :lambda-list '(m))
+(cl:defmethod o-val ((m <BoatPose>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader tugboat_control-msg:o-val is deprecated.  Use tugboat_control-msg:o instead.")
+  (o m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <BoatPose>) ostream)
   "Serializes a message object of type '<BoatPose>"
-  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'timestamp))))
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) ostream)
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -47,11 +68,28 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:map cl:nil #'(cl:lambda (ele) (roslisp-msg-protocol:serialize ele ostream))
-   (cl:slot-value msg 'Pose))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'y))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'o))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <BoatPose>) istream)
   "Deserializes a message object of type '<BoatPose>"
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'ID)) (cl:read-byte istream))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -61,12 +99,27 @@
       (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'timestamp) (roslisp-utils:decode-double-float-bits bits)))
-  (cl:setf (cl:slot-value msg 'Pose) (cl:make-array 11))
-  (cl:let ((vals (cl:slot-value msg 'Pose)))
-    (cl:dotimes (i 11)
-    (cl:setf (cl:aref vals i) (cl:make-instance 'geometry_msgs-msg:Pose2D))
-  (roslisp-msg-protocol:deserialize (cl:aref vals i) istream)))
+    (cl:setf (cl:slot-value msg 'x) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'y) (roslisp-utils:decode-double-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'o) (roslisp-utils:decode-double-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<BoatPose>)))
@@ -77,24 +130,28 @@
   "tugboat_control/BoatPose")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<BoatPose>)))
   "Returns md5sum for a message object of type '<BoatPose>"
-  "fac719579a6887c70b1bfc580630888c")
+  "e95f3e67135784b4229f3c4a980afa6c")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'BoatPose)))
   "Returns md5sum for a message object of type 'BoatPose"
-  "fac719579a6887c70b1bfc580630888c")
+  "e95f3e67135784b4229f3c4a980afa6c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<BoatPose>)))
   "Returns full string definition for message of type '<BoatPose>"
-  (cl:format cl:nil "float64 timestamp~%geometry_msgs/Pose2D[11] Pose~%================================================================================~%MSG: geometry_msgs/Pose2D~%# This expresses a position and orientation on a 2D manifold.~%~%float64 x~%float64 y~%float64 theta~%~%"))
+  (cl:format cl:nil "uint8 ID # ID~%float64 x #x position in meters~%float64 y #y position in meters~%float64 o #orientation in +-pi radians from x-axis~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'BoatPose)))
   "Returns full string definition for message of type 'BoatPose"
-  (cl:format cl:nil "float64 timestamp~%geometry_msgs/Pose2D[11] Pose~%================================================================================~%MSG: geometry_msgs/Pose2D~%# This expresses a position and orientation on a 2D manifold.~%~%float64 x~%float64 y~%float64 theta~%~%"))
+  (cl:format cl:nil "uint8 ID # ID~%float64 x #x position in meters~%float64 y #y position in meters~%float64 o #orientation in +-pi radians from x-axis~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <BoatPose>))
   (cl:+ 0
+     1
      8
-     0 (cl:reduce #'cl:+ (cl:slot-value msg 'Pose) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))
+     8
+     8
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <BoatPose>))
   "Converts a ROS message object to a list"
   (cl:list 'BoatPose
-    (cl:cons ':timestamp (timestamp msg))
-    (cl:cons ':Pose (Pose msg))
+    (cl:cons ':ID (ID msg))
+    (cl:cons ':x (x msg))
+    (cl:cons ':y (y msg))
+    (cl:cons ':o (o msg))
 ))

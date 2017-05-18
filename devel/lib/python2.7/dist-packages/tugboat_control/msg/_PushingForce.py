@@ -10,8 +10,7 @@ class PushingForce(genpy.Message):
   _md5sum = "a7005a38011551613bbcdafc2f85d46e"
   _type = "tugboat_control/PushingForce"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """# From Arduino
-uint8 ID
+  _full_text = """uint8 ID # ID == 0 indicates ship
 float32 force #in Newton"""
   __slots__ = ['ID','force']
   _slot_types = ['uint8','float32']

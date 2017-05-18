@@ -7,14 +7,14 @@ import struct
 
 
 class Thrust(genpy.Message):
-  _md5sum = "eb36a969d5d22c5ec8c64a8469c7e207"
+  _md5sum = "06f7728b8ee5a6c967559af514f9b25c"
   _type = "tugboat_control/Thrust"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """# To Arduino
 uint8 ID
 int8 thrust # In % +- 100
-int8 cwturn # In % +- 100"""
-  __slots__ = ['ID','thrust','cwturn']
+int8 ccwturn # In % +- 100"""
+  __slots__ = ['ID','thrust','ccwturn']
   _slot_types = ['uint8','int8','int8']
 
   def __init__(self, *args, **kwds):
@@ -25,7 +25,7 @@ int8 cwturn # In % +- 100"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       ID,thrust,cwturn
+       ID,thrust,ccwturn
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -38,12 +38,12 @@ int8 cwturn # In % +- 100"""
         self.ID = 0
       if self.thrust is None:
         self.thrust = 0
-      if self.cwturn is None:
-        self.cwturn = 0
+      if self.ccwturn is None:
+        self.ccwturn = 0
     else:
       self.ID = 0
       self.thrust = 0
-      self.cwturn = 0
+      self.ccwturn = 0
 
   def _get_types(self):
     """
@@ -58,7 +58,7 @@ int8 cwturn # In % +- 100"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B2b().pack(_x.ID, _x.thrust, _x.cwturn))
+      buff.write(_get_struct_B2b().pack(_x.ID, _x.thrust, _x.ccwturn))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -72,7 +72,7 @@ int8 cwturn # In % +- 100"""
       _x = self
       start = end
       end += 3
-      (_x.ID, _x.thrust, _x.cwturn,) = _get_struct_B2b().unpack(str[start:end])
+      (_x.ID, _x.thrust, _x.ccwturn,) = _get_struct_B2b().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -86,7 +86,7 @@ int8 cwturn # In % +- 100"""
     """
     try:
       _x = self
-      buff.write(_get_struct_B2b().pack(_x.ID, _x.thrust, _x.cwturn))
+      buff.write(_get_struct_B2b().pack(_x.ID, _x.thrust, _x.ccwturn))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -101,7 +101,7 @@ int8 cwturn # In % +- 100"""
       _x = self
       start = end
       end += 3
-      (_x.ID, _x.thrust, _x.cwturn,) = _get_struct_B2b().unpack(str[start:end])
+      (_x.ID, _x.thrust, _x.ccwturn,) = _get_struct_B2b().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill

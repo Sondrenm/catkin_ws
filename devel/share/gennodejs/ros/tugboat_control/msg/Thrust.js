@@ -20,7 +20,7 @@ class Thrust {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.ID = null;
       this.thrust = null;
-      this.cwturn = null;
+      this.ccwturn = null;
     }
     else {
       if (initObj.hasOwnProperty('ID')) {
@@ -35,11 +35,11 @@ class Thrust {
       else {
         this.thrust = 0;
       }
-      if (initObj.hasOwnProperty('cwturn')) {
-        this.cwturn = initObj.cwturn
+      if (initObj.hasOwnProperty('ccwturn')) {
+        this.ccwturn = initObj.ccwturn
       }
       else {
-        this.cwturn = 0;
+        this.ccwturn = 0;
       }
     }
   }
@@ -50,8 +50,8 @@ class Thrust {
     bufferOffset = _serializer.uint8(obj.ID, buffer, bufferOffset);
     // Serialize message field [thrust]
     bufferOffset = _serializer.int8(obj.thrust, buffer, bufferOffset);
-    // Serialize message field [cwturn]
-    bufferOffset = _serializer.int8(obj.cwturn, buffer, bufferOffset);
+    // Serialize message field [ccwturn]
+    bufferOffset = _serializer.int8(obj.ccwturn, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -63,8 +63,8 @@ class Thrust {
     data.ID = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [thrust]
     data.thrust = _deserializer.int8(buffer, bufferOffset);
-    // Deserialize message field [cwturn]
-    data.cwturn = _deserializer.int8(buffer, bufferOffset);
+    // Deserialize message field [ccwturn]
+    data.ccwturn = _deserializer.int8(buffer, bufferOffset);
     return data;
   }
 
@@ -79,7 +79,7 @@ class Thrust {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'eb36a969d5d22c5ec8c64a8469c7e207';
+    return '06f7728b8ee5a6c967559af514f9b25c';
   }
 
   static messageDefinition() {
@@ -88,7 +88,7 @@ class Thrust {
     # To Arduino
     uint8 ID
     int8 thrust # In % +- 100
-    int8 cwturn # In % +- 100
+    int8 ccwturn # In % +- 100
     `;
   }
 
@@ -112,11 +112,11 @@ class Thrust {
       resolved.thrust = 0
     }
 
-    if (msg.cwturn !== undefined) {
-      resolved.cwturn = msg.cwturn;
+    if (msg.ccwturn !== undefined) {
+      resolved.ccwturn = msg.ccwturn;
     }
     else {
-      resolved.cwturn = 0
+      resolved.ccwturn = 0
     }
 
     return resolved;

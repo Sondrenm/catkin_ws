@@ -26,12 +26,12 @@ struct Thrust_
   Thrust_()
     : ID(0)
     , thrust(0)
-    , cwturn(0)  {
+    , ccwturn(0)  {
     }
   Thrust_(const ContainerAllocator& _alloc)
     : ID(0)
     , thrust(0)
-    , cwturn(0)  {
+    , ccwturn(0)  {
   (void)_alloc;
     }
 
@@ -43,8 +43,8 @@ struct Thrust_
    typedef int8_t _thrust_type;
   _thrust_type thrust;
 
-   typedef int8_t _cwturn_type;
-  _cwturn_type cwturn;
+   typedef int8_t _ccwturn_type;
+  _ccwturn_type ccwturn;
 
 
 
@@ -123,12 +123,12 @@ struct MD5Sum< ::tugboat_control::Thrust_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "eb36a969d5d22c5ec8c64a8469c7e207";
+    return "06f7728b8ee5a6c967559af514f9b25c";
   }
 
   static const char* value(const ::tugboat_control::Thrust_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xeb36a969d5d22c5eULL;
-  static const uint64_t static_value2 = 0xc8c64a8469c7e207ULL;
+  static const uint64_t static_value1 = 0x06f7728b8ee5a6c9ULL;
+  static const uint64_t static_value2 = 0x67559af514f9b25cULL;
 };
 
 template<class ContainerAllocator>
@@ -150,7 +150,7 @@ struct Definition< ::tugboat_control::Thrust_<ContainerAllocator> >
     return "# To Arduino\n\
 uint8 ID\n\
 int8 thrust # In % +- 100\n\
-int8 cwturn # In % +- 100\n\
+int8 ccwturn # In % +- 100\n\
 ";
   }
 
@@ -171,7 +171,7 @@ namespace serialization
     {
       stream.next(m.ID);
       stream.next(m.thrust);
-      stream.next(m.cwturn);
+      stream.next(m.ccwturn);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -194,8 +194,8 @@ struct Printer< ::tugboat_control::Thrust_<ContainerAllocator> >
     Printer<uint8_t>::stream(s, indent + "  ", v.ID);
     s << indent << "thrust: ";
     Printer<int8_t>::stream(s, indent + "  ", v.thrust);
-    s << indent << "cwturn: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.cwturn);
+    s << indent << "ccwturn: ";
+    Printer<int8_t>::stream(s, indent + "  ", v.ccwturn);
   }
 };
 

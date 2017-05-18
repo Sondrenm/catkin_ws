@@ -70,10 +70,10 @@
   "a7005a38011551613bbcdafc2f85d46e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PushingForce>)))
   "Returns full string definition for message of type '<PushingForce>"
-  (cl:format cl:nil "# From Arduino~%uint8 ID~%float32 force #in Newton~%~%"))
+  (cl:format cl:nil "uint8 ID # ID == 0 indicates ship~%float32 force #in Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PushingForce)))
   "Returns full string definition for message of type 'PushingForce"
-  (cl:format cl:nil "# From Arduino~%uint8 ID~%float32 force #in Newton~%~%"))
+  (cl:format cl:nil "uint8 ID # ID == 0 indicates ship~%float32 force #in Newton~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PushingForce>))
   (cl:+ 0
      1

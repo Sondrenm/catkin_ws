@@ -15,7 +15,6 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <geometry_msgs/Pose2D.h>
 
 namespace tugboat_control
 {
@@ -25,23 +24,32 @@ struct BoatPose_
   typedef BoatPose_<ContainerAllocator> Type;
 
   BoatPose_()
-    : timestamp(0.0)
-    , Pose()  {
+    : ID(0)
+    , x(0.0)
+    , y(0.0)
+    , o(0.0)  {
     }
   BoatPose_(const ContainerAllocator& _alloc)
-    : timestamp(0.0)
-    , Pose()  {
+    : ID(0)
+    , x(0.0)
+    , y(0.0)
+    , o(0.0)  {
   (void)_alloc;
-      Pose.assign( ::geometry_msgs::Pose2D_<ContainerAllocator> (_alloc));
-  }
+    }
 
 
 
-   typedef double _timestamp_type;
-  _timestamp_type timestamp;
+   typedef uint8_t _ID_type;
+  _ID_type ID;
 
-   typedef boost::array< ::geometry_msgs::Pose2D_<ContainerAllocator> , 11>  _Pose_type;
-  _Pose_type Pose;
+   typedef double _x_type;
+  _x_type x;
+
+   typedef double _y_type;
+  _y_type y;
+
+   typedef double _o_type;
+  _o_type o;
 
 
 
@@ -120,12 +128,12 @@ struct MD5Sum< ::tugboat_control::BoatPose_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "fac719579a6887c70b1bfc580630888c";
+    return "e95f3e67135784b4229f3c4a980afa6c";
   }
 
   static const char* value(const ::tugboat_control::BoatPose_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xfac719579a6887c7ULL;
-  static const uint64_t static_value2 = 0x0b1bfc580630888cULL;
+  static const uint64_t static_value1 = 0xe95f3e67135784b4ULL;
+  static const uint64_t static_value2 = 0x229f3c4a980afa6cULL;
 };
 
 template<class ContainerAllocator>
@@ -144,15 +152,10 @@ struct Definition< ::tugboat_control::BoatPose_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float64 timestamp\n\
-geometry_msgs/Pose2D[11] Pose\n\
-================================================================================\n\
-MSG: geometry_msgs/Pose2D\n\
-# This expresses a position and orientation on a 2D manifold.\n\
-\n\
-float64 x\n\
-float64 y\n\
-float64 theta\n\
+    return "uint8 ID # ID\n\
+float64 x #x position in meters\n\
+float64 y #y position in meters\n\
+float64 o #orientation in +-pi radians from x-axis\n\
 ";
   }
 
@@ -171,11 +174,13 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.timestamp);
-      stream.next(m.Pose);
+      stream.next(m.ID);
+      stream.next(m.x);
+      stream.next(m.y);
+      stream.next(m.o);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct BoatPose_
 
 } // namespace serialization
@@ -191,16 +196,14 @@ struct Printer< ::tugboat_control::BoatPose_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::tugboat_control::BoatPose_<ContainerAllocator>& v)
   {
-    s << indent << "timestamp: ";
-    Printer<double>::stream(s, indent + "  ", v.timestamp);
-    s << indent << "Pose[]" << std::endl;
-    for (size_t i = 0; i < v.Pose.size(); ++i)
-    {
-      s << indent << "  Pose[" << i << "]: ";
-      s << std::endl;
-      s << indent;
-      Printer< ::geometry_msgs::Pose2D_<ContainerAllocator> >::stream(s, indent + "    ", v.Pose[i]);
-    }
+    s << indent << "ID: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.ID);
+    s << indent << "x: ";
+    Printer<double>::stream(s, indent + "  ", v.x);
+    s << indent << "y: ";
+    Printer<double>::stream(s, indent + "  ", v.y);
+    s << indent << "o: ";
+    Printer<double>::stream(s, indent + "  ", v.o);
   }
 };
 

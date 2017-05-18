@@ -1,6 +1,10 @@
 (cl:in-package tugboat_control-msg)
-(cl:export '(TIMESTAMP-VAL
-          TIMESTAMP
-          POSE-VAL
-          POSE
+(cl:export '(ID-VAL
+          ID
+          X-VAL
+          X
+          Y-VAL
+          Y
+          O-VAL
+          O
 ))

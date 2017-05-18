@@ -5,50 +5,82 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
-let geometry_msgs = _finder('geometry_msgs');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class BoatPose {
-  constructor() {
-    this.timestamp = 0.0;
-    this.Pose = new Array(11).fill(new geometry_msgs.msg.Pose2D());
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.ID = null;
+      this.x = null;
+      this.y = null;
+      this.o = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('ID')) {
+        this.ID = initObj.ID
+      }
+      else {
+        this.ID = 0;
+      }
+      if (initObj.hasOwnProperty('x')) {
+        this.x = initObj.x
+      }
+      else {
+        this.x = 0.0;
+      }
+      if (initObj.hasOwnProperty('y')) {
+        this.y = initObj.y
+      }
+      else {
+        this.y = 0.0;
+      }
+      if (initObj.hasOwnProperty('o')) {
+        this.o = initObj.o
+      }
+      else {
+        this.o = 0.0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type BoatPose
-    // Serialize message field [timestamp]
-    bufferInfo = _serializer.float64(obj.timestamp, bufferInfo);
-    // Serialize message field [Pose]
-    obj.Pose.forEach((val) => {
-      bufferInfo = geometry_msgs.msg.Pose2D.serialize(val, bufferInfo);
-    });
-    return bufferInfo;
+    // Serialize message field [ID]
+    bufferOffset = _serializer.uint8(obj.ID, buffer, bufferOffset);
+    // Serialize message field [x]
+    bufferOffset = _serializer.float64(obj.x, buffer, bufferOffset);
+    // Serialize message field [y]
+    bufferOffset = _serializer.float64(obj.y, buffer, bufferOffset);
+    // Serialize message field [o]
+    bufferOffset = _serializer.float64(obj.o, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type BoatPose
-    let tmp;
     let len;
-    let data = new BoatPose();
-    // Deserialize message field [timestamp]
-    tmp = _deserializer.float64(buffer);
-    data.timestamp = tmp.data;
-    buffer = tmp.buffer;
-    len = 11;
-    // Deserialize message field [Pose]
-    for (let i = 0; i < len; ++i) {
-      tmp = geometry_msgs.msg.Pose2D.deserialize(buffer);
-      data.Pose[i] = tmp.data;
-      buffer = tmp.buffer;
-    }
-    return {
-      data: data,
-      buffer: buffer
-    }
+    let data = new BoatPose(null);
+    // Deserialize message field [ID]
+    data.ID = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [x]
+    data.x = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [y]
+    data.y = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [o]
+    data.o = _deserializer.float64(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    return 25;
   }
 
   static datatype() {
@@ -58,24 +90,55 @@ class BoatPose {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'fac719579a6887c70b1bfc580630888c';
+    return 'e95f3e67135784b4229f3c4a980afa6c';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    float64 timestamp
-    geometry_msgs/Pose2D[11] Pose
-    ================================================================================
-    MSG: geometry_msgs/Pose2D
-    # This expresses a position and orientation on a 2D manifold.
-    
-    float64 x
-    float64 y
-    float64 theta
+    uint8 ID # ID
+    float64 x #x position in meters
+    float64 y #y position in meters
+    float64 o #orientation in +-pi radians from x-axis
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new BoatPose(null);
+    if (msg.ID !== undefined) {
+      resolved.ID = msg.ID;
+    }
+    else {
+      resolved.ID = 0
+    }
+
+    if (msg.x !== undefined) {
+      resolved.x = msg.x;
+    }
+    else {
+      resolved.x = 0.0
+    }
+
+    if (msg.y !== undefined) {
+      resolved.y = msg.y;
+    }
+    else {
+      resolved.y = 0.0
+    }
+
+    if (msg.o !== undefined) {
+      resolved.o = msg.o;
+    }
+    else {
+      resolved.o = 0.0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = BoatPose;

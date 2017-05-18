@@ -5,44 +5,60 @@
 
 "use strict";
 
-let _serializer = require('../base_serialize.js');
-let _deserializer = require('../base_deserialize.js');
-let _finder = require('../find.js');
+const _serializer = _ros_msg_utils.Serialize;
+const _arraySerializer = _serializer.Array;
+const _deserializer = _ros_msg_utils.Deserialize;
+const _arrayDeserializer = _deserializer.Array;
+const _finder = _ros_msg_utils.Find;
+const _getByteLength = _ros_msg_utils.getByteLength;
 
 //-----------------------------------------------------------
 
 class PushingForce {
-  constructor() {
-    this.ID = 0;
-    this.force = 0.0;
+  constructor(initObj={}) {
+    if (initObj === null) {
+      // initObj === null is a special case for deserialization where we don't initialize fields
+      this.ID = null;
+      this.force = null;
+    }
+    else {
+      if (initObj.hasOwnProperty('ID')) {
+        this.ID = initObj.ID
+      }
+      else {
+        this.ID = 0;
+      }
+      if (initObj.hasOwnProperty('force')) {
+        this.force = initObj.force
+      }
+      else {
+        this.force = 0.0;
+      }
+    }
   }
 
-  static serialize(obj, bufferInfo) {
+  static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type PushingForce
     // Serialize message field [ID]
-    bufferInfo = _serializer.uint8(obj.ID, bufferInfo);
+    bufferOffset = _serializer.uint8(obj.ID, buffer, bufferOffset);
     // Serialize message field [force]
-    bufferInfo = _serializer.float32(obj.force, bufferInfo);
-    return bufferInfo;
+    bufferOffset = _serializer.float32(obj.force, buffer, bufferOffset);
+    return bufferOffset;
   }
 
-  static deserialize(buffer) {
+  static deserialize(buffer, bufferOffset=[0]) {
     //deserializes a message object of type PushingForce
-    let tmp;
     let len;
-    let data = new PushingForce();
+    let data = new PushingForce(null);
     // Deserialize message field [ID]
-    tmp = _deserializer.uint8(buffer);
-    data.ID = tmp.data;
-    buffer = tmp.buffer;
+    data.ID = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [force]
-    tmp = _deserializer.float32(buffer);
-    data.force = tmp.data;
-    buffer = tmp.buffer;
-    return {
-      data: data,
-      buffer: buffer
-    }
+    data.force = _deserializer.float32(buffer, bufferOffset);
+    return data;
+  }
+
+  static getMessageSize(object) {
+    return 5;
   }
 
   static datatype() {
@@ -58,12 +74,33 @@ class PushingForce {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    # From Arduino
-    uint8 ID
+    uint8 ID # ID == 0 indicates ship
     float32 force #in Newton
     `;
   }
 
+  static Resolve(msg) {
+    // deep-construct a valid message object instance of whatever was passed in
+    if (typeof msg !== 'object' || msg === null) {
+      msg = {};
+    }
+    const resolved = new PushingForce(null);
+    if (msg.ID !== undefined) {
+      resolved.ID = msg.ID;
+    }
+    else {
+      resolved.ID = 0
+    }
+
+    if (msg.force !== undefined) {
+      resolved.force = msg.force;
+    }
+    else {
+      resolved.force = 0.0
+    }
+
+    return resolved;
+    }
 };
 
 module.exports = PushingForce;

@@ -21,8 +21,6 @@ ros/builtin_message_traits.h
 -
 ros/message_operations.h
 -
-geometry_msgs/Pose2D.h
--
 
 /home/sondre/catkin_ws/devel/include/tugboat_control/ThrustCommand.h
 string

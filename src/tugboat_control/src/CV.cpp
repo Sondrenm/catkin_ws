@@ -1,10 +1,10 @@
 #include "ros/ros.h"
-#include "tugboat_control/BoatList.h"
-
+#include "tugboat_control/BoatPose.h"
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/aruco.hpp>
+#include <opencv2/calib3d.hpp>
 
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
@@ -12,131 +12,123 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <vector>
+#include <math.h>
 
-void createArucoMarker()
-{
-    cv::Ptr<cv::aruco::Dictionary> dictionary =
-        cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME(0));
+/* <-- Remove/add 1st / to toggle - fix this to use input
+#define CAM 0 //Built-in camera - or not? 
+/*/
+#define CAM 1 //extern camera
+//*/
+#define OUTPUTMODE true
 
-    cv::Mat markerImg;
-    cv::aruco::drawMarker(dictionary, 3, 200, markerImg, 1);
-    cv::imwrite("aruco.png", markerImg);    
-}
+#define markerLength 0.094 //m
 
-int redBallTracker(){
-
-  cv::VideoCapture capWebcam(0);    // declare a VideoCapture object and associate to webcam, 0 => use 1st webcam
-
-  if (capWebcam.isOpened() == false) {        // check if VideoCapture object was associated to webcam successfully
-    std::cout << "error: capWebcam not accessed successfully\n\n";  // if not, print error message to std out
-    return(0);                            // and exit program
-  }
-
-  cv::Mat imgOriginal;    // input image
-  cv::Mat imgHSV;
-  cv::Mat imgThreshLow;
-  cv::Mat imgThreshHigh;
-  cv::Mat imgThresh;
-
-  std::vector<cv::Vec3f> v3fCircles;        // 3 element vector of floats, this will be the pass by reference output of HoughCircles()
-
-  char charCheckForEscKey = 0;
-
-  while (charCheckForEscKey != 27 && capWebcam.isOpened()) {    // until the Esc key is pressed or webcam connection is lost
-    bool blnFrameReadSuccessfully = capWebcam.read(imgOriginal);    // get next frame
-
-    if (!blnFrameReadSuccessfully || imgOriginal.empty()) {   // if frame not read successfully
-      std::cout << "error: frame not read from webcam\n";   // print error message to std out
-      break;                          // and jump out of while loop
+static bool readCameraParameters(cv::Mat &camMatrix, cv::Mat &distCoeffs) {
+    std::string filename;
+    if(CAM == 1){
+      filename = "/home/sondre/catkin_ws/src/tugboat_control/cameraParametersUSB";
     }
-
-    cv::cvtColor(imgOriginal, imgHSV, CV_BGR2HSV);
-
-    cv::inRange(imgHSV, cv::Scalar(0, 155, 155), cv::Scalar(18, 255, 255), imgThreshLow);
-    cv::inRange(imgHSV, cv::Scalar(165, 155, 155), cv::Scalar(179, 255, 255), imgThreshHigh);
-
-    cv::add(imgThreshLow, imgThreshHigh, imgThresh);
-
-    cv::GaussianBlur(imgThresh, imgThresh, cv::Size(3, 3), 0);
-
-    cv::Mat structuringElement = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
-
-    cv::dilate(imgThresh, imgThresh, structuringElement);
-    cv::erode(imgThresh, imgThresh, structuringElement);
-
-    // fill circles vector with all circles in processed image
-    cv::HoughCircles(imgThresh,     // input image
-      v3fCircles,             // function output (must be a standard template library vector
-      CV_HOUGH_GRADIENT,          // two-pass algorithm for detecting circles, this is the only choice available
-      2,                  // size of image / this value = "accumulator resolution", i.e. accum res = size of image / 2
-      imgThresh.rows / 4,       // min distance in pixels between the centers of the detected circles
-      100,                // high threshold of Canny edge detector (called by cvHoughCircles)           
-      50,                 // low threshold of Canny edge detector (set at 1/2 previous value)
-      10,                 // min circle radius (any circles with smaller radius will not be returned)
-      400);               // max circle radius (any circles with larger radius will not be returned)
-
-    for (int i = 0; i < v3fCircles.size(); i++) {   // for each circle . . .
-      // show ball position x, y, and radius to command line
-      std::cout << "ball position x = " << v3fCircles[i][0]     // x position of center point of circle
-        << ", y = " << v3fCircles[i][1]               // y position of center point of circle
-        << ", radius = " << v3fCircles[i][2] << "\n";       // radius of circle
-
-      // draw small green circle at center of detected object
-      cv::circle(imgOriginal,                       // draw on original image
-        cv::Point((int)v3fCircles[i][0], (int)v3fCircles[i][1]),    // center point of circle
-        3,                                // radius of circle in pixels
-        cv::Scalar(0, 255, 0),                      // draw pure green (remember, its BGR, not RGB)
-        CV_FILLED);                           // thickness, fill in the circle
-
-      // draw red circle around the detected object
-      cv::circle(imgOriginal,                       // draw on original image
-        cv::Point((int)v3fCircles[i][0], (int)v3fCircles[i][1]),    // center point of circle
-        (int)v3fCircles[i][2],                      // radius of circle in pixels
-        cv::Scalar(0, 0, 255),                      // draw pure red (remember, its BGR, not RGB)
-        3);                               // thickness of circle in pixels
-    } // end for
-
-    // declare windows
-    cv::namedWindow("imgOriginal", CV_WINDOW_AUTOSIZE); // note: you can use CV_WINDOW_NORMAL which allows resizing the window
-    cv::namedWindow("imgThresh", CV_WINDOW_AUTOSIZE); // or CV_WINDOW_AUTOSIZE for a fixed size window matching the resolution of the image
-    // CV_WINDOW_AUTOSIZE is the default
-
-    cv::imshow("imgOriginal", imgOriginal);     // show windows
-    cv::imshow("imgThresh", imgThresh);
-
-    charCheckForEscKey = cv::waitKey(1);      // delay (in ms) and get key press, if any
-  } // end while
-
-  return(0);  
+    else {
+      filename = "/home/sondre/catkin_ws/src/tugboat_control/cameraParameters";
+    }
+    cv::FileStorage fs(filename, cv::FileStorage::READ);
+    if(!fs.isOpened())
+        return false;
+    fs["camera_matrix"] >> camMatrix;
+    fs["distortion_coefficients"] >> distCoeffs;
+    return true;
 }
 
-/*
-void locateBoats(*boats)
+ double rotationMatrixToEulerAngles2D(cv::Mat &R)
 {
-  //cv::aruco::findallthearucos
-  //sort by ID -> boats
+    double sy = sqrt(R.at<double>(0,0) * R.at<double>(0,0) +  R.at<double>(1,0) * R.at<double>(1,0) );
+    bool singular = sy < 1e-6;
+    double o;
+
+    if (!singular) {
+        o = atan2(R.at<double>(1,0), R.at<double>(0,0));
+    }
+    else {
+        o = 0;
+    }
+    return o; 
 }
-*/
 
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "CV");
   ros::NodeHandle n;
-  ros::Publisher CV_pub = n.advertise<tugboat_control::BoatList>("pos", 1);
+  ros::Publisher tug_pub = n.advertise<tugboat_control::BoatPose>("pose", 100);
+  ros::Publisher ship_pub = n.advertise<tugboat_control::BoatPose>("shipPose", 100);
   ros::Rate loop_rate(10);
 
-  /**
-   Do CV-init here:
-   - general init og camera and stuff
-   - find coordinate system and scale
-   - read parameters for each boat (from text file?)
-   */
-  redBallTracker();
+  tugboat_control::BoatPose boat;
 
-  while (ros::ok())
+  //CV init
+  cv::VideoCapture capWebcam(CAM);
+  cv::Mat videoImg, cameraMatrix, distCoeffs, rotation3x3;
+
+  if (capWebcam.isOpened() == false) {
+    std::cout << "error: Webcam not accessed successfully\n\n";
+    return(0);
+  }
+
+  cv::Ptr<cv::aruco::Dictionary> dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_4X4_50);
+  std::vector< int > markerIds;
+  std::vector< std::vector< cv::Point2f > > markerCorners;
+  std::vector< cv::Vec3d > rvecs, tvecs;
+  cv::aruco::DetectorParameters parameters; //Might want to change these?
+  
+  bool readOk = readCameraParameters(cameraMatrix, distCoeffs);
+        if(!readOk) {
+            std::cout << "Invalid camera file\n";
+            return 0;
+        }
+  
+  while (ros::ok() && capWebcam.isOpened() )
   {
-    //locateBoats(&boats);
-    //CV_pub.publish(boats);
+    if(capWebcam.read(videoImg))
+    { //Camera capture successful
+      cv::aruco::detectMarkers(videoImg, dictionary, markerCorners, markerIds); 
+      
+      if (markerIds.size() > 0)
+      { //At least one aruco marker found
+        cv::aruco::estimatePoseSingleMarkers(markerCorners, markerLength, cameraMatrix, distCoeffs, rvecs, tvecs);
+        
+        if(OUTPUTMODE)
+        {
+          cv::aruco::drawDetectedMarkers(videoImg, markerCorners, markerIds);
+        }
+        
+        for(int i=0; i<markerIds.size(); i++)
+        {
+          if(OUTPUTMODE){
+            cv::aruco::drawAxis(videoImg, cameraMatrix, distCoeffs, rvecs[i], tvecs[i], markerLength * 0.5f);
+          }
+
+          //Transform rvec to 2D orientation
+          cv::Rodrigues(rvecs[i], rotation3x3);
+          double orientation = rotationMatrixToEulerAngles2D(rotation3x3);
+
+          boat.ID = (uint8_t)markerIds[i];
+          //x and y assumes corner is at tugboat center
+          boat.x = tvecs[i][0];
+          boat.y = tvecs[i][1];
+          boat.o = orientation;
+          if(boat.ID == 0){
+            ship_pub.publish(boat);
+          } else {
+            tug_pub.publish(boat);
+          }
+        }
+      }
+    }
+
+    cv::namedWindow("out", CV_WINDOW_NORMAL); //TODO: Make window appear nicely
+    cv::imshow("out", videoImg);
+    cv::waitKey(1);
+
     ros::spinOnce();
     loop_rate.sleep();
   }
