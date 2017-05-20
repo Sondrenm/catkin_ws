@@ -1,6 +1,7 @@
 from ._BoatList import *
 from ._BoatPose import *
 from ._BoatStatus import *
+from ._ClearWaypoint import *
 from ._PushingForce import *
 from ._ShipControlInput import *
 from ._ShipWaypoint import *

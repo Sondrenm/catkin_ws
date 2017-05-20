@@ -57,7 +57,7 @@ add_message_files(
 	Thrust.msg
   TugSetpoints.msg
   Waypoint.msg
-  #WaypointRequest.msg
+  ClearWaypoint.msg
 )
 
 # Generate services in the 'srv' folder
@@ -161,9 +161,9 @@ add_executable(TugController src/TugController.cpp /usr/local/include/PID_cpp/pi
 target_link_libraries(TugController ${catkin_LIBRARIES})
 add_dependencies(TugController tugboat_control_generate_messages_cpp)
 
-add_executable(TugMaster src/TugMaster.cpp)
-target_link_libraries(TugMaster ${catkin_LIBRARIES})
-add_dependencies(TugMaster tugboat_control_generate_messages_cpp)
+add_executable(TugManager src/TugManager.cpp /usr/local/include/PID_cpp/pid.cpp)
+target_link_libraries(TugManager ${catkin_LIBRARIES})
+add_dependencies(TugManager tugboat_control_generate_messages_cpp)
 
 add_executable(ShipControl_Generic src/ShipControl_Generic.cpp /usr/local/include/PID_cpp/pid.cpp)
 target_link_libraries(ShipControl_Generic ${catkin_LIBRARIES})
@@ -172,6 +172,10 @@ add_dependencies(ShipControl_Generic tugboat_control_generate_messages_cpp)
 add_executable(TugSim src/TugSim.cpp)
 target_link_libraries(TugSim ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(TugSim tugboat_control_generate_messages_cpp)
+
+add_executable(WaypointDummy src/WaypointDummy.cpp)
+target_link_libraries(WaypointDummy ${catkin_LIBRARIES})
+add_dependencies(WaypointDummy tugboat_control_generate_messages_cpp)
 
 #############
 ## Install ##

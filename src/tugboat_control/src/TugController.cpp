@@ -9,6 +9,7 @@
 #include "tugboat_control/PushingForce.h"
 
 #include "std_msgs/Bool.h"
+#include "std_msgs/UInt8.h"
 
 #include "/usr/local/include/PID_cpp/pid.h"
 
@@ -33,11 +34,11 @@
 #define circular            true
 #define noncircular         false
 
-#define ctrl_ccwturn_Kp      30
+#define ctrl_ccwturn_Kp      20
 #define ctrl_ccwturn_Kd      0
 #define ctrl_ccwturn_Ki      0
 
-#define ctrl_thrust_Kp      1
+#define ctrl_thrust_Kp      2
 #define ctrl_thrust_Kd      0
 #define ctrl_thrust_Ki      0
 
@@ -183,8 +184,11 @@ int main(int argc, char **argv)
   ros::Subscriber wayp_sub = n.subscribe("waypoint", 100, waypCallback);
   ros::Subscriber push_sub = n.subscribe("pushingForce", 100, pushCallback);
 
-  ros::Publisher cmd_pub = n.advertise<tugboat_control::Thrust>("thrust", 1);
-  ros::Publisher stress_pub = n.advertise<std_msgs::Bool>("distress", 1);
+  ros::Publisher cmd_pub = n.advertise<tugboat_control::Thrust>("thrust", 100);
+  ros::Publisher stress_pub = n.advertise<std_msgs::Bool>("distress", 100);
+  ros::Publisher startup_pub = n.advertise<std_msgs::UInt8>("startup", 100);
+  
+  ros::Rate loop_rate(10);
 
   ros::NodeHandle pnh("~");
   double ID;
@@ -192,16 +196,24 @@ int main(int argc, char **argv)
     id = (uint8_t)ID;
   }
   else {
-    id = 0;
+    id = 1;
   }
 
   cmd.ID = id;
+  std_msgs::UInt8 idMsg;
+  idMsg.data = id;
+  if(ros::ok())
+  { 
+    ros::Duration(0.5).sleep();
+    startup_pub.publish(idMsg);
+    ros::spinOnce();
+  }
 
   std::cout << "Started TugController with id " << (int)id << "\n";
-  ros::Rate loop_rate(10);
 
-  while (ros::ok()) //TODO: Add timeout on pos msg
+  while (ros::ok())
   {
+    //startup_pub.publish(idMsg);
     loop_rate.sleep();
     ros::spinOnce();
     computeControl(controlMode, stress_pub);

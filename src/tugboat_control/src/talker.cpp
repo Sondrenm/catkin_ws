@@ -86,19 +86,19 @@ int main(int argc, char **argv)
 
 
     //x: -1.1, y: -0.35 
-    count++;
+    //count++;
     
     tugboat_control::Waypoint wayp;
     wayp.ID = 3;
-    wayp.x = -0.22;
-    wayp.y = -0.22;
+    wayp.x = 1;
+    wayp.y = 1;
     wayp.v = 0.05;
     wayp.o = 4;
     wayp_pub.publish(wayp);
-    
-    wayp.ID = 4;
-    wayp_pub.publish(wayp);
-
+    //
+    //wayp.ID = 4;
+    //wayp_pub.publish(wayp);
+//
     /*
     tugboat_control::Waypoint wayp1;
     wayp1.ID = 1;
@@ -109,12 +109,11 @@ int main(int argc, char **argv)
     */
     /*
     tugboat_control::TugSetpoints ctrl;
-    ctrl.ID = 1;
-    ctrl.orientation=1;
-    ctrl.pushingForce=50;
+    ctrl.ID = 3;
+    ctrl.o = 0;
+    ctrl.force = 5;
     ctrl_pub.publish(ctrl);
     */
-
     /*
 	  tugboat_control::BoatPose pose;
     pose.ID = 0;

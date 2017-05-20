@@ -53,26 +53,27 @@ CMAKE_BINARY_DIR = /home/sondre/catkin_ws/build
 # Include the progress variables for this target.
 include tugboat_control/CMakeFiles/tugboat_control_generate_messages_py.dir/progress.make
 
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugSetpoints.py
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py
-tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py
 
 
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py: /home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG tugboat_control/Thrust"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
+
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugSetpoints.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugSetpoints.py: /home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG tugboat_control/TugSetpoints"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG tugboat_control/TugSetpoints"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
-
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py: /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG tugboat_control/PushingForce"
-	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
 
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg
@@ -84,50 +85,58 @@ tugboat_control/CMakeFiles/tugboat_control_generate_messages_py: /home/sondre/ca
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG tugboat_control/Waypoint"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
 
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py: /home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG tugboat_control/Thrust"
-	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py: /home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG tugboat_control/ClearWaypoint"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
+
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py: /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG tugboat_control/PushingForce"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg
 
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py: /home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python code from SRV tugboat_control/addOneTug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python code from SRV tugboat_control/addOneTug"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv
 
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py: /home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python code from SRV tugboat_control/removeOneTug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python code from SRV tugboat_control/removeOneTug"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv
 
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugSetpoints.py
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python msg __init__.py for tugboat_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python msg __init__.py for tugboat_control"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg --initpy
 
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugSetpoints.py
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py
-/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py
+/home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py
 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python srv __init__.py for tugboat_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python srv __init__.py for tugboat_control"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv --initpy
 
 tugboat_control_generate_messages_py: tugboat_control/CMakeFiles/tugboat_control_generate_messages_py
+tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
 tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugSetpoints.py
-tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py
 tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py
-tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Thrust.py
+tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py
+tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py
 tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py
 tugboat_control_generate_messages_py: /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py

@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sondre/catkin_ws/src/tugboat_control/src/TugManager.cpp" "/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugManager.dir/src/TugManager.cpp.o"
+  "/usr/local/include/PID_cpp/pid.cpp" "/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugManager.dir/usr/local/include/PID_cpp/pid.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

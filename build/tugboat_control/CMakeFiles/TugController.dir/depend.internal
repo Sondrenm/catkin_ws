@@ -63,6 +63,7 @@ tugboat_control/CMakeFiles/TugController.dir/src/TugController.cpp.o
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/std_msgs/Bool.h
+ /opt/ros/kinetic/include/std_msgs/UInt8.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
  /usr/local/include/PID_cpp/pid.h

@@ -21,6 +21,9 @@
 #define CAM 1 //extern camera
 //*/
 #define OUTPUTMODE true
+#define SHIP_ID 4
+#define X_OFFSET 1.5
+#define Y_OFFSET 1
 
 #define markerLength 0.094 //m
 
@@ -60,7 +63,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "CV");
   ros::NodeHandle n;
   ros::Publisher tug_pub = n.advertise<tugboat_control::BoatPose>("pose", 100);
-  ros::Publisher ship_pub = n.advertise<tugboat_control::BoatPose>("shipPose", 100);
+  ros::Publisher ship_pub = n.advertise<tugboat_control::BoatPose>("shipPose", 1);
   ros::Rate loop_rate(10);
 
   tugboat_control::BoatPose boat;
@@ -113,11 +116,12 @@ int main(int argc, char **argv)
 
           boat.ID = (uint8_t)markerIds[i];
           //x and y assumes corner is at tugboat center
-          boat.x = tvecs[i][0];
-          boat.y = tvecs[i][1];
+          boat.x = tvecs[i][0] + X_OFFSET;
+          boat.y = tvecs[i][1] + Y_OFFSET;
           boat.o = orientation;
-          if(boat.ID == 0){
+          if(boat.ID == SHIP_ID){
             ship_pub.publish(boat);
+            //tug_pub.publish(boat); //TODO: Not sure if this is needed, check with Rebecca
           } else {
             tug_pub.publish(boat);
           }

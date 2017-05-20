@@ -39,6 +39,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+    "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg"
     )
 endif()
 

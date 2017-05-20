@@ -11,6 +11,7 @@ ae4ed4b627e7457e7d9cc78a9395623a /home/sondre/catkin_ws/devel/include/rosserial_
 0356a0ba53e66d7a474e0b03d11bebd7 /home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h
 63cc61d2bbd72e25a26daae88aa22868 /home/sondre/catkin_ws/devel/include/tugboat_control/BoatPose.h
 d8f24b5d76c1299a0ee764c1b3de8c40 /home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h
+30a8b4e8014f7ff2209c3450141aa7fb /home/sondre/catkin_ws/devel/include/tugboat_control/ClearWaypoint.h
 d8d3592eb8ea50182ba151e70d141de2 /home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h
 c49f103618e3496b684e47102007186b /home/sondre/catkin_ws/devel/include/tugboat_control/ShipControlInput.h
 6af8049625c0d420ef769322f1f104b4 /home/sondre/catkin_ws/devel/include/tugboat_control/ShipWaypoint.h
@@ -42,6 +43,7 @@ b29af2016ebfd7df850fd2e54d5e5bd3 /home/sondre/catkin_ws/devel/lib/python2.7/dist
 7fa0b33101f733f88aabe576063b9163 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatList.py
 52f2836de83eea4bf80b1f91da5acb89 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py
 ef3c0228f3a18593032c63c6eb9795da /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatStatus.py
+c24467d2d90ef8cb86d7dbeef5aa1b7d /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py
 aa5427c91fcc8bcdf63c86f7c44cd8e1 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 190c146c90c136b9213b5f2a72411b8e /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ShipControlInput.py
 2ddf5781933e89d72fc86a96db9fb935 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ShipWaypoint.py
@@ -69,6 +71,7 @@ e8b1b4bfe65faa8c39b5ebb67f86daa0 /home/sondre/catkin_ws/devel/share/common-lisp/
 fa0cbf90b53fa3c02edd449f6ace4755 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatList.lisp
 083643bda3abbe0a8ca04cbfb94102e9 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatPose.lisp
 df79113cf0b8fbc626b628165ea1c2c4 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatStatus.lisp
+5ac6c8b7c8737590041a48023122f9ff /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ClearWaypoint.lisp
 3a7ef2b3d5edd64139cb106b3eed662e /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/PushingForce.lisp
 6295b0cd9a0c75eff9af79bb081480ee /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ShipControlInput.lisp
 c75d8f9beaa7bd0df51a9491bafb5f5e /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ShipWaypoint.lisp
@@ -94,6 +97,7 @@ f4923c29f4548bd3ffff16eb5e21ad3c /home/sondre/catkin_ws/devel/share/gennodejs/ro
 438c220b1482c1a13c4aa0cfa4904433 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatList.js
 b3fb89c9f62eaa6256e5a983f1daf348 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatPose.js
 a8d63658373efa9375268d494c555159 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatStatus.js
+69eca56d791012e0f12d61abc902213b /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/ClearWaypoint.js
 983d00891e871c47eee7143f21959219 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/PushingForce.js
 c9eebf0580c87163be0f5de21cdaf4d9 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/ShipControlInput.js
 5bf04fef8b62bba2ad4cbcd337786c79 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/ShipWaypoint.js
@@ -123,6 +127,7 @@ bb52ad84062d2394732c5ce7c0fa6f5c /home/sondre/catkin_ws/devel/share/roseus/ros/r
 33492268002d3b1023d4169cae0051c0 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatList.l
 b9df7e4688a357449923f7f5e6699aeb /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatPose.l
 180b8f0d9e2faef240d06cfba8e9c613 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatStatus.l
+6fc2e616d55b976e5d2e4eaef29a932d /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ClearWaypoint.l
 51a97e48c67644e827c9ecbafd32eddf /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/PushingForce.l
 598f234a527a1fc867b348707792b8dd /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ShipControlInput.l
 26ccbbb5bf040244e271ee8f78bf0427 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ShipWaypoint.l
@@ -176,6 +181,7 @@ a8b4846168f2f6e34cc4edc8d0d4d678 rosserial/rosserial_test/CMakeFiles/rosserial_t
 057fd5d8ab5d240c80e0265557c25822 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_socket.test
 4adb4895ac151d19ade3044d41807316 rosserial/rosserial_test/include/rosserial
 1bd14b9a0a125d11d00e94d1c8ef4961 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose
+06363620d926a52ac90a71db00d559ff tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ClearWaypoint
 1f4393a2fb616b66b9e43837b6b8704d tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce
 1d17cf5dcb789f7547d7bb5dc91a1653 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust
 4dd129683fbb0471a28e0cc4899ca6a9 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints

@@ -13,6 +13,8 @@ make the tugboat move towards the ship until it makes contact. Must be a timeout
 #include "tugboat_control/BoatPose.h"
 #include "tugboat_control/Waypoint.h"
 #include "tugboat_control/PushingForce.h"
+#include "tugboat_control/ClearWaypoint.h"
+
 #include "std_msgs/Bool.h"
 #include "std_msgs/UInt8MultiArray.h"
 #include "std_msgs/UInt8.h"
@@ -20,17 +22,22 @@ make the tugboat move towards the ship until it makes contact. Must be a timeout
 #include "tugboat_control/addOneTug.h"
 #include "tugboat_control/removeOneTug.h"
 
+#include "/usr/local/include/PID_cpp/pid.h"
+
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
 
 #define MUCH_DISTRESS 100
 
-int addedTugs = 0; //number of Tugboats on their way to support the ship.
 int distress = 1000;
+
 std_msgs::UInt8MultiArray waypTugs;
+int numWaypTugs = 0;
 std_msgs::UInt8MultiArray ctrlTugs;
+int numCtrlTugs = 0;
 std::vector<tugboat_control::BoatPose> tugRequests; //In ship coordinates (x is along ship), ID = order ID, not tug ID
+int numTugRequests = 0; //number of Tugboats on their way to support the ship.
 tugboat_control::BoatPose shipPose;
 
 void distressCallback(const std_msgs::Bool::ConstPtr& stressed)
@@ -44,35 +51,66 @@ void distressCallback(const std_msgs::Bool::ConstPtr& stressed)
 
 void respondToDistress(ros::ServiceClient *remove_client, tugboat_control::removeOneTug *remove_srv, ros::ServiceClient *add_client, tugboat_control::addOneTug *add_srv)
 {
-  if (distress > MUCH_DISTRESS * (addedTugs + 1) ) {
+  if (distress > MUCH_DISTRESS * (numTugRequests + 1) ) {
     if(add_client->call(*add_srv)){
       //Add to tugRequests
-      addedTugs++; 
+      numTugRequests++; 
       tugRequests.push_back(add_srv->response.Pose);
     }
-  } else if(distress < MUCH_DISTRESS * (addedTugs - 1)) {
+  } else if(distress < MUCH_DISTRESS * (numTugRequests - 1)) {
     if(remove_client->call(*remove_srv)){
-      addedTugs--; 
+      numTugRequests--; 
       //remove Tugboat from ctrlTugs, add to wapyTugs
-      for (uint8_t i = 0; i < sizeof(waypTugs); ++i)
+      for (uint8_t i = 0; i < numCtrlTugs; ++i)
       {
         if(ctrlTugs.data[i] == remove_srv->response.ID){
           ctrlTugs.data.erase(ctrlTugs.data.begin() + i);
+          numCtrlTugs--;
           waypTugs.data.push_back(remove_srv->response.ID);
+          numWaypTugs++;
+          break;
         }
       }
     }
   }
 }
 
-void waypClearCallback(const std_msgs::UInt8::ConstPtr& waypID)
-{ //Clear tugRequest
-  for (int i = 0; i < sizeof(tugRequests)/sizeof(tugRequests[0]); ++i)
+void waypClearCallback(const tugboat_control::ClearWaypoint::ConstPtr& msg)
+{ //Clear tugRequest, give responsibillity from Waypoint to ShipControl
+  for (int i = 0; i < numTugRequests; ++i)
   {
-    if(tugRequests[i].ID == waypID->data){
+    if(tugRequests[i].ID == msg->orderID){
       tugRequests.erase(tugRequests.begin() + i);
+      numTugRequests--;
+      break;
     }
   }
+  for (uint8_t i = 0; i < numWaypTugs; ++i)
+  {
+    if(waypTugs.data[i] == msg->tugID){
+      waypTugs.data.erase(ctrlTugs.data.begin() + i);
+      numWaypTugs--;
+      ctrlTugs.data.push_back(msg->tugID);
+      numCtrlTugs++;
+      break;
+    }
+  }  
+}
+
+tugboat_control::Waypoint shipToWorldCoordinates(tugboat_control::BoatPose poseIn)
+{
+  tugboat_control::Waypoint wayp;
+  wayp.ID = poseIn.ID;
+  wayp.v = 0;
+  wayp.o = 0;
+
+  double sinO = sin(PIDnormalizeAngle(poseIn.o + shipPose.o));
+  double cosO = cos(PIDnormalizeAngle(poseIn.o + shipPose.o));
+
+  wayp.x = (cosO*poseIn.x + sinO*poseIn.y) + shipPose.x;
+  wayp.y = (-sinO*poseIn.x + cosO*poseIn.y) + shipPose.y;
+  std::cout << "waypoint sent: x=" << wayp.x << "\t y=" << wayp.y << "\n";
+  return wayp;
 }
 
 void shipPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
@@ -81,19 +119,20 @@ void shipPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
 }
 
 void sendTugRequests(ros::Publisher *pub)
-{ //Take tugRequests, transform to world coordinate system, and send to Waypoint manager
+{ //Take BoatPose tugRequests, transform to world coordinate system, and send as waypoint to Waypoint manager
   tugboat_control::Waypoint wayp;
-  for (int tug = 0; tug < addedTugs; ++tug)
+  for (int tug = 0; tug < numTugRequests; ++tug)
   {
-    //wayp =  tugRequests[tug]; //Plus some Rotation magic
+    wayp = shipToWorldCoordinates(tugRequests[tug]);
     pub->publish(wayp);
   }
 }
 
-tugboat_control::Waypoint shipToWorldCoordinates(tugboat_control::Waypoint waypIn)
+void startupCallback(const std_msgs::UInt8::ConstPtr& IDIn)
 {
-
-  return waypOut;
+  waypTugs.data.push_back(IDIn->data);
+  std::cout << "Hei!\n";
+  std::cout << "Starting new tugboat with id " << (int)IDIn->data << "\n";
 }
 
 int main(int argc, char **argv)
@@ -109,7 +148,8 @@ int main(int argc, char **argv)
 
   ros::Subscriber pose_sub = n.subscribe("shipPose", 100, shipPoseCallback); //Get position of ship
   ros::Subscriber distress_sub = n.subscribe("distress", 1000, distressCallback); //
-  ros::Subscriber waypClear_sub = n.subscribe("waypointCleared", 100, waypClearCallback); //
+  ros::Subscriber waypClear_sub = n.subscribe("clearWaypoint", 100, waypClearCallback); //
+  ros::Subscriber startup_sub = n.subscribe("startup", 100, startupCallback); //
   
 
   ros::Publisher waypTugs_pub = n.advertise<std_msgs::UInt8MultiArray>("waypTugs", 1); //List of tugboats controlled by Waypoints
