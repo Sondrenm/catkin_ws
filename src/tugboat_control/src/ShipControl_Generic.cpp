@@ -61,7 +61,6 @@ void tugPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
   for (int tug = 0; tug < numCtrlTugs; ++tug)
   {
     if(pose_in->ID == ctrlTugIDs.data[tug]){
-    	std::cout << "test1\n";
       tugPoses[tug] = worldToShipCoordinates(*pose_in);
           std::cout << "Found tugboat at: x=" << tugPoses[tug].x << "\t y=" << tugPoses[tug].y << " in ship coordinates\n";
 
@@ -198,7 +197,6 @@ int main(int argc, char **argv)
   	}
   	while( discardTugs.data.size() > 0)
   	{
-  		std::cout << "test123\n";
   		std_msgs::UInt8 msg;
   		msg.data = discardTugs.data[0];
   		discard_pub.publish(msg);
