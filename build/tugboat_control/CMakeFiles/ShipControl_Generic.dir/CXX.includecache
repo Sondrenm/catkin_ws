@@ -167,6 +167,8 @@ std_msgs/Bool.h
 /home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/Bool.h
 std_msgs/UInt8MultiArray.h
 /home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/UInt8MultiArray.h
+std_msgs/UInt8.h
+/home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/UInt8.h
 tugboat_control/addOneTug.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/addOneTug.h
 tugboat_control/removeOneTug.h
@@ -860,6 +862,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 std_msgs/MultiArrayDimension.h
+-
+
+/opt/ros/kinetic/include/std_msgs/UInt8.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/std_msgs/UInt8MultiArray.h

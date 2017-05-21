@@ -70,6 +70,7 @@ tugboat_control/CMakeFiles/ShipControl_Generic.dir/src/ShipControl_Generic.cpp.o
  /opt/ros/kinetic/include/std_msgs/Bool.h
  /opt/ros/kinetic/include/std_msgs/MultiArrayDimension.h
  /opt/ros/kinetic/include/std_msgs/MultiArrayLayout.h
+ /opt/ros/kinetic/include/std_msgs/UInt8.h
  /opt/ros/kinetic/include/std_msgs/UInt8MultiArray.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

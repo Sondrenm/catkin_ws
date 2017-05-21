@@ -84,11 +84,13 @@ int main(int argc, char **argv)
   cv::aruco::DetectorParameters parameters; //Might want to change these?
   
   bool readOk = readCameraParameters(cameraMatrix, distCoeffs);
-        if(!readOk) {
-            std::cout << "Invalid camera file\n";
-            return 0;
-        }
+  if(!readOk) {
+      std::cout << "Invalid camera file\n";
+      return 0;
+  }
   
+  std::cout << "CV node initialized successfully\n";
+
   while (ros::ok() && capWebcam.isOpened() )
   {
     if(capWebcam.read(videoImg))

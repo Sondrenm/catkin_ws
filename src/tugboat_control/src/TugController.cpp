@@ -34,11 +34,11 @@
 #define circular            true
 #define noncircular         false
 
-#define ctrl_ccwturn_Kp      20
-#define ctrl_ccwturn_Kd      0
+#define ctrl_ccwturn_Kp      40
+#define ctrl_ccwturn_Kd      50
 #define ctrl_ccwturn_Ki      0
 
-#define ctrl_thrust_Kp      2
+#define ctrl_thrust_Kp      25
 #define ctrl_thrust_Kd      0
 #define ctrl_thrust_Ki      0
 
@@ -86,7 +86,7 @@ void poseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
       double vAlongHeading = sqrt(dx*dx + dy*dy) * cos(angleDifference) / timechange;
       if(abs(vAlongHeading) < 1){
         vLowPass = (vLowPass + 0.5 * vAlongHeading) / 1.5; 
-        std::cout << "vLowPass: " << vLowPass << "\n";
+        //std::cout << "vLowPass: " << vLowPass << "\n";
       }
     }
 
@@ -106,6 +106,7 @@ void waypCallback(const tugboat_control::Waypoint::ConstPtr& wayp_in)
 {
   if(wayp_in->ID == id){
     if(controlMode != WAYP){
+      std::cout << "Enter Waypoint Mode\n";
       wayp_ccwturnPID.resetPID();
       wayp_thrustPID.resetPID();
       controlMode = WAYP;
@@ -118,6 +119,7 @@ void ctrlCallback(const tugboat_control::TugSetpoints::ConstPtr& ctrl_in)
 {
   if(ctrl_in->ID == id){
     if(controlMode != CTRL){
+      std::cout << "Enter Control Mode\n";
       ctrl_ccwturnPID.resetPID();
       ctrl_thrustPID.resetPID();
       controlMode = CTRL;
@@ -129,11 +131,11 @@ void ctrlCallback(const tugboat_control::TugSetpoints::ConstPtr& ctrl_in)
 
 void computeControl(bool mode, ros::Publisher stress_pub)
 {
-  long timeSinceLastMsg = PIDmsNow() - lastPoseTime;
-  if( timeSinceLastMsg < TIMEOUT_TIME){
+  long timeSinceLastPoseMeasurement = PIDmsNow() - lastPoseTime;
+  if( timeSinceLastPoseMeasurement < TIMEOUT_TIME)
+  {
     if(controlMode == WAYP)
     {
-  
       double dist = sqrt(pow(pose.x - wayp.x, 2) + pow(pose.y - wayp.y, 2));
       double oSet = atan2(wayp.y - pose.y, wayp.x - pose.x);
       double oErr = PIDnormalizeAngle(oSet - pose.o);
@@ -149,7 +151,9 @@ void computeControl(bool mode, ros::Publisher stress_pub)
         else {
           cmd.thrust = 100;          
         }
-      } else {
+      } 
+      else 
+      {
         cmd.thrust = 0;
       }
       cmd.ccwturn = (int8_t)wayp_ccwturnPID.calculate(oSet, pose.o);
@@ -159,10 +163,13 @@ void computeControl(bool mode, ros::Publisher stress_pub)
       cmd.thrust = (int8_t)ctrl_thrustPID.calculate(ctrl.force, push.force);
       cmd.ccwturn = (int8_t)ctrl_ccwturnPID.calculate(ctrl.o, pose.o);
         std_msgs::Bool stress;
-      if(cmd.thrust > 60){
+      if(cmd.thrust > 60)
+      {
         stress.data = true;
         stress_pub.publish(stress);
-      } else if(cmd.thrust < 20){
+      } 
+      else if(cmd.thrust < 20)
+      {
         stress.data = false;
         stress_pub.publish(stress);
       }
@@ -209,11 +216,10 @@ int main(int argc, char **argv)
     ros::spinOnce();
   }
 
-  std::cout << "Started TugController with id " << (int)id << "\n";
+  std::cout << "TugController initialized successfully with id " << (int)id << "\n";
 
   while (ros::ok())
   {
-    //startup_pub.publish(idMsg);
     loop_rate.sleep();
     ros::spinOnce();
     computeControl(controlMode, stress_pub);

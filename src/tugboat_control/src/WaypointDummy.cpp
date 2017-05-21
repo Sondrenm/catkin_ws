@@ -11,7 +11,7 @@
 #include <vector>
 
 #define SHIP_ID 4 //Should be 0! 4 for testing purposes
-#define ACCEPTABLE_DIST_ERROR 0.3 //30 cm is ok for now
+#define ACCEPTABLE_DIST_ERROR 0.2 //30 cm is ok for now
 
 tugboat_control::BoatPose shipPose;
 tugboat_control::Waypoint shipWaypoint;
@@ -26,25 +26,15 @@ int numTugRequests = 0;
 void shipPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
 { //Not used in dummy
   shipPose = *pose_in;
-  std::cout << "Ship pose: x = " << shipPose.x << "\ty = " << shipPose.y << "\to = " << shipPose.o << "\n";
+  //std::cout << "Ship pose: x = " << shipPose.x << "\ty = " << shipPose.y << "\to = " << shipPose.o << "\n";
 }
 
 void tugPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
 {
-  std::cout << "Test5\n";
   for (int tug = 0; tug < numWaypTugs; ++tug)
   {
     if(pose_in->ID == waypTugIDs.data[tug]){
-      //is tugposes large enough?
-      if(waypTugIDs.data.size() > tugPoses.size())
-      {
-        tugPoses.push_back(*pose_in);
-      }
-      else 
-      {
         tugPoses[tug] = *pose_in;
-      }
-  std::cout << "Test5\n";
       return;
     }
   }
@@ -52,12 +42,6 @@ void tugPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
 
 void waypTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
 {
-  /*if tugsIn != waypTugsIDs
-      remove and/or add elements from waypTugIDs and tugPoses
-
-  Ideally, they should be the same. Any element not the same is deleted and pushed to the back
-  */
-  std::cout << "Test6\n";
   std::vector<tugboat_control::BoatPose> newPoses; 
 
   waypTugIDs = *tugsIn;
@@ -72,7 +56,7 @@ void waypTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
       }
     }
     if(newPoses.size() <= ID)
-    { //No element added
+    { //No element added above, because no Pose is in record
       tugboat_control::BoatPose blankPose;
       blankPose.ID = waypTugIDs.data[ID];
       blankPose.x = 0;
@@ -83,12 +67,10 @@ void waypTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
   }
   tugPoses = newPoses;
   numWaypTugs = waypTugIDs.data.size();
-  std::cout << "Test6\n";
 }
 
 void waypReqCallback(const tugboat_control::Waypoint::ConstPtr& waypIn)
 {
-  std::cout << "Test1\n";
   for (int wayp = 0; wayp < numTugRequests; ++wayp)
   {
     if(tugWaypoints[wayp].ID == waypIn->ID){
@@ -98,13 +80,11 @@ void waypReqCallback(const tugboat_control::Waypoint::ConstPtr& waypIn)
   }
   tugWaypoints.push_back(*waypIn);
   numTugRequests++;
-  std::cout << "Test1.1\n";
 }
 
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "dummyWaypoint");
-
 
   ros::NodeHandle n;
 
@@ -120,37 +100,33 @@ int main(int argc, char **argv)
   ros::Rate loop_rate(1);
 
   shipWaypoint.ID = SHIP_ID;
-  shipWaypoint.x = -0.22;
-  shipWaypoint.y = -0.22;
+  shipWaypoint.x = 1;
+  shipWaypoint.y = 1;
   shipWaypoint.o = 0;
   shipWaypoint.v = 0.05;
 
+  std::cout << "Waypoint Dummy node initialized successfully\n";
   while (ros::ok())
   {
     //If any tugboat in my care is within acceptable distance of target waypoint, the waypoint is cleared and the tugboat is released
     for (int waypoint = 0; waypoint < numTugRequests; ++waypoint)
     {
-          std::cout << "Test2: wayp:  " << waypoint << "\tnumTugRequests " << numTugRequests << "\n";
       for (int tug = 0; tug < numWaypTugs; ++tug)
       {
-          // virker ikke! double test = tugPoses[tug].x; 
-          //std::cout << "Test2: tug "<< tug << "\tnumwaypTugs " << numWaypTugs << "\ttestnum: " << test << "\n";
         if(sqrt( pow(tugWaypoints[waypoint].x - tugPoses[tug].x, 2) + pow(tugWaypoints[waypoint].y - tugPoses[tug].y, 2) ) < ACCEPTABLE_DIST_ERROR)
         {
-          std::cout << "Test2\n";
           tugboat_control::ClearWaypoint msg;
           msg.tugID = waypTugIDs.data[tug];
           msg.orderID = tugWaypoints[waypoint].ID;
           clearWayp_pub.publish(msg);
 
-          std::cout << "Test2\n";
+          std::cout << "Clearing waypoint with id " << (int)msg.orderID << "\n";
 
           tugWaypoints.erase(tugWaypoints.begin() + waypoint);
           waypTugIDs.data.erase(waypTugIDs.data.begin() + tug);
           tugPoses.erase(tugPoses.begin() + tug);
           numWaypTugs--;
           numTugRequests--;
-          std::cout << "Test3\n";
           break;
         }
       }
@@ -162,7 +138,17 @@ int main(int argc, char **argv)
     tugboat_control::Waypoint tempWayp;
     for (int tug = 0; tug < numWaypTugs; ++tug)
     {
-      tempWayp = tugWaypoints[tug];
+      if (tug < numTugRequests)
+      {
+        tempWayp = tugWaypoints[tug];
+      }
+      else 
+      { //No waypoint for you -> stay put
+        tempWayp.x = tugPoses[tug].x;
+        tempWayp.y = tugPoses[tug].y;
+        tempWayp.o = tugPoses[tug].o;
+        tempWayp.v = 0;
+      }
       tempWayp.ID = waypTugIDs.data[tug];
       tugWayp_pub.publish(tempWayp);
     }
