@@ -60,7 +60,10 @@ tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayDimension.h
+tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayLayout.h
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
+tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt8MultiArray.h
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o: /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
 

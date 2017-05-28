@@ -25,7 +25,7 @@ STOP_UNIQUE */
 #include <unistd.h>
 #include <vector>
 
-#define SHIP_ID 4 //Should be 0! 4 for testing purposes ony
+#define SHIP_ID 0 //Should be 0! 4 for testing purposes ony
 #define ACCEPTABLE_DIST_ERROR 0.5 //0.5 m from ship means tug has lost contact
 
 int numCtrlTugs = 0;
@@ -118,7 +118,7 @@ bool addOneTug(tugboat_control::addOneTug::Request  &req, tugboat_control::addOn
 	//START_UNIQUE
 	//Tugboats are lined up along starboard side, perpendicular to the ship
 	res.Pose.x = 0.2 * numCtrlTugs;
-	res.Pose.y = -0.2;
+	res.Pose.y = 0.2;
 	res.Pose.o = 1.57;
 	//END_UNIQUE
     std::cout << "Requested tugboat at: x=" << res.Pose.x << "\t y=" << res.Pose.y << "\n";
@@ -157,7 +157,7 @@ void control(ros::Publisher *pub)
 	{
 		//get thrust from somewhere
 		ctrl.ID = ctrlTugIDs.data[tug];
-		ctrl.o = 1.57;
+		ctrl.o = PIDnormalizeAngle(1.57 + shipPose.o);
 		ctrl.force = 2; //TODO: Calibrate load cell, find threshold, and update this number
 		pub->publish(ctrl);
 	}//END_UNIQUE
@@ -172,7 +172,7 @@ int main(int argc, char **argv)
   ros::ServiceServer add_service = n.advertiseService("addOneTug", addOneTug);
 
   ros::Subscriber wayp_sub = n.subscribe("shipWaypoint", 1, waypCallback);
-  ros::Subscriber shipPose_sub = n.subscribe("shipPose", 100, shipPoseCallback);
+  ros::Subscriber shipPose_sub = n.subscribe("shipPose", 1, shipPoseCallback);
   ros::Subscriber tugPose_sub = n.subscribe("pose", 100, tugPoseCallback);
   ros::Subscriber ctrlTugs_sub = n.subscribe("ctrlTugs", 100, ctrlTugsCallback);
 
@@ -194,6 +194,7 @@ int main(int argc, char **argv)
   		std_msgs::Bool msg;
   		msg.data = true;
   		stress_pub.publish(msg);
+      std::cout << "No tugs attached to ship!\n";
   	}
   	while( discardTugs.data.size() > 0)
   	{

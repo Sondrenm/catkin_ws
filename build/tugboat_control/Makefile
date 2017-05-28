@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+tugboat_control/CMakeFiles/ShipControl_Simple.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/ShipControl_Simple.dir/rule
+.PHONY : tugboat_control/CMakeFiles/ShipControl_Simple.dir/rule
+
+# Convenience name for target.
+ShipControl_Simple: tugboat_control/CMakeFiles/ShipControl_Simple.dir/rule
+
+.PHONY : ShipControl_Simple
+
+# fast build rule for target.
+ShipControl_Simple/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/build
+.PHONY : ShipControl_Simple/fast
+
+# Convenience name for target.
 tugboat_control/CMakeFiles/TugSim.dir/rule:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/TugSim.dir/rule
 .PHONY : tugboat_control/CMakeFiles/TugSim.dir/rule
@@ -211,6 +226,21 @@ CV/fast:
 .PHONY : CV/fast
 
 # Convenience name for target.
+tugboat_control/CMakeFiles/logger.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/logger.dir/rule
+.PHONY : tugboat_control/CMakeFiles/logger.dir/rule
+
+# Convenience name for target.
+logger: tugboat_control/CMakeFiles/logger.dir/rule
+
+.PHONY : logger
+
+# fast build rule for target.
+logger/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/logger.dir/build.make tugboat_control/CMakeFiles/logger.dir/build
+.PHONY : logger/fast
+
+# Convenience name for target.
 tugboat_control/CMakeFiles/listener.dir/rule:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/listener.dir/rule
 .PHONY : tugboat_control/CMakeFiles/listener.dir/rule
@@ -239,6 +269,21 @@ _tugboat_control_generate_messages_check_deps_TugSetpoints: tugboat_control/CMak
 _tugboat_control_generate_messages_check_deps_TugSetpoints/fast:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/build
 .PHONY : _tugboat_control_generate_messages_check_deps_TugSetpoints/fast
+
+# Convenience name for target.
+tugboat_control/CMakeFiles/tugboat_control.dir/rule:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 tugboat_control/CMakeFiles/tugboat_control.dir/rule
+.PHONY : tugboat_control/CMakeFiles/tugboat_control.dir/rule
+
+# Convenience name for target.
+tugboat_control: tugboat_control/CMakeFiles/tugboat_control.dir/rule
+
+.PHONY : tugboat_control
+
+# fast build rule for target.
+tugboat_control/fast:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control.dir/build.make tugboat_control/CMakeFiles/tugboat_control.dir/build
+.PHONY : tugboat_control/fast
 
 # Convenience name for target.
 tugboat_control/CMakeFiles/tugboat_control_gencpp.dir/rule:
@@ -699,6 +744,33 @@ src/ShipControl_Generic.cpp.s:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/src/ShipControl_Generic.cpp.s
 .PHONY : src/ShipControl_Generic.cpp.s
 
+src/ShipControl_Simple.o: src/ShipControl_Simple.cpp.o
+
+.PHONY : src/ShipControl_Simple.o
+
+# target to build an object file
+src/ShipControl_Simple.cpp.o:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/src/ShipControl_Simple.cpp.o
+.PHONY : src/ShipControl_Simple.cpp.o
+
+src/ShipControl_Simple.i: src/ShipControl_Simple.cpp.i
+
+.PHONY : src/ShipControl_Simple.i
+
+# target to preprocess a source file
+src/ShipControl_Simple.cpp.i:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/src/ShipControl_Simple.cpp.i
+.PHONY : src/ShipControl_Simple.cpp.i
+
+src/ShipControl_Simple.s: src/ShipControl_Simple.cpp.s
+
+.PHONY : src/ShipControl_Simple.s
+
+# target to generate assembly for a file
+src/ShipControl_Simple.cpp.s:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/src/ShipControl_Simple.cpp.s
+.PHONY : src/ShipControl_Simple.cpp.s
+
 src/TugController.o: src/TugController.cpp.o
 
 .PHONY : src/TugController.o
@@ -834,6 +906,36 @@ src/listener.cpp.s:
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/listener.dir/build.make tugboat_control/CMakeFiles/listener.dir/src/listener.cpp.s
 .PHONY : src/listener.cpp.s
 
+src/logger.o: src/logger.cpp.o
+
+.PHONY : src/logger.o
+
+# target to build an object file
+src/logger.cpp.o:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/logger.dir/build.make tugboat_control/CMakeFiles/logger.dir/src/logger.cpp.o
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control.dir/build.make tugboat_control/CMakeFiles/tugboat_control.dir/src/logger.cpp.o
+.PHONY : src/logger.cpp.o
+
+src/logger.i: src/logger.cpp.i
+
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/logger.dir/build.make tugboat_control/CMakeFiles/logger.dir/src/logger.cpp.i
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control.dir/build.make tugboat_control/CMakeFiles/tugboat_control.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/logger.dir/build.make tugboat_control/CMakeFiles/logger.dir/src/logger.cpp.s
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/tugboat_control.dir/build.make tugboat_control/CMakeFiles/tugboat_control.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
+
 src/talker.o: src/talker.cpp.o
 
 .PHONY : src/talker.o
@@ -867,6 +969,7 @@ usr/local/include/PID_cpp/pid.o: usr/local/include/PID_cpp/pid.cpp.o
 
 # target to build an object file
 usr/local/include/PID_cpp/pid.cpp.o:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/usr/local/include/PID_cpp/pid.cpp.o
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/usr/local/include/PID_cpp/pid.cpp.o
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/usr/local/include/PID_cpp/pid.cpp.o
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/usr/local/include/PID_cpp/pid.cpp.o
@@ -878,6 +981,7 @@ usr/local/include/PID_cpp/pid.i: usr/local/include/PID_cpp/pid.cpp.i
 
 # target to preprocess a source file
 usr/local/include/PID_cpp/pid.cpp.i:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/usr/local/include/PID_cpp/pid.cpp.i
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/usr/local/include/PID_cpp/pid.cpp.i
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/usr/local/include/PID_cpp/pid.cpp.i
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/usr/local/include/PID_cpp/pid.cpp.i
@@ -889,6 +993,7 @@ usr/local/include/PID_cpp/pid.s: usr/local/include/PID_cpp/pid.cpp.s
 
 # target to generate assembly for a file
 usr/local/include/PID_cpp/pid.cpp.s:
+	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/usr/local/include/PID_cpp/pid.cpp.s
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugController.dir/build.make tugboat_control/CMakeFiles/TugController.dir/usr/local/include/PID_cpp/pid.cpp.s
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Generic.dir/build.make tugboat_control/CMakeFiles/ShipControl_Generic.dir/usr/local/include/PID_cpp/pid.cpp.s
 	cd /home/sondre/catkin_ws/build && $(MAKE) -f tugboat_control/CMakeFiles/TugManager.dir/build.make tugboat_control/CMakeFiles/TugManager.dir/usr/local/include/PID_cpp/pid.cpp.s
@@ -906,11 +1011,14 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... ShipControl_Simple"
 	@echo "... TugSim"
 	@echo "... TugController"
 	@echo "... CV"
+	@echo "... logger"
 	@echo "... listener"
 	@echo "... _tugboat_control_generate_messages_check_deps_TugSetpoints"
+	@echo "... tugboat_control"
 	@echo "... tugboat_control_gencpp"
 	@echo "... _tugboat_control_generate_messages_check_deps_removeOneTug"
 	@echo "... edit_cache"
@@ -945,6 +1053,9 @@ help:
 	@echo "... src/ShipControl_Generic.o"
 	@echo "... src/ShipControl_Generic.i"
 	@echo "... src/ShipControl_Generic.s"
+	@echo "... src/ShipControl_Simple.o"
+	@echo "... src/ShipControl_Simple.i"
+	@echo "... src/ShipControl_Simple.s"
 	@echo "... src/TugController.o"
 	@echo "... src/TugController.i"
 	@echo "... src/TugController.s"
@@ -960,6 +1071,9 @@ help:
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"
+	@echo "... src/logger.o"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
 	@echo "... src/talker.o"
 	@echo "... src/talker.i"
 	@echo "... src/talker.s"

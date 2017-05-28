@@ -511,6 +511,9 @@ topic_tools_DIR:PATH=/opt/ros/kinetic/share/topic_tools/cmake
 //Value Computed by CMake
 tugboat_control_BINARY_DIR:STATIC=/home/sondre/catkin_ws/build/tugboat_control
 
+//Dependencies for target
+tugboat_control_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 tugboat_control_SOURCE_DIR:STATIC=/home/sondre/catkin_ws/src/tugboat_control
 

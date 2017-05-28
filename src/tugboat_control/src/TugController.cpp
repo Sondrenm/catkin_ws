@@ -146,10 +146,10 @@ void computeControl(bool mode, ros::Publisher stress_pub)
           cmd.thrust = (int8_t)wayp_thrustPID.calculate(wayp.v, vLowPass);
         }
         else if(dist < 1){
-          cmd.thrust = (int8_t)(dist * 100);
+          cmd.thrust = (int8_t)(dist * 50);
         }
         else {
-          cmd.thrust = 100;          
+          cmd.thrust = 50;          
         }
       } 
       else 

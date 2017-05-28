@@ -15,13 +15,13 @@
 #include <vector>
 #include <math.h>
 
-/* <-- Remove/add 1st / to toggle - fix this to use input
+//* <-- Remove/add 1st / to toggle - fix this to use input
 #define CAM 0 //Built-in camera - or not? 
 /*/
 #define CAM 1 //extern camera
 //*/
 #define OUTPUTMODE true
-#define SHIP_ID 4
+#define SHIP_ID 0
 #define X_OFFSET 1.5
 #define Y_OFFSET 1
 
@@ -29,7 +29,7 @@
 
 static bool readCameraParameters(cv::Mat &camMatrix, cv::Mat &distCoeffs) {
     std::string filename;
-    if(CAM == 1){
+    if(CAM == 0){
       filename = "/home/sondre/catkin_ws/src/tugboat_control/cameraParametersUSB";
     }
     else {
@@ -130,7 +130,7 @@ int main(int argc, char **argv)
         }
       }
     }
-
+    std::cout << "img: (" << videoImg.rows << ", " << videoImg.cols << std::endl;
     cv::namedWindow("out", CV_WINDOW_NORMAL); //TODO: Make window appear nicely
     cv::imshow("out", videoImg);
     cv::waitKey(1);

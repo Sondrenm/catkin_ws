@@ -80,7 +80,6 @@ add_service_files(
 generate_messages(
 	DEPENDENCIES
 	std_msgs
-	geometry_msgs
 	tugboat_control
 )
 
@@ -153,6 +152,10 @@ add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener tugboat_control_generate_messages_cpp)
 
+add_executable(logger src/logger.cpp)
+target_link_libraries(logger ${catkin_LIBRARIES})
+add_dependencies(logger tugboat_control_generate_messages_cpp)
+
 add_executable(CV src/CV.cpp)
 target_link_libraries(CV ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(CV tugboat_control_generate_messages_cpp)
@@ -165,10 +168,6 @@ add_executable(TugManager src/TugManager.cpp /usr/local/include/PID_cpp/pid.cpp)
 target_link_libraries(TugManager ${catkin_LIBRARIES})
 add_dependencies(TugManager tugboat_control_generate_messages_cpp)
 
-add_executable(ShipControl_Generic src/ShipControl_Generic.cpp /usr/local/include/PID_cpp/pid.cpp)
-target_link_libraries(ShipControl_Generic ${catkin_LIBRARIES})
-add_dependencies(ShipControl_Generic tugboat_control_generate_messages_cpp)
-
 add_executable(TugSim src/TugSim.cpp)
 target_link_libraries(TugSim ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(TugSim tugboat_control_generate_messages_cpp)
@@ -177,12 +176,25 @@ add_executable(WaypointDummy src/WaypointDummy.cpp)
 target_link_libraries(WaypointDummy ${catkin_LIBRARIES})
 add_dependencies(WaypointDummy tugboat_control_generate_messages_cpp)
 
+add_executable(ShipControl_Generic src/ShipControl_Generic.cpp /usr/local/include/PID_cpp/pid.cpp)
+target_link_libraries(ShipControl_Generic ${catkin_LIBRARIES})
+add_dependencies(ShipControl_Generic tugboat_control_generate_messages_cpp)
+
+add_executable(ShipControl_Simple src/ShipControl_Simple.cpp /usr/local/include/PID_cpp/pid.cpp)
+target_link_libraries(ShipControl_Simple ${catkin_LIBRARIES})
+add_dependencies(ShipControl_Simple tugboat_control_generate_messages_cpp)
+
 #############
 ## Install ##
 #############
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
+
+
+add_library(${PROJECT_NAME}
+  src/logger.cpp
+)
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
@@ -191,19 +203,19 @@ add_dependencies(WaypointDummy tugboat_control_generate_messages_cpp)
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
-## Mark executables and/or libraries for installation
-# install(TARGETS tugboat_control tugboat_control_node
-#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+# Mark executables and/or libraries for installation
+ install(TARGETS ${PROJECT_NAME} 
+   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
 
-## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+# Mark cpp header files for installation
+ install(DIRECTORY include/${PROJECT_NAME}/
+   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+   FILES_MATCHING PATTERN "*.h"
+   PATTERN ".svn" EXCLUDE
+ )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES

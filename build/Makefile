@@ -1427,6 +1427,19 @@ run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast:
 .PHONY : run_tests_rosserial_test_rostest_test_rosserial_server_serial.test/fast
 
 #=============================================================================
+# Target rules for targets named ShipControl_Simple
+
+# Build rule for target.
+ShipControl_Simple: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ShipControl_Simple
+.PHONY : ShipControl_Simple
+
+# fast build rule for target.
+ShipControl_Simple/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/ShipControl_Simple.dir/build.make tugboat_control/CMakeFiles/ShipControl_Simple.dir/build
+.PHONY : ShipControl_Simple/fast
+
+#=============================================================================
 # Target rules for targets named TugSim
 
 # Build rule for target.
@@ -1466,6 +1479,19 @@ CV/fast:
 .PHONY : CV/fast
 
 #=============================================================================
+# Target rules for targets named logger
+
+# Build rule for target.
+logger: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 logger
+.PHONY : logger
+
+# fast build rule for target.
+logger/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/logger.dir/build.make tugboat_control/CMakeFiles/logger.dir/build
+.PHONY : logger/fast
+
+#=============================================================================
 # Target rules for targets named listener
 
 # Build rule for target.
@@ -1490,6 +1516,19 @@ _tugboat_control_generate_messages_check_deps_TugSetpoints: cmake_check_build_sy
 _tugboat_control_generate_messages_check_deps_TugSetpoints/fast:
 	$(MAKE) -f tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/build.make tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir/build
 .PHONY : _tugboat_control_generate_messages_check_deps_TugSetpoints/fast
+
+#=============================================================================
+# Target rules for targets named tugboat_control
+
+# Build rule for target.
+tugboat_control: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tugboat_control
+.PHONY : tugboat_control
+
+# fast build rule for target.
+tugboat_control/fast:
+	$(MAKE) -f tugboat_control/CMakeFiles/tugboat_control.dir/build.make tugboat_control/CMakeFiles/tugboat_control.dir/build
+.PHONY : tugboat_control/fast
 
 #=============================================================================
 # Target rules for targets named tugboat_control_gencpp
@@ -1952,11 +1991,14 @@ help:
 	@echo "... clean_test_results_rosserial_test"
 	@echo "... _run_tests_rosserial_test_rostest_test_rosserial_python_socket.test"
 	@echo "... run_tests_rosserial_test_rostest_test_rosserial_server_serial.test"
+	@echo "... ShipControl_Simple"
 	@echo "... TugSim"
 	@echo "... TugController"
 	@echo "... CV"
+	@echo "... logger"
 	@echo "... listener"
 	@echo "... _tugboat_control_generate_messages_check_deps_TugSetpoints"
+	@echo "... tugboat_control"
 	@echo "... tugboat_control_gencpp"
 	@echo "... _tugboat_control_generate_messages_check_deps_removeOneTug"
 	@echo "... tugboat_control_geneus"

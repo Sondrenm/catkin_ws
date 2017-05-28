@@ -199,11 +199,14 @@
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/test.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/install/local.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/install/strip.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/ShipControl_Simple.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugSim.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/TugController.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/CV.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/logger.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/listener.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints.dir
+/home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/tugboat_control_gencpp.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug.dir
 /home/sondre/catkin_ws/build/tugboat_control/CMakeFiles/edit_cache.dir

@@ -11,7 +11,7 @@
 #include <vector>
 
 #define SHIP_ID 4 //Should be 0! 4 for testing purposes
-#define ACCEPTABLE_DIST_ERROR 0.2 //30 cm is ok for now
+#define ACCEPTABLE_DIST_ERROR 0.3 //30 cm is ok for now
 
 tugboat_control::BoatPose shipPose;
 tugboat_control::Waypoint shipWaypoint;
