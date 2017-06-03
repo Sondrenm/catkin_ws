@@ -99,6 +99,8 @@ void ctrlTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
     }
     if(newPoses.size() <= ID)
     { //No element added above, because no Pose is in record
+      std::cout << "Adding tugboat " << (int)ctrlTugIDs.data[ID] << " to Ship Control\n";
+
       tugboat_control::BoatPose blankPose;
       blankPose.ID = ctrlTugIDs.data[ID];
       blankPose.x = 0;

@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 
     ctrlTugs_pub.publish(ctrlTugs);
 
-    wayp.ID = 3;
+    wayp.ID = 1;
     if(count < 20)
     {
       wayp.x = 1;
@@ -79,12 +79,12 @@ int main(int argc, char **argv)
     {
       count = 0;
     }
-    wayp.v = 0.05;
+    wayp.v = 0.1;
     wayp.o = 4;
     wayp_pub.publish(wayp);
     
-    wayp.ID = 4;
-    wayp_pub.publish(wayp);
+    //wayp.ID = 4;
+    //wayp_pub.publish(wayp);
 
     /*
     ctrl.ID = 3;

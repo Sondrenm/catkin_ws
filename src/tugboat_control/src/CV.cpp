@@ -15,7 +15,7 @@
 #include <vector>
 #include <math.h>
 
-//* <-- Remove/add 1st / to toggle - fix this to use input
+/* <-- Remove/add 1st / to toggle - fix this to use input
 #define CAM 0 //Built-in camera - or not? 
 /*/
 #define CAM 1 //extern camera
@@ -29,7 +29,7 @@
 
 static bool readCameraParameters(cv::Mat &camMatrix, cv::Mat &distCoeffs) {
     std::string filename;
-    if(CAM == 0){
+    if(CAM == 1){
       filename = "/home/sondre/catkin_ws/src/tugboat_control/cameraParametersUSB";
     }
     else {

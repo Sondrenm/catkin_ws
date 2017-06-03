@@ -23,40 +23,39 @@
 
 #define CTRL 1
 #define WAYP 0
-#define ACCEPTABLE_ANGLE_ERROR 0.5 //0.5 rad = 29 degrees
-#define ACCEPTABLE_DIST_ERROR 0.1 //10 cm from waypoint is considered OK
+#define ACCEPTABLE_ANGLE_ERROR 0.5 // 0.5 rad = 29 degrees
+#define ACCEPTABLE_DIST_ERROR 0.2 // 20 cm from waypoint is considered OK
 #define TIMEOUT_TIME 1000 //ms
 
-#define pi                  3.1416
 #define dt                  0.1 //Controller timestep in seconds
 #define output_max          100 //Output is measured in %
 #define output_min          -100
 #define circular            true
 #define noncircular         false
 
-#define ctrl_ccwturn_Kp      40
+#define ctrl_ccwturn_Kp      10
 #define ctrl_ccwturn_Kd      50
 #define ctrl_ccwturn_Ki      0
 
-#define ctrl_thrust_Kp      25
+#define ctrl_thrust_Kp      100
 #define ctrl_thrust_Kd      0
-#define ctrl_thrust_Ki      0
+#define ctrl_thrust_Ki      10
 
-#define wayp_ccwturn_Kp      20
+#define wayp_ccwturn_Kp      15
 #define wayp_ccwturn_Kd      50
 #define wayp_ccwturn_Ki      0
 
 //Temporary disabled
 #define SPEED_CONTROLLER_ENABLED false
 #define wayp_thrust_Kp      1000
-#define wayp_thrust_Kd      0
-#define wayp_thrust_Ki      0
+#define wayp_thrust_Kd      100
+#define wayp_thrust_Ki      100
 
 PID ctrl_ccwturnPID = PID(dt, output_max, output_min, ctrl_ccwturn_Kp, ctrl_ccwturn_Kd, ctrl_ccwturn_Ki, circular);
 PID ctrl_thrustPID = PID(dt, output_max, 0, ctrl_thrust_Kp, ctrl_thrust_Kd, ctrl_thrust_Ki, noncircular);
 
 PID wayp_ccwturnPID = PID(dt, output_max, output_min, wayp_ccwturn_Kp, wayp_ccwturn_Kd, wayp_ccwturn_Ki, circular);
-PID wayp_thrustPID = PID(dt, output_max, 0, wayp_thrust_Kp, wayp_thrust_Kd, wayp_thrust_Ki, noncircular);
+PID wayp_thrustPID = PID(dt, 50, 0, wayp_thrust_Kp, wayp_thrust_Kd, wayp_thrust_Ki, noncircular);
 
 tugboat_control::BoatPose pose;
 tugboat_control::BoatPose lastPose;
@@ -83,10 +82,10 @@ void poseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
       double angleDifference = PIDnormalizeAngle(pose.o - directionOfTravel);
 
       double timechange = thisPoseTime - lastPoseTime;
-      double vAlongHeading = sqrt(dx*dx + dy*dy) * cos(angleDifference) / timechange;
+      double vAlongHeading = sqrt(dx*dx + dy*dy) * cos(angleDifference) / (timechange/1000);
       if(abs(vAlongHeading) < 1){
-        vLowPass = (vLowPass + 0.5 * vAlongHeading) / 1.5; 
-        //std::cout << "vLowPass: " << vLowPass << "\n";
+        vLowPass = (0.8 * vLowPass + 0.2 * vAlongHeading); 
+        std::cout << "vLowPass: " << vLowPass << "\n";
       }
     }
 
