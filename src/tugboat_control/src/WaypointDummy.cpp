@@ -103,7 +103,8 @@ int main(int argc, char **argv)
 
   std::cout << "Waypoint Dummy node initialized successfully\n";
   while (ros::ok())
-  {
+  {    
+    ros::spinOnce();
     /*//Try: Only release if all tugboats have reached their waypoint
     int numReadyTugs = 0;
     for (int waypoint = 0; waypoint < tugWaypoints.size(); ++waypoint)
@@ -167,7 +168,6 @@ if(numReadyTugs == tugWaypoints.size()){*/
 
     //std::cout << "numWaypTugs: " << waypTugIDs.data.size() << "\n";
 
-    ros::spinOnce();
     loop_rate.sleep();
   }
 

@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "tugboat_control/BoatPose.h"
+#include "tugboat_control/Waypoint.h"
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
@@ -26,6 +27,8 @@
 #define Y_OFFSET 1
 
 #define markerLength 0.094 //m
+
+std::vector<tugboat_control::Waypoint> waypoints(7); 
 
 static bool readCameraParameters(cv::Mat &camMatrix, cv::Mat &distCoeffs) {
     std::string filename;
@@ -58,12 +61,27 @@ static bool readCameraParameters(cv::Mat &camMatrix, cv::Mat &distCoeffs) {
     return o; 
 }
 
+void waypCallback(const tugboat_control::Waypoint::ConstPtr& waypIn)
+{
+  waypoints[(int)waypIn->ID] = *waypIn;
+}
+
+
+void shipWaypCallback(const tugboat_control::Waypoint::ConstPtr& wayp_in)
+{
+   waypoints[0] = *wayp_in;
+}
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "CV");
   ros::NodeHandle n;
   ros::Publisher tug_pub = n.advertise<tugboat_control::BoatPose>("pose", 100);
   ros::Publisher ship_pub = n.advertise<tugboat_control::BoatPose>("shipPose", 1);
+
+  ros::Subscriber shipWayp_sub = n.subscribe("shipWaypoint", 1, shipWaypCallback);
+  ros::Subscriber wayp_sub = n.subscribe("waypoint", 100, waypCallback);
+
   ros::Rate loop_rate(10);
 
   tugboat_control::BoatPose boat;
@@ -110,6 +128,14 @@ int main(int argc, char **argv)
         {
           if(OUTPUTMODE){
             cv::aruco::drawAxis(videoImg, cameraMatrix, distCoeffs, rvecs[i], tvecs[i], markerLength * 0.5f);
+            if(waypoints[markerIds[i]].x > 0.001)
+            {
+              cv::Point2d tugPt = cv::Point2d((tvecs[i][0] + X_OFFSET) * 220, (tvecs[i][1] + Y_OFFSET) * 220), waypPt = cv::Point(waypoints[markerIds[i]].x * 222, waypoints[markerIds[i]].y * 222);
+              cv::Scalar colour = cv::Scalar(0, 0, 255);
+              cv::arrowedLine(videoImg, tugPt, waypPt, colour, 2, 8, 0, 0.03);
+            }
+            std::cout << "Drawing stuff\n";
+
           }
 
           //Transform rvec to 2D orientation
@@ -130,7 +156,6 @@ int main(int argc, char **argv)
         }
       }
     }
-    std::cout << "img: (" << videoImg.rows << ", " << videoImg.cols << std::endl;
     cv::namedWindow("out", CV_WINDOW_NORMAL); //TODO: Make window appear nicely
     cv::imshow("out", videoImg);
     cv::waitKey(1);

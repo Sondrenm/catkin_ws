@@ -8,10 +8,12 @@ a29ba62ece17413c38ac20e02dc4d58d /home/sondre/catkin_ws/devel/include/rosserial_
 ae4ed4b627e7457e7d9cc78a9395623a /home/sondre/catkin_ws/devel/include/rosserial_msgs/RequestParam.h
 3793828adaa4cf4a224f8d08bceda794 /home/sondre/catkin_ws/devel/include/rosserial_msgs/RequestServiceInfo.h
 2e92ee2a3e31ece77e10a5275087fcdd /home/sondre/catkin_ws/devel/include/rosserial_msgs/TopicInfo.h
+21dcee5c431da7146e88e7dab1d14570 /home/sondre/catkin_ws/devel/include/tugboat_control/AvoidShipCollision.h
 0356a0ba53e66d7a474e0b03d11bebd7 /home/sondre/catkin_ws/devel/include/tugboat_control/BoatList.h
 034aa980a2db74aa6125723885beec9e /home/sondre/catkin_ws/devel/include/tugboat_control/BoatPose.h
 d8f24b5d76c1299a0ee764c1b3de8c40 /home/sondre/catkin_ws/devel/include/tugboat_control/BoatStatus.h
 1834fc704883a75de65d857094147fc2 /home/sondre/catkin_ws/devel/include/tugboat_control/ClearWaypoint.h
+e9d4b4b0bd2544ea45492f60b1063423 /home/sondre/catkin_ws/devel/include/tugboat_control/Path.h
 3cee2c4fca61367f539ba7ef3f5a2fe9 /home/sondre/catkin_ws/devel/include/tugboat_control/PushingForce.h
 c49f103618e3496b684e47102007186b /home/sondre/catkin_ws/devel/include/tugboat_control/ShipControlInput.h
 6af8049625c0d420ef769322f1f104b4 /home/sondre/catkin_ws/devel/include/tugboat_control/ShipWaypoint.h
@@ -22,7 +24,9 @@ c49f103618e3496b684e47102007186b /home/sondre/catkin_ws/devel/include/tugboat_co
 2eae35612eb0123f2f437259051ed478 /home/sondre/catkin_ws/devel/include/tugboat_control/TugStatus.h
 0ad77f88f3b878d447af75c28415362c /home/sondre/catkin_ws/devel/include/tugboat_control/TugWaypoint.h
 31eccc7c7ab3f8094eebdc5c30596016 /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h
+3b616ca68d091436e39a3d07b6d221c2 /home/sondre/catkin_ws/devel/include/tugboat_control/WaypointAvailable.h
 484b1cd36d9e4062a068f1674cb82313 /home/sondre/catkin_ws/devel/include/tugboat_control/WaypointRequest.h
+bab64809f4f43e293ebde84b1da9db38 /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoints.h
 c35ba1e70c35cd71d926cd882f40f28c /home/sondre/catkin_ws/devel/include/tugboat_control/addOneTug.h
 2bd1e8952dfcf9332ae93f3d047531b6 /home/sondre/catkin_ws/devel/include/tugboat_control/removeOneTug.h
 ae4115f4c86143cb5af59431ebf0da3a /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/rosserial_arduino/msg/_Adc.py
@@ -44,6 +48,7 @@ b29af2016ebfd7df850fd2e54d5e5bd3 /home/sondre/catkin_ws/devel/lib/python2.7/dist
 3871e52fb8d13b504353a86d0af65e78 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatPose.py
 ef3c0228f3a18593032c63c6eb9795da /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_BoatStatus.py
 c14a38de4e555dbab69ade30b1194c78 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ClearWaypoint.py
+b386cc71b3a93aba8bc47bf1a0e90270 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Path.py
 0a8b279d311c578e2a106a9ededfcb03 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_PushingForce.py
 190c146c90c136b9213b5f2a72411b8e /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ShipControlInput.py
 2ddf5781933e89d72fc86a96db9fb935 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_ShipWaypoint.py
@@ -55,7 +60,10 @@ b76d8f91a5c166fd4cf10d4aee61ae35 /home/sondre/catkin_ws/devel/lib/python2.7/dist
 e491691e42539311042d63ad4bcbef64 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_TugWaypoint.py
 10d23865c1122e3c3fbb6576e94cf5a6 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoint.py
 6fb042296b32f88bd5898ce0bd8d284f /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_WaypointRequest.py
+10b70f25b3cca6ab5fe3d9cfa9ba47ee /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/_Waypoints.py
 63e9f04f659e95ab207a678f2addc2f5 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/msg/__init__.py
+8f680f03079a23df8284e8f43356237d /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_AvoidShipCollision.py
+ffb14aadf6aad3119ef8dda8ace2ffda /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_WaypointAvailable.py
 3bcbf3f6d42ce6648be62ecd54a40c7a /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/__init__.py
 16ed575ea092ce2d3dc7aed7a1ccade5 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_addOneTug.py
 2797fbe5dfc2bd25ec72951f6d9d7505 /home/sondre/catkin_ws/devel/lib/python2.7/dist-packages/tugboat_control/srv/_removeOneTug.py
@@ -72,6 +80,7 @@ fa0cbf90b53fa3c02edd449f6ace4755 /home/sondre/catkin_ws/devel/share/common-lisp/
 bf5ecd389282c5de5381a55213026364 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatPose.lisp
 df79113cf0b8fbc626b628165ea1c2c4 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/BoatStatus.lisp
 6cf8c40e527844c99a3271010d389244 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ClearWaypoint.lisp
+3f3eeea83c146a0013a57dd8beca7102 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Path.lisp
 4700774f70ed4e0da250dd568cdcecf2 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/PushingForce.lisp
 6295b0cd9a0c75eff9af79bb081480ee /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ShipControlInput.lisp
 c75d8f9beaa7bd0df51a9491bafb5f5e /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/ShipWaypoint.lisp
@@ -83,6 +92,9 @@ fd77afe418738591575a79fb952d9ae8 /home/sondre/catkin_ws/devel/share/common-lisp/
 e739b64b0fcc1a2535d05768ed613a10 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/TugWaypoint.lisp
 83e6b5c19e9e5a2c1c2bb5e9c76c99fc /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoint.lisp
 a306cf2df68c6e0e3959bf175e4df469 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/WaypointRequest.lisp
+7ff90649f68d0165d5059841482850a3 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/msg/Waypoints.lisp
+b99432d2603ea51c4fe838d4f5591ae3 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/srv/AvoidShipCollision.lisp
+810b48066a4b6d3bd13df6b60f2ba20f /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/srv/WaypointAvailable.lisp
 8d1138a390905de5478b3ec96fdc9527 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/srv/addOneTug.lisp
 4d17c602afc815326d0d268dddd70a79 /home/sondre/catkin_ws/devel/share/common-lisp/ros/tugboat_control/srv/removeOneTug.lisp
 9da41bd5fc4f95f452fb58911a7ecc1d /home/sondre/catkin_ws/devel/share/gennodejs/ros/rosserial_arduino/msg/Adc.js
@@ -98,6 +110,7 @@ f4923c29f4548bd3ffff16eb5e21ad3c /home/sondre/catkin_ws/devel/share/gennodejs/ro
 353ee8790f1bbd6e18f938767d971511 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatPose.js
 a8d63658373efa9375268d494c555159 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/BoatStatus.js
 b83d25d7d5f7a7ebd5ecd25509a3c488 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/ClearWaypoint.js
+f455215a2b933bece3fd59e04e12f48d /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Path.js
 71366cd384d8234d1ea89a15e591372c /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/PushingForce.js
 c9eebf0580c87163be0f5de21cdaf4d9 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/ShipControlInput.js
 5bf04fef8b62bba2ad4cbcd337786c79 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/ShipWaypoint.js
@@ -109,6 +122,9 @@ faaa676b45359a1808e6f2d5bb0fbfc3 /home/sondre/catkin_ws/devel/share/gennodejs/ro
 f9af51970df706e45eaa4d71d2f0d4b9 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/TugWaypoint.js
 cdee081b87bee11931ad56519002a3c6 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoint.js
 9a5e7aaa4643556ce55e09d517c42ffe /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/WaypointRequest.js
+39b34f1fab976e486342e02545d04a82 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/msg/Waypoints.js
+9a96ca9fd478fce9f4c6095555122144 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/AvoidShipCollision.js
+49d865ed80262ed44d01377e430a9867 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/WaypointAvailable.js
 4326abf3bac3a6604c65b3fbe86d2119 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/addOneTug.js
 b988cb3956874e7045d8059f62c32a13 /home/sondre/catkin_ws/devel/share/gennodejs/ros/tugboat_control/srv/removeOneTug.js
 8083fe29c7d2fed4dbc8b7e545062213 /home/sondre/catkin_ws/devel/share/roseus/ros/rosserial_arduino/manifest.l
@@ -128,6 +144,7 @@ ad78ab5af0f377b68f5e9fad9a2db8b8 /home/sondre/catkin_ws/devel/share/roseus/ros/t
 52aa6c346146c187165828dacfe123f8 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatPose.l
 180b8f0d9e2faef240d06cfba8e9c613 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatStatus.l
 84e1b92462c45d76e563e79a6a43c757 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ClearWaypoint.l
+cc4ee69c0e3102a5046c1e3c3ec4feaa /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Path.l
 957699fb2ec2dac825fedd8e6b7fbd7d /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/PushingForce.l
 598f234a527a1fc867b348707792b8dd /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ShipControlInput.l
 26ccbbb5bf040244e271ee8f78bf0427 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ShipWaypoint.l
@@ -139,6 +156,9 @@ e9197636ea6721eda94177f7d069ead8 /home/sondre/catkin_ws/devel/share/roseus/ros/t
 c27c9cc268b8afcbc1e20484b55a988e /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/TugWaypoint.l
 c929fedac47ef99f2577014dfa865856 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoint.l
 5581cd9ba5130497da1458a7fba3e146 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/WaypointRequest.l
+e3b0decb4ba77b56489f03c5dcec82dc /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoints.l
+db1af4178d1019b76c1a40b43500f569 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/AvoidShipCollision.l
+40ef6e697029c9fa549c1d66e4508759 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l
 497f9a141fd1faec86a5155cba8612c5 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l
 664f0354d7314b519ff8ee89e4f66942 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/removeOneTug.l
 3ba12c6d48d161941d158a78c983eaac CMakeFiles/clean_test_results
@@ -180,12 +200,16 @@ a8b4846168f2f6e34cc4edc8d0d4d678 rosserial/rosserial_test/CMakeFiles/rosserial_t
 964c0770ea56646480f1bb81e587981e rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_serial.test
 057fd5d8ab5d240c80e0265557c25822 rosserial/rosserial_test/CMakeFiles/run_tests_rosserial_test_rostest_test_rosserial_server_socket.test
 4adb4895ac151d19ade3044d41807316 rosserial/rosserial_test/include/rosserial
+1902b1070b2c6c1db0c9f60335adba6e tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_AvoidShipCollision
 1bd14b9a0a125d11d00e94d1c8ef4961 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_BoatPose
 06363620d926a52ac90a71db00d559ff tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_ClearWaypoint
+6f89aa2df6a441417df250aee1b8a1b1 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Path
 1f4393a2fb616b66b9e43837b6b8704d tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_PushingForce
 1d17cf5dcb789f7547d7bb5dc91a1653 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Thrust
 4dd129683fbb0471a28e0cc4899ca6a9 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_TugSetpoints
 047d6969fe2213f1822673867acebb78 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoint
+e8f6511e96069673b345ccd997404ca3 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_WaypointAvailable
+42217fdd009a2e213010bc6afb33ddad tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_Waypoints
 17c0c67faed6daa97762d79bf0842f65 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_addOneTug
 975f80a839a2a9ac32b4873df55b21f1 tugboat_control/CMakeFiles/_tugboat_control_generate_messages_check_deps_removeOneTug
 e77712cc39800a7f0c446667c0dd1291 tugboat_control/CMakeFiles/tugboat_control_generate_messages_cpp

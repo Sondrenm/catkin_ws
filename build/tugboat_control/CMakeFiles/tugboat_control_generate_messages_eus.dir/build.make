@@ -55,12 +55,16 @@ include tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/pro
 
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Thrust.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/TugSetpoints.l
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoints.l
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Path.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatPose.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoint.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ClearWaypoint.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/PushingForce.l
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/AvoidShipCollision.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/removeOneTug.l
+tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l
 tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/manifest.l
 
 
@@ -74,50 +78,79 @@ tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus: /home/sondre/c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from tugboat_control/TugSetpoints.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
 
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoints.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoints.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoints.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from tugboat_control/Waypoints.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
+
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Path.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Path.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Path.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from tugboat_control/Path.msg"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
+
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatPose.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatPose.l: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from tugboat_control/BoatPose.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from tugboat_control/BoatPose.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
 
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoint.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoint.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from tugboat_control/Waypoint.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from tugboat_control/Waypoint.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
 
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ClearWaypoint.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ClearWaypoint.l: /home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from tugboat_control/ClearWaypoint.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from tugboat_control/ClearWaypoint.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
 
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/PushingForce.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/PushingForce.l: /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from tugboat_control/PushingForce.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from tugboat_control/PushingForce.msg"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg
+
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/AvoidShipCollision.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/AvoidShipCollision.l: /home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/AvoidShipCollision.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp code from tugboat_control/AvoidShipCollision.srv"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv
 
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l: /home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l: /home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from tugboat_control/addOneTug.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp code from tugboat_control/addOneTug.srv"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv
 
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/removeOneTug.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/removeOneTug.l: /home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from tugboat_control/removeOneTug.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating EusLisp code from tugboat_control/removeOneTug.srv"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv
 
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l: /home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l: /home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg
+/home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l: /opt/ros/kinetic/share/std_msgs/msg/Bool.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating EusLisp code from tugboat_control/WaypointAvailable.srv"
+	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg -p tugboat_control -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv
+
 /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp manifest code for tugboat_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sondre/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating EusLisp manifest code for tugboat_control"
 	cd /home/sondre/catkin_ws/build/tugboat_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control tugboat_control std_msgs tugboat_control
 
 tugboat_control_generate_messages_eus: tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Thrust.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/TugSetpoints.l
+tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoints.l
+tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Path.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/BoatPose.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/Waypoint.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/ClearWaypoint.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/msg/PushingForce.l
+tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/AvoidShipCollision.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/addOneTug.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/removeOneTug.l
+tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/srv/WaypointAvailable.l
 tugboat_control_generate_messages_eus: /home/sondre/catkin_ws/devel/share/roseus/ros/tugboat_control/manifest.l
 tugboat_control_generate_messages_eus: tugboat_control/CMakeFiles/tugboat_control_generate_messages_eus.dir/build.make
 

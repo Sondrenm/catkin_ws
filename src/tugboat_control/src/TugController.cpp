@@ -24,8 +24,8 @@
 #define CTRL 1
 #define WAYP 0
 #define ACCEPTABLE_ANGLE_ERROR 0.5 // 0.5 rad = 29 degrees
-#define ACCEPTABLE_DIST_ERROR 0.2 // 20 cm from waypoint is considered OK
-#define TIMEOUT_TIME 1000 //ms
+#define ACCEPTABLE_DIST_ERROR 0.0 // 0 cm from waypoint is considered OK
+#define TIMEOUT_TIME 1000 //ms 
 
 #define dt                  0.1 //Controller timestep in seconds
 #define output_max          100 //Output is measured in %
@@ -33,23 +33,25 @@
 #define circular            true
 #define noncircular         false
 
-#define ctrl_ccwturn_Kp      10
+#define ctrl_ccwturn_Kp      15
 #define ctrl_ccwturn_Kd      50
 #define ctrl_ccwturn_Ki      0
 
+#define PUSHING_CONTROLLER_ENABLED false
+#define FORCE_TO_THRUST 100
 #define ctrl_thrust_Kp      100
 #define ctrl_thrust_Kd      0
 #define ctrl_thrust_Ki      10
 
 #define wayp_ccwturn_Kp      15
-#define wayp_ccwturn_Kd      50
+#define wayp_ccwturn_Kd      30
 #define wayp_ccwturn_Ki      0
 
 //Temporary disabled
 #define SPEED_CONTROLLER_ENABLED false
 #define wayp_thrust_Kp      1000
 #define wayp_thrust_Kd      100
-#define wayp_thrust_Ki      100
+#define wayp_thrust_Ki      0
 
 PID ctrl_ccwturnPID = PID(dt, output_max, output_min, ctrl_ccwturn_Kp, ctrl_ccwturn_Kd, ctrl_ccwturn_Ki, circular);
 PID ctrl_thrustPID = PID(dt, output_max, 0, ctrl_thrust_Kp, ctrl_thrust_Kd, ctrl_thrust_Ki, noncircular);
@@ -66,8 +68,24 @@ tugboat_control::TugSetpoints ctrl;
 
 uint8_t id; //Passed as an argument. Default value 0
 bool controlMode = WAYP;
+bool timeout = false;
 long lastPoseTime = 0;
-double vLowPass;
+//double vLowPass;
+double v;
+
+void resetController()
+{
+  if(controlMode == CTRL)
+  {
+    ctrl_ccwturnPID.resetPID();
+    ctrl_thrustPID.resetPID();
+  }
+  else
+  {
+    wayp_ccwturnPID.resetPID();
+    wayp_thrustPID.resetPID();
+  }
+}
 
 void poseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
 {
@@ -83,10 +101,11 @@ void poseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
 
       double timechange = thisPoseTime - lastPoseTime;
       double vAlongHeading = sqrt(dx*dx + dy*dy) * cos(angleDifference) / (timechange/1000);
-      if(abs(vAlongHeading) < 1){
-        vLowPass = (0.8 * vLowPass + 0.2 * vAlongHeading); 
-        std::cout << "vLowPass: " << vLowPass << "\n";
-      }
+      v = vAlongHeading;
+      //if(std::abs(vAlongHeading) < 1){
+      //  vLowPass = (0.8 * vLowPass + 0.2 * vAlongHeading); 
+      //  std::cout << "vLowPass: " << vLowPass << "\n";
+      //}
     }
 
   lastPoseTime = thisPoseTime;
@@ -106,8 +125,7 @@ void waypCallback(const tugboat_control::Waypoint::ConstPtr& wayp_in)
   if(wayp_in->ID == id){
     if(controlMode != WAYP){
       std::cout << "Enter Waypoint Mode\n";
-      wayp_ccwturnPID.resetPID();
-      wayp_thrustPID.resetPID();
+      resetController();
       controlMode = WAYP;
     }
     wayp = *wayp_in;
@@ -119,14 +137,12 @@ void ctrlCallback(const tugboat_control::TugSetpoints::ConstPtr& ctrl_in)
   if(ctrl_in->ID == id){
     if(controlMode != CTRL){
       std::cout << "Enter Control Mode\n";
-      ctrl_ccwturnPID.resetPID();
-      ctrl_thrustPID.resetPID();
+      resetController();
       controlMode = CTRL;
     }
     ctrl = *ctrl_in;
   }
 }
-
 
 void computeControl(bool mode, ros::Publisher stress_pub)
 {
@@ -142,10 +158,10 @@ void computeControl(bool mode, ros::Publisher stress_pub)
       if(std::abs(oErr) < ACCEPTABLE_ANGLE_ERROR && dist > ACCEPTABLE_DIST_ERROR)
       {
         if(SPEED_CONTROLLER_ENABLED){        
-          cmd.thrust = (int8_t)wayp_thrustPID.calculate(wayp.v, vLowPass);
+          cmd.thrust = (int8_t)wayp_thrustPID.calculate(wayp.v, v ); //LowPass);
         }
         else if(dist < 1){
-          cmd.thrust = (int8_t)(dist * 50);
+          cmd.thrust = (int8_t)(dist * 40 + 10);
         }
         else {
           cmd.thrust = 50;          
@@ -157,11 +173,26 @@ void computeControl(bool mode, ros::Publisher stress_pub)
       }
       cmd.ccwturn = (int8_t)wayp_ccwturnPID.calculate(oSet, pose.o);
     }
+
     else //controlMode == CTRL
     {
-      cmd.thrust = (int8_t)ctrl_thrustPID.calculate(ctrl.force, push.force);
       cmd.ccwturn = (int8_t)ctrl_ccwturnPID.calculate(ctrl.o, pose.o);
-        std_msgs::Bool stress;
+
+      double oErrCtrl = PIDnormalizeAngle(ctrl.o - pose.o);
+      if( std::abs( oErrCtrl ) < ACCEPTABLE_ANGLE_ERROR )
+      {
+        if(PUSHING_CONTROLLER_ENABLED)
+        {
+          cmd.thrust = (int8_t)ctrl_thrustPID.calculate(ctrl.force, push.force);
+        }
+        else
+        { //Had some trouble with pushing controller
+          cmd.thrust = FORCE_TO_THRUST * ctrl.force;
+        }
+      }
+      
+      //For stress-based tugboat managing
+      std_msgs::Bool stress;
       if(cmd.thrust > 60)
       {
         stress.data = true;
@@ -178,6 +209,7 @@ void computeControl(bool mode, ros::Publisher stress_pub)
   { //More than TIMEOUT_TIME ms since last pos update - shut down tugboat
     cmd.thrust = 0;
     cmd.ccwturn = 0;
+    resetController();
   }
 }
 
@@ -219,11 +251,10 @@ int main(int argc, char **argv)
 
   while (ros::ok())
   {
-    loop_rate.sleep();
     ros::spinOnce();
     computeControl(controlMode, stress_pub);
     cmd_pub.publish(cmd);
-    ros::spinOnce();
+    loop_rate.sleep();
   }
 
   return 0;

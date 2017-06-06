@@ -9,6 +9,10 @@
    "CLEARWAYPOINT"
    "<CLEARWAYPOINT>"
    "CLEARWAYPOINT"
+   "<PATH>"
+   "PATH"
+   "<PATH>"
+   "PATH"
    "<PUSHINGFORCE>"
    "PUSHINGFORCE"
    "<PUSHINGFORCE>"
@@ -25,5 +29,9 @@
    "WAYPOINT"
    "<WAYPOINT>"
    "WAYPOINT"
+   "<WAYPOINTS>"
+   "WAYPOINTS"
+   "<WAYPOINTS>"
+   "WAYPOINTS"
   ))
 

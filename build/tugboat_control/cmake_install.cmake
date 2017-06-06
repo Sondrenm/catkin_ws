@@ -40,6 +40,8 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
     "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg"
+    "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg"
+    "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
     )
 endif()
 
@@ -47,6 +49,8 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tugboat_control/srv" TYPE FILE FILES
     "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
     "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
+    "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv"
+    "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
     )
 endif()
 

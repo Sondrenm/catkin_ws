@@ -2,6 +2,7 @@ from ._BoatList import *
 from ._BoatPose import *
 from ._BoatStatus import *
 from ._ClearWaypoint import *
+from ._Path import *
 from ._PushingForce import *
 from ._ShipControlInput import *
 from ._ShipWaypoint import *
@@ -13,3 +14,4 @@ from ._TugStatus import *
 from ._TugWaypoint import *
 from ._Waypoint import *
 from ._WaypointRequest import *
+from ._Waypoints import *

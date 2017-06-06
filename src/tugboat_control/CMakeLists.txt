@@ -58,6 +58,8 @@ add_message_files(
   TugSetpoints.msg
   Waypoint.msg
   ClearWaypoint.msg
+  Path.msg
+  Waypoints.msg
 )
 
 # Generate services in the 'srv' folder
@@ -67,6 +69,8 @@ add_service_files(
 	FILES
 	removeOneTug.srv
   addOneTug.srv
+  AvoidShipCollision.srv
+  WaypointAvailable.srv
 )
 
 ## Generate actions in the 'action' folder

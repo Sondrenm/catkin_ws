@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "tugboat_control: 6 messages, 2 services")
+message(STATUS "tugboat_control: 8 messages, 4 services")
 
 set(MSG_I_FLAGS "-Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Itugboat_control:/home/sondre/catkin_ws/src/tugboat_control/msg")
 
@@ -27,6 +27,21 @@ add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" ""
 )
 
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" ""
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" "tugboat_control/Waypoint"
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" "tugboat_control/Waypoint"
+)
+
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" NAME_WE)
 add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" "tugboat_control/BoatPose"
@@ -35,6 +50,11 @@ add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" NAME_WE)
 add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" ""
+)
+
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" NAME_WE)
+add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" "tugboat_control/Waypoint:std_msgs/Bool"
 )
 
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
@@ -47,9 +67,9 @@ add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg" ""
 )
 
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" NAME_WE)
 add_custom_target(_tugboat_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "tugboat_control" "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" "tugboat_control/Waypoint"
 )
 
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv" NAME_WE)
@@ -76,6 +96,18 @@ _generate_msg_cpp(tugboat_control
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
 )
 _generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_cpp(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -102,6 +134,12 @@ _generate_msg_cpp(tugboat_control
 
 ### Generating Services
 _generate_srv_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_cpp(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
   "${MSG_I_FLAGS}"
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
@@ -111,6 +149,12 @@ _generate_srv_cpp(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_cpp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Bool.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/tugboat_control
 )
 
@@ -130,15 +174,23 @@ get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_cpp _tugboat_control_generate_messages_check_deps_${_filename})
@@ -165,6 +217,18 @@ _generate_msg_eus(tugboat_control
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
 )
 _generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_eus(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -191,6 +255,12 @@ _generate_msg_eus(tugboat_control
 
 ### Generating Services
 _generate_srv_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_eus(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
   "${MSG_I_FLAGS}"
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
@@ -200,6 +270,12 @@ _generate_srv_eus(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_eus(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Bool.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/tugboat_control
 )
 
@@ -219,15 +295,23 @@ get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_eus _tugboat_control_generate_messages_check_deps_${_filename})
@@ -254,6 +338,18 @@ _generate_msg_lisp(tugboat_control
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
 )
 _generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_lisp(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -280,6 +376,12 @@ _generate_msg_lisp(tugboat_control
 
 ### Generating Services
 _generate_srv_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_lisp(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
   "${MSG_I_FLAGS}"
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
@@ -289,6 +391,12 @@ _generate_srv_lisp(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_lisp(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Bool.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/tugboat_control
 )
 
@@ -308,15 +416,23 @@ get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_lisp _tugboat_control_generate_messages_check_deps_${_filename})
@@ -343,6 +459,18 @@ _generate_msg_nodejs(tugboat_control
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
 )
 _generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_nodejs(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -369,6 +497,12 @@ _generate_msg_nodejs(tugboat_control
 
 ### Generating Services
 _generate_srv_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_nodejs(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
   "${MSG_I_FLAGS}"
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
@@ -378,6 +512,12 @@ _generate_srv_nodejs(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_nodejs(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Bool.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/tugboat_control
 )
 
@@ -397,15 +537,23 @@ get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_nodejs _tugboat_control_generate_messages_check_deps_${_filename})
@@ -432,6 +580,18 @@ _generate_msg_py(tugboat_control
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
 )
 _generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_msg_py(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
   "${MSG_I_FLAGS}"
   ""
@@ -458,6 +618,12 @@ _generate_msg_py(tugboat_control
 
 ### Generating Services
 _generate_srv_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_py(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
   "${MSG_I_FLAGS}"
   "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg"
@@ -467,6 +633,12 @@ _generate_srv_py(tugboat_control
   "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
+)
+_generate_srv_py(tugboat_control
+  "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
+  "${MSG_I_FLAGS}"
+  "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Bool.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/tugboat_control
 )
 
@@ -486,15 +658,23 @@ get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg" NAME_WE)
+add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg" NAME_WE)
+get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv" NAME_WE)
 add_dependencies(tugboat_control_generate_messages_py _tugboat_control_generate_messages_check_deps_${_filename})

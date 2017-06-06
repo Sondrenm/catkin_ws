@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg"
-services_str = "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv;/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv"
+messages_str = "/home/sondre/catkin_ws/src/tugboat_control/msg/BoatPose.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/PushingForce.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Thrust.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/TugSetpoints.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoint.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/ClearWaypoint.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Path.msg;/home/sondre/catkin_ws/src/tugboat_control/msg/Waypoints.msg"
+services_str = "/home/sondre/catkin_ws/src/tugboat_control/srv/removeOneTug.srv;/home/sondre/catkin_ws/src/tugboat_control/srv/addOneTug.srv;/home/sondre/catkin_ws/src/tugboat_control/srv/AvoidShipCollision.srv;/home/sondre/catkin_ws/src/tugboat_control/srv/WaypointAvailable.srv"
 pkg_name = "tugboat_control"
 dependencies_str = "std_msgs;tugboat_control"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

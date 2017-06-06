@@ -177,6 +177,10 @@ int main(int argc, char **argv)
 
   while (ros::ok())
   {
+    ros::spinOnce();
+    waypTugs_pub.publish(waypTugs);
+    ctrlTugs_pub.publish(ctrlTugs);
+    
     if(STRESS_MODE)
     {    
       std::cout << "Stress level: " << distress << "\n";
@@ -198,9 +202,6 @@ int main(int argc, char **argv)
       }
     }
     sendTugRequests(&waypReq_pub);
-    waypTugs_pub.publish(waypTugs);
-    ctrlTugs_pub.publish(ctrlTugs);
-    ros::spinOnce();
     //std::cout << "numCtrlTugs: " << ctrlTugs.data.size() << "\tnumWaypTugs: " << waypTugs.data.size() << "\n";
 
     loop_rate.sleep();

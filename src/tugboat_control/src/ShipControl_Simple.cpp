@@ -23,11 +23,12 @@ STOP_UNIQUE */
 #include <unistd.h>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 
 #define SHIP_ID 0 
 #define HALF_SHIP_WIDTH 0.3 //plus one tugboat radius + margin 
 #define HALF_SHIP_LENGTH 0.35 //TODO: Find better name for this
-#define ACCEPTABLE_DIST_ERROR 0.5 //0.5 m from ship means tug has lost contact
+#define ACCEPTABLE_DIST_ERROR 1.0 //0.5 m from ship means tug has lost contact
 #define MAX_PUSHING_FORCE 0.5 //Max setpoint for pushing force, in N
 #define MIN_PUSHING_FORCE 0.1 //Min force required to maintain contact, in N
 
@@ -127,11 +128,11 @@ int determineShipSide(tugboat_control::BoatPose tugPose) //tugPose in ship coord
   double tugPosAngle = atan2(tugPose.y, tugPose.x); //angle from origin to tug position in ship coordinates
   double cornerAngle = atan2(HALF_SHIP_WIDTH, HALF_SHIP_LENGTH);
   std::cout << "tugPosAngle: " << tugPosAngle << " cornerAngle: " << cornerAngle << "\n";
-  if(abs(tugPosAngle) < cornerAngle)
+  if(std::abs(tugPosAngle) < cornerAngle)
   {
     return 0;
   }
-  else if(abs(tugPosAngle) > (3.14 - cornerAngle))
+  else if(std::abs(tugPosAngle) > (3.14 - cornerAngle))
   {
     return 2;
   }
@@ -306,7 +307,7 @@ void control(ros::Publisher *pub)
     std::cout << "Tug " << (int)ctrl.ID << " at shipSide " << determineShipSide(tugPoses[tug]) << " in ship coordinates ( " << tugPoses[tug].x << ", " << tugPoses[tug].y << " )\n";
     double oSetShipCoordinates = -3.14 + 1.57 * determineShipSide(tugPoses[tug]);
 
-		ctrl.o = PIDnormalizeAngle(oSetShipCoordinates + shipPose.o); //TODO: Feil her?
+		ctrl.o = PIDnormalizeAngle(oSetShipCoordinates + shipPose.o);
 		ctrl.force = std::max(MIN_PUSHING_FORCE, MAX_PUSHING_FORCE * cos(tugPoses[tug].o - shipSetHeading) ); 
 		pub->publish(ctrl);
 	}//END_UNIQUE
@@ -341,6 +342,7 @@ int main(int argc, char **argv)
 
   while (ros::ok())
   {
+    ros::spinOnce();
   	if(ctrlTugIDs.data.size() > 0)
   	{
   		control(&ctrl_pub);
@@ -363,7 +365,6 @@ int main(int argc, char **argv)
       std::cout << "Debug: Discard OK\n";
   	}
     //std::cout << "numCtrlTugs: " << ctrlTugIDs.data.size() << "\n";
-    ros::spinOnce();
     loop_rate.sleep();
   }
   return 0;

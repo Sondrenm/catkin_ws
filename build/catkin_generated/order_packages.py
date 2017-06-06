@@ -2,4 +2,4 @@
 source_root_dir = "/home/sondre/catkin_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/sondre/catkin_ws/devel;/opt/ros/kinetic".split(';') if "/home/sondre/catkin_ws/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/home/sondre/RebeccaMaster/masteroppgave/ros_ws/devel;/home/sondre/catkin_ws/devel;/opt/ros/kinetic".split(';') if "/home/sondre/RebeccaMaster/masteroppgave/ros_ws/devel;/home/sondre/catkin_ws/devel;/opt/ros/kinetic" != "" else []
