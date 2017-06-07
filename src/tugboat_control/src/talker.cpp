@@ -4,15 +4,25 @@
 #include "tugboat_control/TugSetpoints.h"
 #include "tugboat_control/BoatPose.h"
 #include "tugboat_control/Waypoint.h"
+#include "tugboat_control/ClearWaypoint.h"
 #include "std_msgs/UInt8MultiArray.h"
 
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
 
-/**
- * This tutorial demonstrates simple sending of messages over the ROS system.
- */
+std_msgs::UInt8MultiArray waypTugs;
+
+void waypClearCallback(const tugboat_control::ClearWaypoint::ConstPtr& msg)
+{
+  for (int i = 0; i < waypTugs.data.size(); ++i)
+  {
+    if(waypTugs.data[i] == msg->tugID){
+      waypTugs.data.erase(waypTugs.data.begin() + i);
+    }
+  }  
+}
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "talker");
@@ -29,23 +39,28 @@ int main(int argc, char **argv)
   ros::Publisher shipWayp_pub = n.advertise<tugboat_control::Waypoint>("shipWaypoint", 10);
   ros::Publisher waypReq_pub = n.advertise<tugboat_control::Waypoint>("waypointRequest", 10);
   ros::Publisher ctrlTugs_pub = n.advertise<std_msgs::UInt8MultiArray>("ctrlTugs", 1); //List of tugboats controlled by Ship Control
+  ros::Publisher waypTugs_pub = n.advertise<std_msgs::UInt8MultiArray>("waypTugs", 1); //List of tugboats controlled by Ship Control
+
+  ros::Subscriber waypClear_sub = n.subscribe("clearWaypoint", 100, waypClearCallback); //
 
   //Messages
   std_msgs::String msg;
   tugboat_control::Thrust cmd;
   tugboat_control::Waypoint wayp;
+  tugboat_control::Waypoint waypReq;
   tugboat_control::TugSetpoints ctrl;
   tugboat_control::BoatPose pose;
   std_msgs::UInt8MultiArray ctrlTugs;
 
-  ctrlTugs.data.push_back(1);
+  waypTugs.data.push_back(3);
+  waypTugs.data.push_back(4);
 
   int count = 0;
 
   while (ros::ok())
   {
     count++;
-    
+    waypTugs_pub.publish(waypTugs);
     /*
     std::stringstream ss;
     ss << "hello world " << count;
@@ -55,13 +70,24 @@ int main(int argc, char **argv)
     chatter_pub.publish(msg);
     */
 
+    //For demonstrating collision-avoidance
+    waypReq.ID = 3;
+    waypReq.x = 2.8;
+    waypReq.y = 1.7;
+    waypReq_pub.publish(waypReq);
+
+
+    waypReq.ID = 4;
+    waypReq.x = 2.8;
+    waypReq.y = 1.3;
+    waypReq_pub.publish(waypReq);
     /*
     cmd.ID = 1;
     cmd.thrust = 0;
     cmd.ccwturn = 0;
     cmd_pub.publish(cmd);
     */
-
+    /*
     ctrlTugs_pub.publish(ctrlTugs);
 
     wayp.ID = 2;
@@ -85,6 +111,7 @@ int main(int argc, char **argv)
     
     //wayp.ID = 4;
     //wayp_pub.publish(wayp);
+    */
 
     /*
     ctrl.ID = 3;

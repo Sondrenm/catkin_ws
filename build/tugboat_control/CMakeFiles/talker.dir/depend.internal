@@ -3,6 +3,7 @@
 
 tugboat_control/CMakeFiles/talker.dir/src/talker.cpp.o
  /home/sondre/catkin_ws/devel/include/tugboat_control/BoatPose.h
+ /home/sondre/catkin_ws/devel/include/tugboat_control/ClearWaypoint.h
  /home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
  /home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h
  /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h

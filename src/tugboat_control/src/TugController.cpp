@@ -38,7 +38,7 @@
 #define ctrl_ccwturn_Ki      0
 
 #define PUSHING_CONTROLLER_ENABLED false
-#define FORCE_TO_THRUST 100
+#define FORCE_TO_THRUST 100.0
 #define ctrl_thrust_Kp      10
 #define ctrl_thrust_Kd      10
 #define ctrl_thrust_Ki      0
@@ -183,7 +183,7 @@ void computeControl(bool mode, ros::Publisher stress_pub)
         }
         else
         { //Had some trouble with pushing controller
-          cmd.thrust = FORCE_TO_THRUST * ctrl.force;
+          cmd.thrust = (int8_t)(FORCE_TO_THRUST * ctrl.force);
         }
       }
       

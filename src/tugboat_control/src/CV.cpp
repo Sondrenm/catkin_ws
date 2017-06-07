@@ -226,7 +226,7 @@ int main(int argc, char **argv)
               cv::Point2d waypPt = cv::Point(waypoints[markerIds[i]].x * 220, waypoints[markerIds[i]].y * 220);
               cv::arrowedLine(videoImg, tugPt, waypPt, colour[markerIds[i]], 2, 8, 0, 0.03); //TODO: Stop drawing waypoint line when tugboat enters ctrlMode
               //Draw circle at waypoint in documentation image
-              if(!(counter % 100) ) 
+              if(!(counter % 10) ) 
               { //Draw waypoint every 10 sec
                 cv::circle(boatPosImg, waypPt, 20, colour[markerIds[i]], 2, 8, 0); //first int is radius - should be about one tugboat size
               }

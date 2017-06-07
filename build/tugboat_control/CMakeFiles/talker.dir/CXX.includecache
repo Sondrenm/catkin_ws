@@ -22,6 +22,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/home/sondre/catkin_ws/devel/include/tugboat_control/ClearWaypoint.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/sondre/catkin_ws/devel/include/tugboat_control/Thrust.h
 string
 -
@@ -83,6 +99,8 @@ tugboat_control/BoatPose.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/BoatPose.h
 tugboat_control/Waypoint.h
 /home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/Waypoint.h
+tugboat_control/ClearWaypoint.h
+/home/sondre/catkin_ws/src/tugboat_control/src/tugboat_control/ClearWaypoint.h
 std_msgs/UInt8MultiArray.h
 /home/sondre/catkin_ws/src/tugboat_control/src/std_msgs/UInt8MultiArray.h
 iostream

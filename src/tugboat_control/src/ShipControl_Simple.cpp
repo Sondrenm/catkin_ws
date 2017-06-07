@@ -329,6 +329,7 @@ int main(int argc, char **argv)
   ros::Publisher ctrl_pub = n.advertise<tugboat_control::TugSetpoints>("control", 100);
   ros::Publisher stress_pub = n.advertise<std_msgs::Bool>("distress", 100);
   ros::Publisher discard_pub = n.advertise<std_msgs::UInt8>("ctrlClear", 100);
+  ros::Publisher shipWayp_pub = n.advertise<tugboat_control::Waypoint>("shipWaypoint", 1);
   
   ros::Rate loop_rate(10);
 
@@ -338,6 +339,7 @@ int main(int argc, char **argv)
   shipWaypoint.o = 0;
   shipWaypoint.v = 0.05;
 
+  shipWayp_pub.publish(shipWaypoint); //for illustration purposes only
   std::cout << "Ship Control node initialized successfully\n";
 
   while (ros::ok())

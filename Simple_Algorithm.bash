@@ -11,8 +11,8 @@ sleep 1
 #gnome-terminal --geometry 60x10+0+620 -e "rosrun tugboat_control WaypointDummy"
 gnome-terminal --geometry 60x10+0+620 -e "roslaunch master demo.launch"
 sleep 1
-gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=1 __name:=ctrl1"
-gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=2 __name:=ctrl2"
+gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=3 __name:=ctrl1"
+gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=4 __name:=ctrl2"
 #gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=3 __name:=ctrl3"
 #gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=4 __name:=ctrl4"
 #gnome-terminal --geometry 60x10+0+820 -e "rosrun tugboat_control TugController _ID:=5 __name:=ctrl5"
