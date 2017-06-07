@@ -202,7 +202,7 @@ int main(int argc, char **argv)
       }
     }
     sendTugRequests(&waypReq_pub);
-    //std::cout << "numCtrlTugs: " << ctrlTugs.data.size() << "\tnumWaypTugs: " << waypTugs.data.size() << "\n";
+    std::cout << "numCtrlTugs: " << ctrlTugs.data.size() << "\tnumWaypTugs: " << waypTugs.data.size() << "\n";
 
     loop_rate.sleep();
   }

@@ -3,6 +3,7 @@
 
 tugboat_control/CMakeFiles/CV.dir/src/CV.cpp.o
  /home/sondre/catkin_ws/devel/include/tugboat_control/BoatPose.h
+ /home/sondre/catkin_ws/devel/include/tugboat_control/TugSetpoints.h
  /home/sondre/catkin_ws/devel/include/tugboat_control/Waypoint.h
  /home/sondre/catkin_ws/src/tugboat_control/src/CV.cpp
  /opt/ros/kinetic/include/opencv-3.2.0-dev/opencv/cxcore.h
@@ -188,5 +189,8 @@ tugboat_control/CMakeFiles/CV.dir/src/CV.cpp.o
  /opt/ros/kinetic/include/ros/wall_timer.h
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
+ /opt/ros/kinetic/include/std_msgs/Float64MultiArray.h
+ /opt/ros/kinetic/include/std_msgs/MultiArrayDimension.h
+ /opt/ros/kinetic/include/std_msgs/MultiArrayLayout.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
