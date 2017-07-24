@@ -1,3 +1,8 @@
+/*
+This module is used to debug other modules by publishing on relevant topics.
+*/
+
+
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "tugboat_control/Thrust.h"
@@ -39,9 +44,9 @@ int main(int argc, char **argv)
   ros::Publisher shipWayp_pub = n.advertise<tugboat_control::Waypoint>("shipWaypoint", 10);
   ros::Publisher waypReq_pub = n.advertise<tugboat_control::Waypoint>("waypointRequest", 10);
   ros::Publisher ctrlTugs_pub = n.advertise<std_msgs::UInt8MultiArray>("ctrlTugs", 1); //List of tugboats controlled by Ship Control
-  ros::Publisher waypTugs_pub = n.advertise<std_msgs::UInt8MultiArray>("waypTugs", 1); //List of tugboats controlled by Ship Control
+  ros::Publisher waypTugs_pub = n.advertise<std_msgs::UInt8MultiArray>("waypTugs", 1); //List of tugboats controlled by Waypoint manager
 
-  ros::Subscriber waypClear_sub = n.subscribe("clearWaypoint", 100, waypClearCallback); //
+  ros::Subscriber waypClear_sub = n.subscribe("clearWaypoint", 100, waypClearCallback);
 
   //Messages
   std_msgs::String msg;

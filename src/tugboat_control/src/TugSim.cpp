@@ -38,7 +38,6 @@ public:
 
   void move() {
     // Water resistance: Fd = 1/2 * rho * v² *Cd * A = 0.5 * 1000 * V² * 0.5 * 0.1*0.16 (cross section in water) = 0.004 * v²
-
     double FxWater = - 4 * Vx * std::abs(Vx);
     double FyWater = - 4 * Vy * std::abs(Vy);
     //Skin drag: F = 1/2 * Cf * rho * v² * S_wetted = 1/2 * Cf * rho * (Vr * r)^2 * 2*pi*r*h_wetted = 0.5*1(?)*1000*Vr²*0.08²*2*pi*0.08*0.1 = 0.08*Vr²

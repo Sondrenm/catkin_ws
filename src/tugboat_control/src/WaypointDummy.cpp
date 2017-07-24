@@ -1,8 +1,12 @@
+/* WaypointManager.cpp
+ This module is a placeholder for Cox' path-planning 
+ algorithms, but is included to show the interface and
+  the general functionality. Not that this module 
+  has no path-planning capabilities.*/
 #include "ros/ros.h"
 #include "tugboat_control/BoatPose.h"
 #include "tugboat_control/Waypoint.h"
 #include "tugboat_control/ClearWaypoint.h"
-
 #include "std_msgs/UInt8MultiArray.h"
 
 #include <iostream>
@@ -16,18 +20,21 @@
 tugboat_control::BoatPose shipPose;
 tugboat_control::Waypoint shipWaypoint;
 
-//tugPoses and waypTugIDs have the same indexes for the same tugboats
+//tugPoses and waypTugIDs have the same indexes for 
+//the same tugboats
 std_msgs::UInt8MultiArray waypTugIDs;
 std::vector<tugboat_control::BoatPose> tugPoses; 
-std::vector<tugboat_control::Waypoint> tugWaypoints; //ID = orderID
+std::vector<tugboat_control::Waypoint> tugWaypoints; 
+//ID = orderID
 
-void shipPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
+void shipPoseCallback(const tugboat_control::BoatPose::
+  ConstPtr& pose_in)
 { //Not used in dummy
   shipPose = *pose_in;
-  //std::cout << "Ship pose: x = " << shipPose.x << "\ty = " << shipPose.y << "\to = " << shipPose.o << "\n";
 }
 
-void tugPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
+void tugPoseCallback(const tugboat_control::BoatPose::
+  ConstPtr& pose_in)
 {
   for (int tug = 0; tug < waypTugIDs.data.size(); ++tug)
   {
@@ -38,7 +45,8 @@ void tugPoseCallback(const tugboat_control::BoatPose::ConstPtr& pose_in)
   }
 }
 
-void waypTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
+void waypTugsCallback(const std_msgs::UInt8MultiArray::
+  ConstPtr& tugsIn)
 {
   std::vector<tugboat_control::BoatPose> newPoses; 
 
@@ -54,7 +62,8 @@ void waypTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
       }
     }
     if(newPoses.size() <= ID)
-    { //No element added above, because no Pose is in record
+    { //No element added above, because no Pose is in 
+      //record
       tugboat_control::BoatPose blankPose;
       blankPose.ID = waypTugIDs.data[ID];
       blankPose.x = -10;
@@ -66,7 +75,8 @@ void waypTugsCallback(const std_msgs::UInt8MultiArray::ConstPtr& tugsIn)
   tugPoses = newPoses;
 }
 
-void waypReqCallback(const tugboat_control::Waypoint::ConstPtr& waypIn)
+void waypReqCallback(const tugboat_control::Waypoint::
+  ConstPtr& waypIn)
 {
   for (int wayp = 0; wayp < tugWaypoints.size(); ++wayp)
   {
@@ -83,15 +93,20 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "dummyWaypoint");
 
   ros::NodeHandle n;
-
-  ros::Publisher clearWayp_pub = n.advertise<tugboat_control::ClearWaypoint>("clearWaypoint", 1000);
-  ros::Publisher tugWayp_pub = n.advertise<tugboat_control::Waypoint>("waypoint", 10);
-  ros::Publisher shipWayp_pub = n.advertise<tugboat_control::Waypoint>("shipWaypoint", 10);
-
-  ros::Subscriber shipPose_sub = n.subscribe("shipPose", 100, shipPoseCallback);
-  ros::Subscriber tugPose_sub = n.subscribe("pose", 100, tugPoseCallback);
-  ros::Subscriber waypTugs_sub = n.subscribe("waypTugs", 100, waypTugsCallback);
-  ros::Subscriber waypReq_sub = n.subscribe("waypointRequest", 100, waypReqCallback);
+  ros::Publisher clearWayp_pub = n.advertise<
+  tugboat_control::ClearWaypoint>("clearWaypoint", 1000);
+  ros::Publisher tugWayp_pub = n.advertise<
+  tugboat_control::Waypoint>("waypoint", 10);
+  ros::Publisher shipWayp_pub = n.advertise<
+  tugboat_control::Waypoint>("shipWaypoint", 10);
+  ros::Subscriber shipPose_sub = n.subscribe(
+    "shipPose", 100, shipPoseCallback);
+  ros::Subscriber tugPose_sub = n.subscribe(
+    "pose", 100, tugPoseCallback);
+  ros::Subscriber waypTugs_sub = n.subscribe(
+    "waypTugs", 100, waypTugsCallback);
+  ros::Subscriber waypReq_sub = n.subscribe(
+    "waypointRequest", 100, waypReqCallback);
  
   ros::Rate loop_rate(1);
 
@@ -101,57 +116,53 @@ int main(int argc, char **argv)
   shipWaypoint.o = 0;
   shipWaypoint.v = 0.05;
 
-  std::cout << "Waypoint Dummy node initialized successfully\n";
+  std::cout << "Waypoint Dummy node initialized 
+  successfully\n";
   while (ros::ok())
   {    
     ros::spinOnce();
-    /*//Try: Only release if all tugboats have reached their waypoint
-    int numReadyTugs = 0;
-    for (int waypoint = 0; waypoint < tugWaypoints.size(); ++waypoint)
+    for (int waypoint = 0; waypoint < 
+      tugWaypoints.size(); ++waypoint)
     {
-      for (int tug = 0; tug < waypTugIDs.data.size(); ++tug)
+      for (int tug = 0; tug < waypTugIDs.data.size();
+       ++tug)
       {
-        if(sqrt( pow(tugWaypoints[waypoint].x - tugPoses[tug].x, 2) + pow(tugWaypoints[waypoint].y - tugPoses[tug].y, 2) ) < ACCEPTABLE_DIST_ERROR)
-        {
-          numReadyTugs++;
-          break;
-        }
-      }
-    }
-
-if(numReadyTugs == tugWaypoints.size()){*/
-    //If any tugboat in my care is within acceptable distance of target waypoint, the waypoint is cleared and the tugboat is released
-    for (int waypoint = 0; waypoint < tugWaypoints.size(); ++waypoint)
-    {
-      for (int tug = 0; tug < waypTugIDs.data.size(); ++tug)
-      {
-        if(sqrt( pow(tugWaypoints[waypoint].x - tugPoses[tug].x, 2) + pow(tugWaypoints[waypoint].y - tugPoses[tug].y, 2) ) < ACCEPTABLE_DIST_ERROR)
+        if(sqrt( pow(tugWaypoints[waypoint].x - 
+          tugPoses[tug].x, 2) + pow(tugWaypoints[
+            waypoint].y - tugPoses[tug].y, 2) ) < 
+          ACCEPTABLE_DIST_ERROR)
         {
           tugboat_control::ClearWaypoint msg;
           msg.tugID = waypTugIDs.data[tug];
           msg.orderID = tugWaypoints[waypoint].ID;
           clearWayp_pub.publish(msg);
 
-          std::cout << "Clearing waypoint with id " << (int)msg.orderID << "\n";
+          std::cout << "Clearing waypoint with id " << 
+          (int)msg.orderID << "\n";
 
-          tugWaypoints.erase(tugWaypoints.begin() + waypoint);
-          waypTugIDs.data.erase(waypTugIDs.data.begin() + tug);
+          tugWaypoints.erase(tugWaypoints.begin() + 
+            waypoint);
+          waypTugIDs.data.erase(waypTugIDs.data.begin()
+           + tug);
           tugPoses.erase(tugPoses.begin() + tug);
           break;
         }
       }
     }
-//}
     //Publish all remaining waypoints
     shipWayp_pub.publish(shipWaypoint);
 
     tugboat_control::Waypoint tempWayp;
-    for (int tug = 0; tug < waypTugIDs.data.size(); ++tug)
+    for (int tug = 0; tug < waypTugIDs.data.size();
+     ++tug)
     {
       if (tug < tugWaypoints.size())
       {
         tempWayp = tugWaypoints[tug];
-        std::cout << "Tugboat " << (int)waypTugIDs.data[tug] << "to ( " << tugWaypoints[tug].x << ", " << tugWaypoints[tug].y << " )\n";
+        std::cout << "Tugboat " << 
+        (int)waypTugIDs.data[tug] << "to ( " << 
+        tugWaypoints[tug].x << ", " << 
+        tugWaypoints[tug].y << " )\n";
       }
       else 
       { //No waypoint for you -> stay put
@@ -159,15 +170,13 @@ if(numReadyTugs == tugWaypoints.size()){*/
         tempWayp.y = tugPoses[tug].y;
         tempWayp.o = tugPoses[tug].o;
         tempWayp.v = 0;
-        std::cout << "Tugboat " << (int)waypTugIDs.data[tug] << " stay put\n";
+        std::cout << "Tugboat " << 
+        (int)waypTugIDs.data[tug] << " stay put\n";
       }
       tempWayp.ID = waypTugIDs.data[tug];
       tugWayp_pub.publish(tempWayp);
     }
     std::cout << "\n";
-
-    //std::cout << "numWaypTugs: " << waypTugIDs.data.size() << "\n";
-
     loop_rate.sleep();
   }
 
